@@ -13,7 +13,7 @@ function do_login()
   $.ajax
   ({
   type:'post',
-  url:'do_login.php',
+  url:'https://infinity-id.herokuapp.com/index.php',
   data:{
    do_login:"do_login",
    email:email,
@@ -48,7 +48,7 @@ function do_login()
 <div id="login_form">
  <h1>LOGIN FORM</h1>
  <p id="login_label">Email : demo@demo.com | Password : demo</p>
- <form method="post" action="do_login.php" onsubmit="return do_login();">
+ <form method="post" action="https://infinity-id.herokuapp.com/index.php" onsubmit="return do_login();">
   <input type="text" name="emailid" id="emailid" placeholder="Enter Email">
   <br>
   <input type="password" name="password" id="password" placeholder="***********">
