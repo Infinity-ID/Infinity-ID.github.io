@@ -66,9 +66,12 @@
     </style>
 </head>
 <body>
+    <div id="images"></div>
 <div class="container">
     <div class="main-body">
-    
+        
+ 
+       
           <!-- Breadcrumb -->
           <nav aria-label="breadcrumb" class="main-breadcrumb">
             <ol class="breadcrumb">
@@ -232,7 +235,26 @@
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-	
+
+         
 </script>
+<script>
+    (function() {
+      var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+      $.getJSON( flickerAPI, {
+        tags: "mount rainier",
+        tagmode: "any",
+        format: "json"
+      })
+        .done(function( data ) {
+          $.each( data.items, function( i, item ) {
+            $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+            if ( i === 3 ) {
+              return false;
+            }
+          });
+        });
+    })();
+    </script>
 </body>
 </html>
