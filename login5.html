@@ -7,12 +7,12 @@
 <body>
 <form action="" method="post" id="form-search">
    
-    Phone:<input class="input" type="text" placeholder="phone" name="phone" id="phone" required><br><br>
-    <div id="otp_section" style="display:none;">
-		OTP:<input class="input" type="text" placeholder="OTP" name="otp" id="otp" required><br><br>
-    </div>
-    <button  type="button" name="btn-save" id="continue">Continue</button>
-    <button  type="button" name="login" id="login" style="display:none;">Submit</button>
+    username or email<input class="input" type="text" placeholder="phone" name="phone" id="phone" required><br><br>
+  
+		password<input class="input" type="text" placeholder="OTP" name="otp" id="otp" required><br><br>
+   
+    <button  type="button" name="btn-save" id="continue" style="display:none;">Continue</button>
+    <button  type="button" name="login" id="login" >Submit</button>
 </form>
 <script>
 $(document).on('click','#continue',function(e) {
