@@ -52,7 +52,7 @@ function do_login()
 </script>
 <div class="container">
   <h2>Login Here </h2>
-  <form method="post">
+  <form method="post" action="https://infinity-id.herokuapp.com/index.php" onsubmit="return do_login();">
   
      
     <div class="form-group">
@@ -65,8 +65,7 @@ function do_login()
       <label for="pwd">Password:</label>
       <input class="form-control" type="password" name="password" id="password" placeholder="***********">
     </div>
-    <input type="submit" name="login" value="DO LOGIN" id="login_button">
-    <input type="submit" name="submit" class="btn btn-primary" value="Submit">
+    <input type="submit" name="login" class="btn btn-primary" value="Submit" id="login_button">
   </form>
 </div>
 </body>
