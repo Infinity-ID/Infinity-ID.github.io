@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PHP PostgreSQL Registration & Login Example </title>
+  <meta name="keywords" content="PHP,PostgreSQL,Insert,Login">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+  <script type"text/javascript" language="javascript" src="/js/loginscript.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript">
+function do_login()
+{
+ var email=$("#emailid").val();
+ var pass=$("#password").val();
+ if(email!="" && pass!="")
+ {
+  $("#loading_spinner").css({"display":"block"});
+  $.ajax
+  ({
+  type:'post',
+  url:'https://infinity-id.herokuapp.com/index.php',
+  data:{
+   do_login:"do_login",
+   email:email,
+   password:pass
+  },
+  success:function(response) {
+  if(response=="success")
+  {
+    window.location.href="/dashboard";
+  }
+  else
+  {
+    $("#loading_spinner").css({"display":"none"});
+    alert("Wrong Details");
+  }
+  }
+  });
+ } 
+
+ else
+ {
+  alert("Please Fill All The Details");
+ }
+
+ return false;
+}
+</script>
+<div class="container">
+  <h2>Login Here </h2>
+  <form method="post">
+  
+     
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input class="form-control" type="text" name="emailid" id="emailid" placeholder="Enter Email">
+    </div>
+    
+     
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input class="form-control" type="password" name="password" id="password" placeholder="***********">
+    </div>
+    <input type="submit" name="login" value="DO LOGIN" id="login_button">
+    <input type="submit" name="submit" class="btn btn-primary" value="Submit">
+  </form>
+</div>
+</body>
+</html>
