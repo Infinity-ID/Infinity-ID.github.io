@@ -1,0 +1,54 @@
+<nav class="navbar navbar-standard navbar-expand-lg fixed-top navbar-dark navbar-theme">
+    <div class="container"><a class="navbar-brand" href="/index.html"><span class="text-white">{{ site.name }}</span></a><button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse scrollbar perfect-scrollbar" id="navbarStandard">
+        <ul class="navbar-nav">
+      <!--   <li class="nav-item"><a class="nav-link" id="" href="/index.html">Home</a>--> 
+            <li class="nav-item"><a class="nav-link" id="" href="/blog">Blog</a>
+                <li class="nav-item"><a class="nav-link" id="" href="/about">About</a>
+          </li>
+       </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="/index.html"><span class="fas fa-chart-pie d-none d-lg-inline-block" data-toggle="tooltip" data-placement="bottom" title="Dashboard"></span><span class="d-lg-none">Dashboard</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="/home/feed.html"><span class="fas fa-list-alt d-none d-lg-inline-block" data-toggle="tooltip" data-placement="bottom" title="Feed"></span><span class="d-lg-none">Feed</span></a></li>
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownLogin" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-card" aria-labelledby="navbarDropdownLogin">
+              <div class="card shadow-none navbar-card-login">
+                <div class="card-body fs--1 p-4 font-weight-normal">
+                  <div class="row text-left justify-content-between align-items-center mb-2">
+                    <div class="col-auto">
+                      <h5 class="mb-0">Log in</h5>
+                    </div>
+                    <div class="col-auto">
+                      <p class="fs--1 text-600 mb-0">or <a href="/authentication/basic/register.html">Create an account</a></p>
+                    </div>
+                  </div>
+                  <form>
+                    <div class="form-group"><input class="form-control" type="email" placeholder="Email address" /></div>
+                    <div class="form-group"><input class="form-control" type="password" placeholder="Password" /></div>
+                    <div class="row justify-content-between align-items-center">
+                      <div class="col-auto">
+                        <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="modal-checkbox" /><label class="custom-control-label" for="modal-checkbox">Remember me</label></div>
+                      </div>
+                      <div class="col-auto"><a class="fs--1" href="/authentication/basic/forgot-password.html">Forgot Password?</a></div>
+                    </div>
+                    <div class="form-group"><button class="btn btn-primary btn-block mt-3" type="submit" name="submit">Log in</button></div>
+                  </form>
+                  <div class="w-100 position-relative mt-4">
+                    <hr class="text-300" />
+                    <div class="position-absolute absolute-centered t-0 px-3 bg-white text-sans-serif fs--1 text-500 text-nowrap">or log in with</div>
+                  </div>
+                  <div class="form-group mb-0">
+                    <div class="row no-gutters">
+                      <div class="col-sm-6 pr-sm-1"><a class="btn btn-outline-google-plus btn-sm btn-block mt-2" href="#"><span class="fab fa-google-plus-g mr-2" data-fa-transform="grow-8"></span> google</a></div>
+                      <div class="col-sm-6 pl-sm-1"><a class="btn btn-outline-facebook btn-sm btn-block mt-2" href="#"><span class="fab fa-facebook-square mr-2" data-fa-transform="grow-8"></span> facebook</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#!" data-toggle="modal" data-target="#exampleModal">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
