@@ -62,7 +62,7 @@ $(document).ready(function(){
         if(email.length != "" && password.length != ""){
             $.ajax({
                 type : 'POST',
-                url  : 'userLogin.php',
+                url  : 'https://infinity-id.herokuapp.com/connect11.php',
                 data : {'email': email, 'password': password},
                 dataType : 'JSON',
                 success : function(feedback){
@@ -74,6 +74,16 @@ $(document).ready(function(){
                         $(".email").removeClass("is-invalid");
                         $(".emailError").html("");
                     } else if(feedback.status === "emailError"){
+                        $(".password").removeClass("is-invalid");
+                        $(".passwordError").html("");
+                        $(".email").addClass("is-invalid");
+                        $(".emailError").html(feedback.message);
+                    }else if(feedback.status === "Invalid Details"){
+                        $(".password").removeClass("is-invalid");
+                        $(".passwordError").html("");
+                        $(".email").addClass("is-invalid");
+                        $(".emailError").html(feedback.message);
+                    }else if(feedback.status === ""){
                         $(".password").removeClass("is-invalid");
                         $(".passwordError").html("");
                         $(".email").addClass("is-invalid");
