@@ -63,7 +63,21 @@
     <!-- Page Content -->
     
 <div class="container">
-    <div class="col-md-12">
+    <div class="posts">
+        {% for post in site.posts %}
+          <article class="post">
+      
+            <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      
+            <div class="entry">
+              {{ post.excerpt }}
+            </div>
+      
+            <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+          </article>
+        {% endfor %}
+      </div>
+  <!--  <div class="col-md-12">
         <h1>Alice in Wonderland, part dos</h1>
         <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
         'Yes, we went to school in the sea, though you mayn't believe it—'
@@ -83,7 +97,7 @@
     <span class="label label-danger">Danger</span></div>
         </div>     
         <hr>
-    </div>
+    </div>-->
     </div>
     <!-- /.container -->
 
