@@ -1,31 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>PHP PostgreSQL Registration & Login Example </title>
-  <meta name="keywords" content="PHP,PostgreSQL,Insert,Login">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+  <title>Signin Template for Bootstrap</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+  <script type"text/javascript" language="javascript" src="/js/loginscript.js"></script>
+   <script type"text/javascript" language="javascript" src="/js/jquery.js"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/style.css" type="text/css" rel="stylesheet"/>
+<link href="/signin.css" rel="stylesheet">
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript">
+function do_login()
+{
+ var email=$("#emailid").val();
+ var pass=$("#password").val();
+ if(email!="" && pass!="")
+ {
+  $("#loading_spinner").css({"display":"block"});
+  $.ajax
+  ({
+  type:'post',
+  url:'https://infinity-id.herokuapp.com/index.php',
+  data:{
+   do_login:"do_login",
+   email:email,
+   password:pass
+  },
+  success:function(response) {
+  if(response=="success")
+  {
+    window.location.href="/dashboard";
+  }
+  else
+  {
+    $("#loading_spinner").css({"display":"none"});
+    alert("Wrong Details");
+  }
+  }
+  });
+ } 
+
+ else
+ {
+  alert("Please Fill All The Details");
+ }
+
+ return false;
+}
+</script>
 </head>
 <body>
-<div class="container">
-  <h2>Login Here </h2>
-  <form method="post">
-  
-     
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-    </div>
-    
-     
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-    </div>
-     
-    <input type="submit" name="submit" class="btn btn-primary" value="Submit">
-  </form>
+<div id="wrapper">
+
+<div id="login_form">
+ <h1>LOGIN FORM</h1>
+ <p id="login_label">Email : demo@demo.com | Password : demo</p>
+ <form method="post" action="https://infinity-id.herokuapp.com/index.php" onsubmit="return do_login();">
+  <input type="text" name="emailid" id="emailid" placeholder="Enter Email">
+  <br>
+  <input type="password" name="password" id="password" placeholder="***********">
+  <br>
+  <input type="submit" name="login" value="DO LOGIN" id="login_button">
+ </form>
+ <p id="loading_spinner"><img src="/images/loader.gif"></p>
+</div>
+
 </div>
 </body>
 </html>
