@@ -20,9 +20,9 @@
 <script type="text/javascript">
 function do_login()
 {
- var email=$("#emailid").val();
- var pass=$("#password").val();
- if(email!="" && pass!="")
+ var email=$("#email").val();
+ var password=$("#password").val();
+ if(email!="" && password!="")
  {
  /* $("#loading_spinner").css({"display":"block"});*/
   $.ajax
@@ -30,9 +30,8 @@ function do_login()
   type:'post',
   url:'https://infinity-id.herokuapp.com/viewphp.php',
   data:{
-   do_login:"do_login",
    email:email,
-   password:pass
+   password:password
   },
   success:function(response) {
   if(response=="success")
@@ -63,18 +62,18 @@ function do_login()
 <div class="container">
     {% include nav2.html %}
     <h2>Login Here </h2>
-    <form method="post" action="https://infinity-id.herokuapp.com/connect11.php" onsubmit="return do_login();">
+    <form method="post" action="https://infinity-id.herokuapp.com/viewphp.php" onsubmit="return do_login();">
     
        
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" class="form-control" id="emailid" placeholder="Enter email" name="email">
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
       </div>
       
        
       <div class="form-group">
         <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="password" placeholder="Enter password" name="pwd">
+        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
       </div>
        
       <input type="submit" name="submit" class="btn btn-primary" value="Submit" id="login_button">
