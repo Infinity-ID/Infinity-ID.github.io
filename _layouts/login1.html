@@ -17,44 +17,28 @@
 <link href="/style.css" type="text/css" rel="stylesheet"/>
 <link href="/signin.css" rel="stylesheet">
 <script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript">
-function do_login()
-{
- var email=$("#email").val();
- var password=$("#password").val();
- if(email!="" && password!="")
- {
- /* $("#loading_spinner").css({"display":"block"});*/
-  $.ajax
-  ({
-  type:'post',
-  url:'https://infinity-id.herokuapp.com/viewphp1.php',
-  data:{
-   email:email,
-   password:password
-  },
-  success:function(response) {
-  if(response=="success")
-  {
-    window.location.href="/dashboard";
+<script>
+  function callLogin(){
+    var userName = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    xmlHttpRequest=new XMLHttpRequest();
+    xmlHttpRequest.onreadystatechange=function() {
+      if (xmlHttpRequest.readyState==4 && xmlHttpRequest.status==200) {
+        var response = xmlHttpRequest.responseText;
+        if(response == 'success') {
+          var welcome_message = '<p class="welcome-message">Welcome, You have successfully loggedin!</p>';
+          document.getElementById("output").innerHTML = welcome_message;
+        } else {
+          document.getElementById("messageBoxId").innerHTML="Invalid Credentials";
+          document.getElementById("messageBoxId").className="error-message";
+        }
+      }
+    }
+    xmlHttpRequest.open("GET","https://infinity-id.herokuapp.com/viewphp1.php?email="+userName+"&password="+password,true);
+    xmlHttpRequest.send();
   }
-  else
-  {
-   /* $("#loading_spinner").css({"display":"none"});*/
-    alert("Wrong Details");
-  }
-  }
-  });
- } 
-
- else
- {
-  alert("Please Fill All The Details");
- }
-
- return false;
-}
-</script>
+  </script>
+  
 </head>
 <body>
 
@@ -62,8 +46,8 @@ function do_login()
 <div class="container">
     {% include nav2.html %}
     <h2>Login Here </h2>
-    <form method="post" action="https://infinity-id.herokuapp.com/viewphp1.php" onsubmit="return do_login();">
-    
+    <form action="" method="post" id="frmLogin">
+	 
        
       <div class="form-group">
         <label for="email">Email:</label>
@@ -76,9 +60,8 @@ function do_login()
         <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
       </div>
        
-      <input type="submit" name="submit" class="btn btn-primary" value="Submit" id="login_button">
-    </form>
+      <input type="button" name="login" value="Login" class="form-submit-button" onClick="callLogin();">   </form>
   </div>
-
+	<div id="output"><div id="messageBoxId"></div></div>
 </body>
 </html>
