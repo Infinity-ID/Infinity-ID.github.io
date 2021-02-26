@@ -28,7 +28,7 @@ function do_login()
   $.ajax
   ({
   type:'post',
-  url:'https://infinity-id.herokuapp.com/viewphp.php',
+  url:'https://infinity-id.herokuapp.com/viewphp1.php',
   data:{
    email:email,
    password:password
@@ -62,7 +62,7 @@ function do_login()
 <div class="container">
     {% include nav2.html %}
     <h2>Login Here </h2>
-    <form method="post" action="https://infinity-id.herokuapp.com/viewphp.php" onsubmit="return do_login();">
+    <form method="post" action="https://infinity-id.herokuapp.com/viewphp1.php" onsubmit="return do_login();">
     
        
       <div class="form-group">
