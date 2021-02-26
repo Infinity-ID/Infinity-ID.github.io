@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+ 
+<script>
+const xhr = new XMLHttpRequest();
+
+// configure a `POST` request
+xhr.open('POST', 'https://infinity-id.herokuapp.com/viewphp1a.php');
+
+// prepare form data
+let params = 'username=attacomsian&password=123456';
+
+// set `Content-Type` header
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+// pass `params` to `send()` method
+xhr.send(params);
+
+// listen for `load` event
+xhr.onload = () => {
+   console.log(xhr.responseText);
+}
+</script>
+
+</body>
+</html>

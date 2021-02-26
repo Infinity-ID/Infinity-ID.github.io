@@ -20,6 +20,7 @@
                     else {
                        $.ajax(
                            {
+                            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                                url: 'https://infinity-id.herokuapp.com/viewphp1a.php',
                                method: 'POST',
                                data: {
