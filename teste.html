@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>User Login</title>
+<style>
+	body{font-family:calibri;}
+	#frmLogin {
+		padding: 10px 30px;
+		background: #B6E0FF;
+		color: #555;
+		max-width: 300px;
+		border-radius: 4px;
+		border: #95bee6 1px solid;		
+	}
+	.field-group {
+		margin-top:15px;
+	}
+	.input-field {
+		padding: 8px;
+		width: 200px;
+		border: #A3C3E7 1px solid;
+		border-radius: 4px;
+	}
+	.form-submit-button {
+		background: #65C370;
+		border: 0;
+		padding: 8px 20px;
+		border-radius: 4px;
+		color: #FFF;
+		text-transform: uppercase;
+	}
+	.member-dashboard {
+		padding: 40px;
+		background: #D2EDD5;
+		color: #555;
+		border-radius: 4px;
+		display: inline-block;
+	}
+	.member-dashboard a {
+		color: #09F;
+		text-decoration:none;
+	}
+	.error-message {
+		color: #b12d2d;
+		background: #ffb5b5;
+		border: #c76969 1px solid;
+		width: 100%;
+		max-width: 300px;
+		padding: 10px 30px;
+		border-radius: 4px;
+		margin-bottom: 5px;
+	}
+	.welcome-message {
+		border: #95bee6 1px solid;
+		background: #B6E0FF;
+		border-radius: 4px;
+		max-width: 300px;
+		padding:20px 30px 30px;
+		text-align:center;
+		color:#31ab00;
+	}
+</style>
+<script>
+function callLogin(){
+	var userName = document.getElementById("userName").value;
+	var password = document.getElementById("password").value;
+	xmlHttpRequest=new XMLHttpRequest();
+	xmlHttpRequest.onreadystatechange=function() {
+		if (xmlHttpRequest.readyState==4 && xmlHttpRequest.status==200) {
+			var response = xmlHttpRequest.responseText;
+			if(response > 0) {
+				var welcome_message = '<p class="welcome-message">Welcome, You have successfully loggedin!</p>';
+				document.getElementById("output").innerHTML = welcome_message;
+			} else {
+				document.getElementById("messageBoxId").innerHTML="Invalid Credentials";
+				document.getElementById("messageBoxId").className="error-message";
+			}
+		}
+	}
+	xmlHttpRequest.open("GET","https://infinity-id.herokuapp.com/viewphp1a.php?="+userName+"&password="+password,true);
+	xmlHttpRequest.send();
+}
+</script>
+
+</head>
+<body>
+<div id="output">
+	<div id="messageBoxId"></div>		
+	<form action="" method="post" id="frmLogin">
+		<div class="field-group">
+			<div><label for="login">Username</label></div>
+			<div><input name="userName" id="userName" type="text" class="input-field">
+		</div>
+		<div class="field-group">
+			<div><label for="password">Password</label></div>
+			<div><input name="password" id="password" type="password" class="input-field"> 
+		</div>
+		<div class="field-group">
+			<div><input type="button" name="login" value="Login" class="form-submit-button" onClick="callLogin();"></span></div>
+		</div>       
+	</form>
+</div>
+</body>
+</html>
