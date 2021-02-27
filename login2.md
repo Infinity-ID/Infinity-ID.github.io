@@ -2,8 +2,22 @@
 layout: post
 title: login
 permalink: /login/
+image: "/assets/making-conference-badge-better-hero.png"
+tags: [design, typography]
+dir_path_scripts: scripts/
+before_scripts:
+  - script-1.js
+  - script-2.js
+before_scriptfiles:
+  - script-1.md
+  - script-2.md
+after_scripts:
+  - script-1.js
+  - script-2.js
+after_scriptfiles:
+  - script-1.md
+  - script-2.md
 ---
-
 <form action="" method="post" id="frmLogin">
 <div class="form-group">
         <label for="email">Email:</label>
