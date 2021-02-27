@@ -43,14 +43,15 @@
                 <h1>{% if page.title %}{{ page.title }}{% endif %}</h1>
 
                 <!-- Author -->
+                {% if page.author %}  
                 <p class="lead">
-                    by <a href="file:///C:/Users/JUSTIN~1.DES/AppData/Local/Temp/Rar$EXa15552.12073/startbootstrap-blog-post-1.0.2/index.html#">Start Bootstrap</a>
+                by <a href="file:///C:/Users/JUSTIN~1.DES/AppData/Local/Temp/Rar$EXa15552.12073/startbootstrap-blog-post-1.0.2/index.html#">Start Bootstrap</a> {{page.author}}  
                 </p>
-
+                {% endif %}
                 <hr>
 
                 <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Posted on  {{ page.date | date: "%B %e, %Y" }}</p>
+                {% if page.date %}   <p><span class="glyphicon glyphicon-time"></span> Posted on  {{ page.date | date: "%B %e, %Y" }}</p>{% endif %}
 
                 {{ content }}
 
