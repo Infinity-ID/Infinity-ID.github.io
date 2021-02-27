@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
@@ -26,13 +26,12 @@
 </head>
 
 <body>
-    <script>
-       $(document).ready(function() {
-          var d = new Date();
-          var n = d.getFullYear();
-          document.getElementById("thisyear").innerHTML = n;
-        });
-        </script>        
+<script>$(document).ready(function() {
+    var d = new Date();
+    var n = d.getFullYear();
+    document.getElementById("thisyear").innerHTML = n;
+});
+</script>      
     <!-- Navigation -->
     {% include nav2.html %}
     <!-- Page Content -->
