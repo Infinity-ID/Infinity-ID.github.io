@@ -43,20 +43,44 @@
                       <h5 class="text-uppercase text-white opacity-85 mb-3">From the Blog</h5>
                       <ul class="list-unstyled">
                         <li>
-                          <h5 class="fs-0 mb-0"><a class="text-600" href="#!">New components are ready to publish!</a></h5>
-                          <p class="text-600 opacity-50">Jan 15 &bull; 8min read </p>
+                              {% for post in site.posts offset:0 limit:1 %}
+                          <h5 class="fs-0 mb-0">
+                                <a class="text-600" href="{{ post.url | prepend: site.baseurl | replace: '//', '/'}}">
+                                {{ post.title }}!
+                                </a>
+                          </h5>
+                          <p class="text-600 opacity-50">{{ post.date | date: '%B %d, %Y' }}</p>
+                              {% endfor %}
                         </li>
                         <li>
-                          <h5 class="fs-0 mb-0"><a class="text-600" href="#!">January '19 New Features Newsletter</a></h5>
-                          <p class="text-600 opacity-50">Jan 5 &bull; 3min read &starf;</p>
+                              {% for post in site.posts offset:1 limit:1 %}
+                          <h5 class="fs-0 mb-0">
+                                <a class="text-600" href="{{ post.url | prepend: site.baseurl | replace: '//', '/'}}">
+                                {{ post.title }}!
+                                </a>
+                          </h5>
+                          <p class="text-600 opacity-50">{{ post.date | date: '%B %d, %Y' }}</p>
+                              {% endfor %}
                         </li>
                         <li>
-                          <h5 class="fs-0 mb-0"><a class="text-600" href="#!">Merry Christmas From the Falcon Team.</a></h5>
-                          <p class="text-600 opacity-50">Dec 25 &bull; 2min read</p>
+                              {% for post in site.posts offset:2 limit:1 %}
+                          <h5 class="fs-0 mb-0">
+                                <a class="text-600" href="{{ post.url | prepend: site.baseurl | replace: '//', '/'}}">
+                                {{ post.title }}!
+                                </a>
+                          </h5>
+                          <p class="text-600 opacity-50">{{ post.date | date: '%B %d, %Y' }}</p>
+                              {% endfor %}
                         </li>
-                        <li>
-                          <h5 class="fs-0 mb-0"><a class="text-600" href="#!">The New Falcon Theme</a></h5>
-                          <p class="text-600 opacity-50">Dec 23 &bull; 10min read </p>
+                         <li>
+                              {% for post in site.posts offset:3 limit:1 %}
+                          <h5 class="fs-0 mb-0">
+                                <a class="text-600" href="{{ post.url | prepend: site.baseurl | replace: '//', '/'}}">
+                                {{ post.title }}!
+                                </a>
+                          </h5>
+                          <p class="text-600 opacity-50">{{ post.date | date: '%B %d, %Y' }}</p>
+                              {% endfor %}
                         </li>
                       </ul>
                     </div>
