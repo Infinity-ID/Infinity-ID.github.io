@@ -26,7 +26,13 @@
 </head>
 
 <body>
-
+    <script>
+       $(document).ready(function() {
+          var d = new Date();
+          var n = d.getFullYear();
+          document.getElementById("thisyear").innerHTML = n;
+        });
+        </script>        
     <!-- Navigation -->
     {% include nav2.html %}
     <!-- Page Content -->
@@ -80,7 +86,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright © Your Website 2014</p>
+                    <p>Copyright © Your Website <span id="thisyear"></span></p>
                 </div>
             </div>
             <!-- /.row -->
