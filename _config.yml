@@ -87,3 +87,10 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+permalink: pretty
