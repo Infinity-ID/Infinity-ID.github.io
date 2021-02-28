@@ -92,5 +92,10 @@ collections:
   pages:
     output: true
     permalink: /:path/
+  user:
+    output: true
+    permalink: /:path/
+  admin:
+    output: true
+    permalink: /admin/:path/
 
-permalink: pretty
