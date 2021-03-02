@@ -36,7 +36,7 @@
   <p align="center">
     Welcome to the pages of our platform!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Infinity-ID/Infinity-ID/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://infinity-id.co.uk/">View Site</a>
