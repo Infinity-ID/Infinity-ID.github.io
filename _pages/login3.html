@@ -13,11 +13,11 @@ function do_login()
   $.ajax
   ({
   type:'post',
-  url:'https://infinity-id.herokuapp.com/index.php',
+  url:'https://infinity-id.herokuapp.com/login2.php',
   data:{
    do_login:"do_login",
    email:email,
-   password:pass
+   password:password
   },
   success:function(response) {
   if(response=="success")

@@ -19,7 +19,7 @@
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script>
   function callLogin(){
-    var userName = document.getElementById("email").value;
+    var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     xmlHttpRequest=new XMLHttpRequest();
     xmlHttpRequest.onreadystatechange=function() {
@@ -34,7 +34,7 @@
         }
       }
     }
-    xmlHttpRequest.open("GET","https://infinity-id.herokuapp.com/viewphp1.php?email="+userName+"&password="+password,true);
+    xmlHttpRequest.open("GET","https://infinity-id.herokuapp.com/login2.php?email="+email+"&pwd="+password,true);
     xmlHttpRequest.send();
   }
   </script>
