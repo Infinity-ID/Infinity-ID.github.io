@@ -80,9 +80,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://infinity-id.co.uk)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+There are many great reasons why we started using Github was manyly the cost, not only that being part of the open sourse community. Then we chose a new framework called jekyll along with our custom made restful API.
 
 Here's why:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
