@@ -28,8 +28,9 @@
         if(response == 'success') {
           var welcome_message = '<p class="welcome-message">Welcome, You have successfully loggedin!</p>';
           document.getElementById("output").innerHTML = welcome_message;
-          window.location.href = './dashboard/';
-         }, 5000);
+          setTimeout(function(){
+          window.location.href = '/dashboard';
+         }, 3000);
         } else {
           document.getElementById("messageBoxId").innerHTML="Invalid Credentials";
           document.getElementById("messageBoxId").className="error-message";
