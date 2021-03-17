@@ -1,0 +1,3318 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1366, maximum-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <link rel="stylesheet" type="text/css" href="css/home.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Montserrat:400,300,700|Poppins:400,300,700,400italic");
+
+      @font-face {
+        font-family: "Runda-Normal";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://anima-uploads.s3.amazonaws.com/5d6ba63d97ac03b9cb7754ad/.7909.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "MuseoSans-700";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://anima-uploads.s3.amazonaws.com/5bf7a2010c3abe000b678507/MuseoSans-700.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "Runda-Light";
+        font-style: normal;
+        font-weight: 300;
+        src: url("https://anima-uploads.s3.amazonaws.com/5d6ba63d97ac03b9cb7754ad/.7915.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "Runda-Medium";
+        font-style: normal;
+        font-weight: 500;
+        src: url("https://anima-uploads.s3.amazonaws.com/5c8205c4598af3000ac880f3/Runda Medium.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "Runda-Bold";
+        font-style: normal;
+        font-weight: 700;
+        src: url("https://anima-uploads.s3.amazonaws.com/5c8205c4598af3000ac880f3/Runda Bold.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "Arial-Bold";
+        font-style: normal;
+        font-weight: 700;
+        src: url("https://anima-uploads.s3.amazonaws.com/5c58c99ae21217000c4e869b/arial.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "MuseoSans-500";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://anima-uploads.s3.amazonaws.com/5bf7a2010c3abe000b678507/Museo Sans.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "BrandonGrotesque-Bold";
+        font-style: normal;
+        font-weight: 700;
+        src: url("https://anima-uploads.s3.amazonaws.com/5b3c7db95d6b6a00096731e2/.10296.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "MuseoSans-900";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://anima-uploads.s3.amazonaws.com/5b629ea4f333e4000bb23b2e/MuseoSans_900.otf") format("opentype");
+      }
+
+      .component-wrapper a,
+      .screen a {
+        text-decoration: none;
+        display: contents;
+      }
+
+      .full-width-a {
+        width: 100%;
+      }
+
+      .full-height-a {
+        height: 100%;
+      }
+
+      .screen textarea:focus,
+      .screen input:focus {
+        outline: none;
+      }
+
+      .screen *,
+      .component-wrapper * {
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .screen div {
+        -webkit-text-size-adjust: none;
+      }
+
+      .container-center-vertical,
+      .container-center-horizontal {
+        pointer-events: none;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+      }
+
+      .container-center-vertical {
+        align-items: center;
+        height: 100%;
+      }
+
+      .container-center-horizontal {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .container-center-vertical > *,
+      .container-center-horizontal > * {
+        pointer-events: auto;
+        flex-shrink: 0;
+      }
+
+      .component-wrapper,
+      .screen {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-all;
+        word-break: break-word;
+      }
+
+      .auto-animated div {
+        opacity: 0;
+        position: absolute;
+        --z-index: -1;
+      }
+
+      .auto-animated .container-center-vertical,
+      .auto-animated .container-center-horizontal {
+        opacity: 1;
+      }
+
+      .overlay {
+        position: absolute;
+        opacity: 0;
+        display: none;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+      }
+
+      .animate-appear {
+        opacity: 0;
+        display: block;
+        animation: reveal 0.3s ease-in-out 1 normal forwards;
+      }
+
+      .animate-disappear {
+        opacity: 1;
+        display: block;
+        animation: reveal 0.3s ease-in-out 1 reverse forwards;
+      }
+
+      .animate-nodelay {
+        animation-delay: 0s;
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .align-self-flex-start {
+        align-self: flex-start;
+      }
+      .align-self-flex-end {
+        align-self: flex-end;
+      }
+      .align-self-flex-center {
+        align-self: center;
+      }
+      .valign-text-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .valign-text-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      input:focus {
+        outline: none;
+      }
+      .component-wrapper,
+      .component-wrapper * {
+        pointer-events: none;
+      }
+
+      .component-wrapper a *,
+      .component-wrapper a,
+      .component-wrapper input,
+      .component-wrapper video,
+      .component-wrapper iframe,
+      .listeners-active,
+      .listeners-active * {
+        pointer-events: auto;
+      }
+
+      .hidden,
+      .hidden * {
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .smart-layers-pointers,
+      .smart-layers-pointers * {
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      .component-wrapper.not-ready,
+      .component-wrapper.not-ready * {
+        visibility: hidden !important;
+      }
+
+      .listeners-active-click,
+      .listeners-active-click * {
+        cursor: pointer;
+      }
+    </style>
+    <meta name="author" content="AnimaApp.com - Design to code, Automated." />
+  </head>
+  <body style="margin: 0; background: rgba(255, 255, 255, 1)">
+    <input type="hidden" id="anPageName" name="page" value="home" />
+    <div class="container-center-horizontal">
+      <div
+        class="home auto-animated screen"
+        data-page="home"
+        data-screens="home,login,public-profile,photos,nft-page-layout,messages,main-menu,nft-mint,marketplace-home,wallet,friends-list,nfts,edit-profile,feed,dashboard,user-profile"
+      >
+        <div class="x3d-grid-perspec-a-visualization-C61RwL"></div>
+        <div class="rectangle-1515-C61RwL"></div>
+        <div class="dashboard-alt-C61RwL"></div>
+        <div
+          class="sign-up-button-C61RwL"
+          onclick="Lib.autoanim_redirect('home,registration,,,;login,home%23public-profile,,,;nft-page-layout,home%23nft-mint,,ease-out,2000;marketplace-home,home%23nft-mint,,ease-out,2000;wallet,home%23nft-mint,,ease-out,2000;edit-profile,home%23user-profile,,ease-out,2000;dashboard,home%23nft-mint,,ease-out,2000;user-profile,home%23nft-mint,,ease-out,2000', event)"
+        >
+          <div class="rectangle-1479-mT7s7X"></div>
+          <div class="folllow-mT7s7X">FOLLLOW</div>
+          <div
+            class="nft-mint-mT7s7X"
+            onclick="Lib.autoanim_redirect('messages,home%23nft-mint,,ease-out,2000', event)"
+          >
+            NFT MINT
+          </div>
+          <div class="join-now-mT7s7X">JOIN NOW</div>
+          <div class="login-mT7s7X">LOGIN</div>
+          <div class="your-profile-mT7s7X">YOUR PROFILE</div>
+        </div>
+        <div class="infinit-yi-d-logo3-C61RwL"></div>
+        <div class="infinit-yi-d-logo-C61RwL"></div>
+        <div
+          class="sign-up-button-VMr6Om"
+          onclick="Lib.autoanim_redirect('home,home%23login,,ease-out,2000;public-profile,home%23messages,,ease-out,2000;photos,home%23messages,,ease-out,2000;friends-list,home%23messages,,ease-out,2000;nfts,home%23messages,,ease-out,2000;edit-profile,home%23messages,,ease-out,2000;feed,home%23messages,,ease-out,2000;user-profile,home%23edit-profile,,ease-out,2000', event)"
+        >
+          <div class="rectangle-1479-RbUZY8"></div>
+          <div class="path-272-RbUZY8"></div>
+          <div class="message-RbUZY8">MESSAGE</div>
+          <div class="i-d-login-RbUZY8">iD LOGIN</div>
+          <div class="buy-now-RbUZY8">BUY NOW</div>
+          <div class="mint-RbUZY8">MINT</div>
+          <div class="inbox-RbUZY8">INBOX</div>
+          <div class="edit-profile-RbUZY8">EDIT PROFILE</div>
+        </div>
+        <div class="group-47-C61RwL">
+          <div class="futuristic-car-abstract-space-uAs3px"></div>
+          <div class="rectangle-1516-uAs3px"></div>
+          <div class="path-276-uAs3px"></div>
+        </div>
+        <div class="rectangle-1517-C61RwL"></div>
+        <div class="group-225-C61RwL">
+          <div class="info-CtL6ww">
+            <div class="hi-my-name-is-i-an-francisco-ca-qvb501">
+              Hi! My name is INFINITYID, I’m a creative geek from San Francisco, CA.
+            </div>
+          </div>
+          <div class="png-item1951784-CtL6ww"></div>
+        </div>
+        <div class="photos-28-C61RwL">
+          <span class="span0-SEC7Or">PHOTOS </span><span class="span1-SEC7Or">28</span>
+        </div>
+        <div class="featured-nf-ts-C61RwL">FEATURED NFTs</div>
+        <div
+          class="repeat-grid-3-C61RwL"
+          onclick="Lib.autoanim_redirect('public-profile,home%23photos,,ease-out,2000;user-profile,home%23photos,,ease-out,2000', event)"
+        >
+          <div class="x0-A1Rl2I">
+            <div class="visor-media-bLyKUZ"></div>
+          </div>
+          <div class="x1-A1Rl2I">
+            <div class="middle-TBnJsv"></div>
+          </div>
+        </div>
+        <div class="featured-content-C61RwL">FEATURED CONTENT</div>
+        <div
+          class="recent-activity-C61RwL"
+          onclick="Lib.autoanim_redirect('public-profile,home%23nft-page-layout,,ease-out,2000;photos,home%23nft-page-layout,,ease-out,2000;friends-list,home%23nft-page-layout,,ease-out,2000;nfts,home%23nft-page-layout,,ease-out,2000;feed,home%23nft-page-layout,,ease-out,2000;user-profile,home%23nft-page-layout,,ease-out,2000', event)"
+        >
+          <div class="song-xf4Gxe">
+            <div class="avatar-9Pqia4"></div>
+            <div class="avatar-e6MBI4"></div>
+            <div class="nft-art-9Pqia4">NFT ART</div>
+            <div class="infinityid-9Pqia4">INFINITYID</div>
+          </div>
+          <div class="song-Jiakfp">
+            <div class="avatar-01Dzly"></div>
+            <div class="avatar-H2lti0"></div>
+            <div class="nft-art-01Dzly">NFT ART</div>
+            <div class="infinityid-01Dzly">INFINITYID</div>
+          </div>
+          <div class="song-uQ206w">
+            <div class="avatar-kOiruS"></div>
+            <div class="avatar-2tFotf"></div>
+            <div class="nft-art-kOiruS">NFT ART</div>
+            <div class="infinityid-kOiruS">INFINITYID</div>
+          </div>
+          <div class="song-JM0flj">
+            <div class="avatar-EA4xJz"></div>
+            <div class="avatar-CUHa55"></div>
+            <div class="nft-art-EA4xJz">NFT ART</div>
+            <div class="infinityid-EA4xJz">INFINITYID</div>
+          </div>
+          <div class="song-anyXJP">
+            <div class="avatar-9Qsj8W"></div>
+            <div class="avatar-LOJJdr"></div>
+            <div class="nft-art-9Qsj8W">NFT ART</div>
+            <div class="infinityid-9Qsj8W">INFINITYID</div>
+          </div>
+          <div class="song-gXtyOZ">
+            <div class="avatar-Aa84Rs"></div>
+            <div class="avatar-qcV9J1"></div>
+            <div class="nft-art-Aa84Rs">NFT ART</div>
+            <div class="infinityid-Aa84Rs">INFINITYID</div>
+          </div>
+          <div class="song-rdJ1t7">
+            <div class="avatar-uAxM0e"></div>
+            <div class="avatar-lPcVOx"></div>
+            <div class="nft-art-uAxM0e">NFT ART</div>
+            <div class="infinityid-uAxM0e">INFINITYID</div>
+          </div>
+        </div>
+        <div class="nft-watching-C61RwL">NFT WATCHING</div>
+        <div class="rectangle-1527-C61RwL"></div>
+        <div
+          class="menu-C61RwL"
+          onclick="Lib.autoanim_redirect('public-profile,home%23main-menu,,ease-out,1000;photos,home%23main-menu,,ease-out,1000;nft-page-layout,home%23main-menu,,ease-out,1000;messages,home%23main-menu,,ease-out,1000;nft-mint,home%23main-menu,,ease-out,1000;marketplace-home,home%23main-menu,,ease-out,1000;wallet,home%23main-menu,,ease-out,1000;friends-list,home%23main-menu,,ease-out,1000;nfts,home%23main-menu,,ease-out,1000;edit-profile,home%23main-menu,,ease-out,1000;feed,home%23main-menu,,ease-out,1000;dashboard,home%23main-menu,,ease-out,1000;user-profile,home%23main-menu,,ease-out,1000', event)"
+        >
+          <div class="menu-SQ9Gz0">
+            <div class="rectangle-4-624YFD"></div>
+            <div class="rectangle-5-624YFD"></div>
+            <div class="rectangle-6-624YFD"></div>
+          </div>
+          <div class="rectangle-1446-SQ9Gz0"></div>
+        </div>
+        <div
+          class="sign-up-button-mzXdH9"
+          onclick="Lib.autoanim_redirect('public-profile,home%23nft-mint,,ease-out,2000;photos,home%23nft-mint,,ease-out,2000;friends-list,home%23nft-mint,,ease-out,2000;nfts,home%23nft-mint,,ease-out,2000;edit-profile,home%23nft-mint,,ease-out,2000;feed,home%23nft-mint,,ease-out,2000;user-profile,home%23messages,,ease-out,2000', event)"
+        >
+          <div class="rectangle-1479-Kf3nx4"></div>
+          <div class="nft-mint-Kf3nx4">NFT MINT</div>
+          <div class="bid-Kf3nx4">BID</div>
+          <div class="path-272-Kf3nx4"></div>
+          <div class="inbox-Kf3nx4">INBOX</div>
+        </div>
+        <div
+          class="home-C61RwL"
+          onclick="Lib.autoanim_redirect('public-profile,home%23home,,ease-out,1000;photos,home%23home,,ease-out,2000;nft-page-layout,home%23home,,ease-out,2000;messages,home%23home,,ease-out,2000;marketplace-home,home%23home,,ease-out,2000;wallet,home%23home,,ease-out,2000;friends-list,home%23home,,ease-out,2000;nfts,home%23home,,ease-out,2000;edit-profile,home%23home,,ease-out,2000;feed,home%23home,,ease-out,2000;dashboard,home%23home,,ease-out,2000;user-profile,home%23home,,ease-out,2000', event)"
+        >
+          HOME
+        </div>
+        <div
+          class="profile-C61RwL"
+          onclick="Lib.autoanim_redirect('photos,home%23public-profile,,ease-out,2000;nft-page-layout,home%23public-profile,,ease-out,2000;messages,home%23public-profile,,ease-out,2000;main-menu,home%23public-profile,,ease-out,1000;marketplace-home,home%23public-profile,,ease-out,2000;wallet,home%23public-profile,,ease-out,2000;friends-list,home%23public-profile,,ease-out,2000;nfts,home%23public-profile,,ease-out,2000;edit-profile,home%23public-profile,,ease-out,2000;feed,home%23public-profile,,ease-out,2000;dashboard,home%23public-profile,,ease-out,2000;user-profile,home%23public-profile,,ease-out,2000', event)"
+        >
+          PROFILE
+        </div>
+        <div
+          class="marketplace-C61RwL"
+          onclick="Lib.autoanim_redirect('public-profile,home%23marketplace-home,,ease-out,1000;photos,home%23marketplace-home,,ease-out,2000;nft-page-layout,home%23marketplace-home,,ease-out,2000;messages,home%23marketplace-home,,ease-out,2000;main-menu,home%23marketplace-home,,ease-out,1000;wallet,home%23marketplace-home,,ease-out,2000;friends-list,home%23marketplace-home,,ease-out,2000;nfts,home%23marketplace-home,,ease-out,2000;edit-profile,home%23marketplace-home,,ease-out,2000;feed,home%23marketplace-home,,ease-out,2000;dashboard,home%23marketplace-home,,ease-out,2000;user-profile,home%23marketplace-home,,ease-out,2000', event)"
+        >
+          MARKETPLACE
+        </div>
+        <div class="qr-code-icon-C61RwL"></div>
+        <div class="group-235-C61RwL">
+          <div class="rectangle-1518-P35dPW"></div>
+          <div class="group-48-P35dPW">
+            <div class="ellipse-234-7mJwpW"></div>
+            <div class="cryptopunk-7mJwpW"></div>
+          </div>
+          <div class="infinity-id-P35dPW">InfinityID</div>
+          <div class="london-england-P35dPW">LONDON, ENGLAND</div>
+          <div class="group-49-P35dPW">
+            <div class="icon-material-content-copy-qTQEKh"></div>
+            <div class="x0xej212bsjah124d-qTQEKh">0xej212bsjah124d</div>
+          </div>
+          <div
+            class="group-220-P35dPW"
+            onclick="Lib.autoanim_redirect('photos,home%23wallet,,ease-out,2000;friends-list,home%23wallet,,ease-out,2000;nfts,home%23wallet,,ease-out,2000;feed,home%23wallet,,ease-out,2000;user-profile,home%23wallet,,ease-out,2000', event)"
+          >
+            <div
+              class="button-cta-pressed-2bBj1I"
+              onclick="Lib.autoanim_redirect('public-profile,home%23wallet,,ease-out,2000', event)"
+            >
+              <div class="rectangle-1090-Gvvw0h"></div>
+              <div class="send-Gvvw0h">SEND</div>
+            </div>
+            <div
+              class="button-cta-pressed-4o4S5x"
+              onclick="Lib.autoanim_redirect('public-profile,home%23wallet,,ease-out,2000', event)"
+            >
+              <div class="rectangle-1090-c971Bq"></div>
+              <div class="receive-c971Bq">RECEIVE</div>
+            </div>
+            <div class="x59262-200-2bBj1I"></div>
+          </div>
+        </div>
+        <div
+          class="repeat-grid-28-C61RwL"
+          onclick="Lib.autoanim_redirect('public-profile,home%23nft-page-layout,,ease-out,2000;user-profile,home%23nft-page-layout,,ease-out,2000', event)"
+        >
+          <div class="x01-6Pof7n">
+            <div class="x1175387721f14-97-b1c8066e7ab1-23ibTT"></div>
+            <div class="base-23ibTT"></div>
+            <div class="x2-bids-highest-002-eth-23ibTT">2 BIDS - HIGHEST 0.02 ETH</div>
+            <div class="lorem-ipsum-dolor-23ibTT">LOREM IPSUM DOLOR</div>
+          </div>
+          <div class="x11-6Pof7n">
+            <div class="nyancat-still-6-e262161985fb564-HLSxzB"></div>
+            <div class="base-HLSxzB"></div>
+            <div class="x2-bids-highest-002-eth-HLSxzB">2 BIDS - HIGHEST 0.02 ETH</div>
+            <div class="lorem-ipsum-dolor-HLSxzB">LOREM IPSUM DOLOR</div>
+          </div>
+        </div>
+        <div class="repeat-grid-29-C61RwL">
+          <div class="group-221-tCu6H8">
+            <div class="rectangle-885-TWyq8r"></div>
+            <div class="excepteur-sint-unt-mollit-anim-TWyq8r">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+            </div>
+            <div class="x1h-ago-TWyq8r">1h ago</div>
+            <div class="cc-TWyq8r"></div>
+            <div class="likes-comments-TWyq8r">
+              <div class="likes-Mz4IVM">
+                <div class="x609-GG8nvc">609</div>
+                <div class="component-97-5-GG8nvc">
+                  <div class="heart-EN8JXc"></div>
+                  <div class="rectangle-1450-EN8JXc"></div>
+                </div>
+              </div>
+              <div class="comments-Mz4IVM">
+                <div class="x120-TlRyGw">120</div>
+                <div class="component-96-14-TlRyGw">
+                  <div class="chat-U3Sng5"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="group-221-t2WjKO">
+            <div class="rectangle-885-K4nbA1"></div>
+            <div class="excepteur-sint-unt-mollit-anim-K4nbA1">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+            </div>
+            <div class="x1h-ago-K4nbA1">1h ago</div>
+            <div class="maxresdefault-K4nbA1"></div>
+            <div class="likes-comments-K4nbA1">
+              <div class="likes-7qeWog">
+                <div class="x609-qgJeWU">609</div>
+                <div class="component-97-5-qgJeWU">
+                  <div class="heart-Kq1r5i"></div>
+                  <div class="rectangle-1450-Kq1r5i"></div>
+                </div>
+              </div>
+              <div class="comments-7qeWog">
+                <div class="x120-6qNVvL">120</div>
+                <div class="component-96-14-6qNVvL">
+                  <div class="chat-CNQTmC"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="group-221-JqOWQc">
+            <div class="rectangle-885-Bar7vx"></div>
+            <div class="excepteur-sint-unt-mollit-anim-Bar7vx">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+            </div>
+            <div class="x1h-ago-Bar7vx">1h ago</div>
+            <div class="grimes-nft-1614741018-Bar7vx"></div>
+            <div class="likes-comments-Bar7vx">
+              <div class="likes-5RpkTx">
+                <div class="x609-yQp7zs">609</div>
+                <div class="component-97-5-yQp7zs">
+                  <div class="heart-RZKIaE"></div>
+                  <div class="rectangle-1450-RZKIaE"></div>
+                </div>
+              </div>
+              <div class="comments-5RpkTx">
+                <div class="x120-65ea4Z">120</div>
+                <div class="component-96-14-65ea4Z">
+                  <div class="chat-Bnw1Cn"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="group-221-BkpXI8">
+            <div class="rectangle-885-6Iadyk"></div>
+            <div class="excepteur-sint-unt-mollit-anim-6Iadyk">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+            </div>
+            <div class="x1h-ago-6Iadyk">1h ago</div>
+            <div class="grimes-nft-1614741018-6Iadyk"></div>
+            <div class="likes-comments-6Iadyk">
+              <div class="likes-ZAnpkS">
+                <div class="x609-WKLqiu">609</div>
+                <div class="component-97-5-WKLqiu">
+                  <div class="heart-6Bjjx5"></div>
+                  <div class="rectangle-1450-6Bjjx5"></div>
+                </div>
+              </div>
+              <div class="comments-ZAnpkS">
+                <div class="x120-c1Skpy">120</div>
+                <div class="component-96-14-c1Skpy">
+                  <div class="chat-DrxZTs"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="group-221-N2YQqb">
+            <div class="rectangle-885-gAUuWx"></div>
+            <div class="excepteur-sint-unt-mollit-anim-gAUuWx">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+            </div>
+            <div class="x1h-ago-gAUuWx">1h ago</div>
+            <div class="grimes-nft-1614741018-gAUuWx"></div>
+            <div class="likes-comments-gAUuWx">
+              <div class="likes-8Cd4Qo">
+                <div class="x609-j22BVh">609</div>
+                <div class="component-97-5-j22BVh">
+                  <div class="heart-zKh2nQ"></div>
+                  <div class="rectangle-1450-zKh2nQ"></div>
+                </div>
+              </div>
+              <div class="comments-8Cd4Qo">
+                <div class="x120-xoQM4c">120</div>
+                <div class="component-96-14-xoQM4c">
+                  <div class="chat-FNka3p"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="group-221-QWlEi2">
+            <div class="rectangle-885-Nt5frZ"></div>
+            <div class="excepteur-sint-unt-mollit-anim-Nt5frZ">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+            </div>
+            <div class="x1h-ago-Nt5frZ">1h ago</div>
+            <div class="grimes-nft-1614741018-Nt5frZ"></div>
+            <div class="likes-comments-Nt5frZ">
+              <div class="likes-NOllD4">
+                <div class="x609-GZpztD">609</div>
+                <div class="component-97-5-GZpztD">
+                  <div class="heart-7vXLWw"></div>
+                  <div class="rectangle-1450-7vXLWw"></div>
+                </div>
+              </div>
+              <div class="comments-NOllD4">
+                <div class="x120-tViTBx">120</div>
+                <div class="component-96-14-tViTBx">
+                  <div class="chat-I3xtNb"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="group-221-zJzN29">
+            <div class="rectangle-885-igcvxe"></div>
+            <div class="excepteur-sint-unt-mollit-anim-igcvxe">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+            </div>
+            <div class="x1h-ago-igcvxe">1h ago</div>
+            <div class="grimes-nft-1614741018-igcvxe"></div>
+            <div class="likes-comments-igcvxe">
+              <div class="likes-4QFXOI">
+                <div class="x609-R8bOtp">609</div>
+                <div class="component-97-5-R8bOtp">
+                  <div class="heart-mk97O2"></div>
+                  <div class="rectangle-1450-mk97O2"></div>
+                </div>
+              </div>
+              <div class="comments-4QFXOI">
+                <div class="x120-JpPe7J">120</div>
+                <div class="component-96-14-JpPe7J">
+                  <div class="chat-30Pkzc"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="group-221-9WrWBd">
+            <div class="rectangle-885-QC1Ypd"></div>
+            <div class="excepteur-sint-unt-mollit-anim-QC1Ypd">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+            </div>
+            <div class="x1h-ago-QC1Ypd">1h ago</div>
+            <div class="grimes-nft-1614741018-QC1Ypd"></div>
+            <div class="likes-comments-QC1Ypd">
+              <div class="likes-BaI6py">
+                <div class="x609-IDf6aM">609</div>
+                <div class="component-97-5-IDf6aM">
+                  <div class="heart-RLMSpa"></div>
+                  <div class="rectangle-1450-RLMSpa"></div>
+                </div>
+              </div>
+              <div class="comments-BaI6py">
+                <div class="x120-x2d56K">120</div>
+                <div class="component-96-14-x2d56K">
+                  <div class="chat-Mx6gzx"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group-228-C61RwL">
+          <div class="rectangle-1523-yzeNro"></div>
+          <div class="rectangle-1524-yzeNro"></div>
+          <div class="rewards-coins-yzeNro">REWARDS &amp; COINS</div>
+          <div class="x100-k-infinity-coins-yzeNro">
+            <span class="span0-6hJDCQ">100K</span><span class="span1-6hJDCQ">&nbsp;</span
+            ><span class="span2-6hJDCQ">/ </span><span class="span3-6hJDCQ">INFINITY COINS</span>
+          </div>
+          <div class="favourite-header-card-yzeNro">
+            <div class="path-268-qYOH19"></div>
+            <div class="favorite-qYOH19">
+              <div class="path-157-aawLxG"></div>
+              <div class="rectangle-1449-aawLxG"></div>
+            </div>
+          </div>
+          <div class="x2-k-art-sold-yzeNro">
+            <span class="span0-I0vcFW">2K</span><span class="span1-I0vcFW">&nbsp;</span
+            ><span class="span2-I0vcFW">/ </span><span class="span3-I0vcFW">ART SOLD</span>
+          </div>
+          <div class="x24-k-rewards-yzeNro">
+            <span class="span0-mwb1Rz">24K</span><span class="span1-mwb1Rz">&nbsp;</span
+            ><span class="span2-mwb1Rz">/ </span><span class="span3-mwb1Rz">REWARDS</span>
+          </div>
+          <div class="favourite-header-card-H3KcrV">
+            <div class="path-268-xkcrBH"></div>
+            <div class="favorite-xkcrBH">
+              <div class="path-157-4IXTFY"></div>
+              <div class="rectangle-1449-4IXTFY"></div>
+            </div>
+          </div>
+          <div class="favourite-header-card-ZHxe5Z">
+            <div class="path-268-tfJTFA"></div>
+            <div class="favorite-tfJTFA">
+              <div class="path-157-KxsKcJ"></div>
+              <div class="rectangle-1449-KxsKcJ"></div>
+            </div>
+          </div>
+        </div>
+        <div class="line-7-C61RwL"></div>
+        <div class="recent-posts-C61RwL">RECENT POSTS</div>
+        <div class="line-8-C61RwL"></div>
+        <div class="group-227-C61RwL">
+          <div
+            class="group-55-rHRxZV"
+            onclick="Lib.autoanim_redirect('public-profile,home%23friends-list,,ease-out,2000;photos,home%23friends-list,,ease-out,2000;feed,home%23friends-list,,ease-out,2000', event)"
+          >
+            <div class="followers-5f5zLn">FOLLOWERS</div>
+            <div class="x10-k-5f5zLn">10K</div>
+          </div>
+          <div class="line-1-rHRxZV"></div>
+          <div class="line-2-rHRxZV"></div>
+          <div
+            class="group-223-rHRxZV"
+            onclick="Lib.autoanim_redirect('public-profile,home%23friends-list,,ease-out,2000;photos,home%23friends-list,,ease-out,2000;feed,home%23friends-list,,ease-out,2000', event)"
+          >
+            <div class="following-Y8IjlH">FOLLOWING</div>
+            <div class="x1239-Y8IjlH">1,239</div>
+          </div>
+          <div
+            class="group-224-rHRxZV"
+            onclick="Lib.autoanim_redirect('public-profile,home%23nfts,,ease-out,2000;photos,home%23nfts,,ease-out,2000;feed,home%23nfts,,ease-out,2000', event)"
+          >
+            <div class="nft-projects-2yWxTp">NFT PROJECTS</div>
+            <div class="x24-2yWxTp">24</div>
+          </div>
+        </div>
+        <div
+          class="group-229-C61RwL"
+          onclick="Lib.autoanim_redirect('public-profile,home%23nft-page-layout,,ease-out,2000;photos,home%23nft-page-layout,,ease-out,2000;friends-list,home%23nft-page-layout,,ease-out,2000;nfts,home%23nft-page-layout,,ease-out,2000;feed,home%23nft-page-layout,,ease-out,2000;user-profile,home%23nft-page-layout,,ease-out,2000', event)"
+        >
+          <div class="rectangle-1534-BR4z6U"></div>
+          <div class="avatar-BR4z6U"></div>
+          <div class="nft-art-BR4z6U">NFT ART</div>
+          <div class="infinityid-BR4z6U">INFINITYID</div>
+          <div class="x2-bids-highest-002-eth-BR4z6U">2 BIDS - HIGHEST 0.02 ETH</div>
+          <div class="rectangle-1535-BR4z6U"></div>
+          <div class="current-auction-BR4z6U">CURRENT AUCTION</div>
+        </div>
+        <div
+          class="group-234-C61RwL"
+          onclick="Lib.autoanim_redirect('public-profile,home%23edit-profile,,ease-out,2000;photos,home%23edit-profile,,ease-out,2000;friends-list,home%23edit-profile,,ease-out,2000;nfts,home%23edit-profile,,ease-out,2000;feed,home%23edit-profile,,ease-out,2000;user-profile,home%23edit-profile,,ease-out,2000', event)"
+        >
+          <div class="rectangle-1523-hX9xCh"></div>
+          <div class="rectangle-1524-hX9xCh"></div>
+          <div class="supported-favor-kchain-projects-hX9xCh">
+            <span class="span0-xhlxe3">SUPPORTED &amp; FAVORITE</span><span class="span1-xhlxe3"> <br /></span
+            ><span class="span2-xhlxe3">BLOCKCHAIN PROJECTS</span>
+          </div>
+          <div class="group-231-hX9xCh">
+            <div class="table-rectangle-0-SauN0S"></div>
+            <div class="bitcoinlogoactive-SauN0S"></div>
+            <div class="bitcoin-btc-SauN0S">BITCOIN (BTC)</div>
+          </div>
+          <div class="group-232-hX9xCh">
+            <div class="table-rectangle-0-DmvD5R"></div>
+            <div class="bitcoinlogoactive-DmvD5R"></div>
+            <div class="ethereum-eth-DmvD5R">ETHEREUM (ETH)</div>
+          </div>
+          <div class="group-233-hX9xCh">
+            <div class="table-rectangle-0-npVKt5"></div>
+            <div class="bitcoinlogoactive-npVKt5"></div>
+            <div class="doge-coin-doge-npVKt5">DOGE COIN (DOGE)</div>
+          </div>
+          <div class="default-support-kchain-projects-hX9xCh">
+            <span class="span0-1Gv4Xf">DEFAULT SUPPORTED &amp; FAVORITE</span><span class="span1-1Gv4Xf"> <br /></span
+            ><span class="span2-1Gv4Xf">BLOCKCHAIN PROJECTS</span>
+          </div>
+        </div>
+        <div
+          class="group-236-C61RwL"
+          onclick="Lib.autoanim_redirect('public-profile,home%23friends-list,,ease-out,2000;nfts,home%23friends-list,,ease-out,2000;feed,home%23friends-list,,ease-out,2000', event)"
+        >
+          <div class="rectangle-1523-1W1u5Q"></div>
+          <div class="rectangle-1524-1W1u5Q"></div>
+          <div class="friends-1W1u5Q">FRIENDS</div>
+          <div class="adobe-stock297318661-1W1u5Q"></div>
+          <div class="adobe-stock243906355-1W1u5Q"></div>
+          <div class="visor-media-1W1u5Q"></div>
+          <div class="adobe-stock288797981-1W1u5Q"></div>
+          <div class="rectangle-264-1W1u5Q"></div>
+          <div class="x24-k-1W1u5Q">+24K</div>
+          <div class="adobe-stock352331998-copy-1W1u5Q"></div>
+          <div class="adobe-stock225993686-1W1u5Q"></div>
+          <div class="smoke-1W1u5Q"></div>
+          <div class="middle-1W1u5Q"></div>
+        </div>
+        <div class="line-9-C61RwL"></div>
+        <div class="play-C61RwL">
+          <div class="path-5-78XG2A"></div>
+          <div class="ellipse-2-78XG2A"></div>
+        </div>
+        <div class="play-VMr6Om">
+          <div class="path-5-e750S5"></div>
+          <div class="ellipse-2-e750S5"></div>
+        </div>
+        <div class="posts-C61RwL">POSTS</div>
+        <div class="liked-supported-projects-C61RwL">LIKED &amp; SUPPORTED PROJECTS</div>
+        <div
+          class="wallet-C61RwL"
+          onclick="Lib.autoanim_redirect('public-profile,home%23wallet,,,;photos,home%23wallet,,ease-out,2000;nft-page-layout,home%23wallet,,ease-out,2000;messages,home%23wallet,,ease-out,2000;main-menu,home%23wallet,,ease-out,1000;marketplace-home,home%23wallet,,ease-out,2000;friends-list,home%23wallet,,ease-out,2000;nfts,home%23wallet,,ease-out,2000;edit-profile,home%23wallet,,ease-out,2000;feed,home%23wallet,,ease-out,2000;dashboard,home%23wallet,,ease-out,2000;user-profile,home%23wallet,,ease-out,2000', event)"
+        >
+          WALLET
+        </div>
+        <div class="tab-bar-C61RwL">
+          <div class="rectangle-1512-9x0ZAa"></div>
+          <div
+            class="profile-9x0ZAa"
+            onclick="Lib.autoanim_redirect('photos,home%23public-profile,,ease-out,2000;friends-list,home%23public-profile,,ease-out,2000;nfts,home%23public-profile,,ease-out,2000;feed,home%23public-profile,,ease-out,2000', event)"
+          >
+            PROFILE
+          </div>
+          <div
+            class="feed-9x0ZAa"
+            onclick="Lib.autoanim_redirect('public-profile,home%23feed,,ease-out,2000;photos,home%23feed,,ease-out,2000;friends-list,home%23feed,,ease-out,2000;nfts,home%23feed,,ease-out,2000;edit-profile,home%23feed,,ease-out,2000;user-profile,home%23feed,,ease-out,2000', event)"
+          >
+            FEED
+          </div>
+          <div
+            class="photos-9x0ZAa"
+            onclick="Lib.autoanim_redirect('public-profile,home%23photos,,ease-out,2000;nfts,home%23photos,,ease-out,2000;edit-profile,home%23photos,,ease-out,2000;feed,home%23photos,,ease-out,2000;user-profile,home%23photos,,ease-out,2000', event)"
+          >
+            PHOTOS
+          </div>
+          <div class="rectangle-1513-9x0ZAa"></div>
+          <div
+            class="nft-9x0ZAa"
+            onclick="Lib.autoanim_redirect('public-profile,home%23nfts,,ease-out,2000;photos,home%23nfts,,ease-out,2000;friends-list,home%23nfts,,ease-out,2000;edit-profile,home%23nfts,,ease-out,2000;feed,home%23nfts,,ease-out,2000;user-profile,home%23nfts,,ease-out,2000', event)"
+          >
+            NFT
+          </div>
+        </div>
+        <div class="line-5-C61RwL"></div>
+        <div
+          class="repeat-grid-33-C61RwL"
+          onclick="Lib.autoanim_redirect('marketplace-home,home%23nft-page-layout,,ease-out,2000', event)"
+        >
+          <div class="x02-fh8tx8">
+            <div class="project-3nQzkX">
+              <div class="nft-art-beeple-g-id4-beIhGb"></div>
+              <div class="base-beIhGb"></div>
+            </div>
+            <div class="nft-art-3nQzkX">NFT ART</div>
+            <div class="infinityid-3nQzkX">INFINITYID</div>
+            <div class="x2-bids-highest-002-eth-3nQzkX">2 BIDS - HIGHEST 0.02 ETH</div>
+          </div>
+          <div class="x12-fh8tx8">
+            <div class="project-ZRDXv8">
+              <div class="nyancat-still-6-e262161985fb564-xrgyfh"></div>
+              <div class="base-xrgyfh"></div>
+            </div>
+            <div class="nft-art-ZRDXv8">NFT ART</div>
+            <div class="infinityid-ZRDXv8">INFINITYID</div>
+            <div class="x2-bids-highest-002-eth-ZRDXv8">2 BIDS - HIGHEST 0.02 ETH</div>
+          </div>
+          <div class="x2-fh8tx8">
+            <div class="project-AuN3oA">
+              <div class="cc-691Dzu"></div>
+              <div class="base-691Dzu"></div>
+            </div>
+            <div class="nft-art-AuN3oA">NFT ART</div>
+            <div class="infinityid-AuN3oA">INFINITYID</div>
+            <div class="x2-bids-highest-002-eth-AuN3oA">2 BIDS - HIGHEST 0.02 ETH</div>
+          </div>
+          <div class="x3-fh8tx8">
+            <div class="project-5gdgNK">
+              <div class="nft-digital-art-digital-artists-Uwu1C2"></div>
+              <div class="base-Uwu1C2"></div>
+            </div>
+            <div class="nft-art-5gdgNK">NFT ART</div>
+            <div class="infinityid-5gdgNK">INFINITYID</div>
+            <div class="x2-bids-highest-002-eth-5gdgNK">2 BIDS - HIGHEST 0.02 ETH</div>
+          </div>
+          <div class="x4-fh8tx8">
+            <div class="project-zfDXdX">
+              <div class="alternativedata-eatured-770x400-2vKFiW"></div>
+              <div class="base-2vKFiW"></div>
+            </div>
+            <div class="nft-art-zfDXdX">NFT ART</div>
+            <div class="infinityid-zfDXdX">INFINITYID</div>
+            <div class="x2-bids-highest-002-eth-zfDXdX">2 BIDS - HIGHEST 0.02 ETH</div>
+          </div>
+          <div class="x5-fh8tx8">
+            <div class="project-bFj6t2">
+              <div class="nss-magazine-fo-my-studio-nft-1-0MUsyw"></div>
+              <div class="base-0MUsyw"></div>
+            </div>
+            <div class="nft-art-bFj6t2">NFT ART</div>
+            <div class="infinityid-bFj6t2">INFINITYID</div>
+            <div class="x2-bids-highest-002-eth-bFj6t2">2 BIDS - HIGHEST 0.02 ETH</div>
+          </div>
+          <div class="x6-fh8tx8">
+            <div class="project-Za8X5s">
+              <div class="maxresdefault-sx6ia9"></div>
+              <div class="base-sx6ia9"></div>
+            </div>
+            <div class="nft-art-Za8X5s">NFT ART</div>
+            <div class="infinityid-Za8X5s">INFINITYID</div>
+            <div class="x2-bids-highest-002-eth-Za8X5s">2 BIDS - HIGHEST 0.02 ETH</div>
+          </div>
+          <div class="x7-fh8tx8">
+            <div class="project-2mkgAa">
+              <div class="grimes-nft-1614741018-x1SxeA"></div>
+              <div class="base-x1SxeA"></div>
+            </div>
+            <div class="nft-art-2mkgAa">NFT ART</div>
+            <div class="infinityid-2mkgAa">INFINITYID</div>
+            <div class="x2-bids-highest-002-eth-2mkgAa">2 BIDS - HIGHEST 0.02 ETH</div>
+          </div>
+          <div class="x8-fh8tx8">
+            <div class="project-6fZ1yi">
+              <div class="x1175387721f14-97-b1c8066e7ab1-JlR44p"></div>
+              <div class="base-JlR44p"></div>
+            </div>
+            <div class="nft-art-6fZ1yi">NFT ART</div>
+            <div class="infinityid-6fZ1yi">INFINITYID</div>
+            <div class="x2-bids-highest-002-eth-6fZ1yi">2 BIDS - HIGHEST 0.02 ETH</div>
+          </div>
+          <div class="x9-fh8tx8">
+            <div class="project-D3HvZs">
+              <div class="grimes-nft-1614741018-TZ5B91"></div>
+              <div class="base-TZ5B91"></div>
+            </div>
+            <div class="nft-art-D3HvZs">NFT ART</div>
+            <div class="infinityid-D3HvZs">INFINITYID</div>
+            <div class="x2-bids-highest-002-eth-D3HvZs">2 BIDS - HIGHEST 0.02 ETH</div>
+          </div>
+          <div class="x10-fh8tx8">
+            <div class="project-9QOCLd">
+              <div class="x14637-QNHlxR"></div>
+              <div class="base-QNHlxR"></div>
+            </div>
+            <div class="nft-art-9QOCLd">NFT ART</div>
+            <div class="infinityid-9QOCLd">INFINITYID</div>
+            <div class="x2-bids-highest-002-eth-9QOCLd">2 BIDS - HIGHEST 0.02 ETH</div>
+          </div>
+          <div class="x111-fh8tx8">
+            <div class="project-YuVw8a">
+              <div class="x604a869a9942cf001865de6c-QiqxKQ"></div>
+              <div class="base-QiqxKQ"></div>
+            </div>
+            <div class="nft-art-YuVw8a">NFT ART</div>
+            <div class="infinityid-YuVw8a">INFINITYID</div>
+            <div class="x2-bids-highest-002-eth-YuVw8a">2 BIDS - HIGHEST 0.02 ETH</div>
+          </div>
+        </div>
+        <div class="rectangle-1539-C61RwL"></div>
+        <div class="rectangle-1543-C61RwL"></div>
+        <div class="rectangle-1544-C61RwL"></div>
+        <div
+          class="sign-up-button-QxM5SU"
+          onclick="Lib.autoanim_redirect('edit-profile,home%23wallet,,ease-out,2000;user-profile,home%23wallet,,ease-out,2000', event)"
+        >
+          <div class="rectangle-1479-8OKISx"></div>
+          <div class="wallet-8OKISx">WALLET</div>
+        </div>
+        <div class="group-261-C61RwL">
+          <div class="rectangle-95-FD978N"></div>
+          <div class="photos-FD978N">
+            <div class="rectangle-549-fUeWVy"></div>
+            <div class="path-148-fUeWVy"></div>
+          </div>
+          <div class="videos-FD978N">
+            <div class="rectangle-312-Expy45"></div>
+            <div class="path-123-Expy45"></div>
+          </div>
+          <div class="toggle-on-FD978N">
+            <div class="rectangle-657-TN6cEh"></div>
+            <div class="rectangle-658-TN6cEh"></div>
+            <div class="on-TN6cEh">ON</div>
+          </div>
+          <div class="feature-on-profile-FD978N">Feature on Profile</div>
+          <div class="visor-media-FD978N"></div>
+          <div class="rectangle-1549-FD978N"></div>
+          <div class="infinity-i-d-what-on-your-mind-FD978N">INFINITY iD what on your mind….</div>
+          <div class="photo-FD978N">PHOTO</div>
+          <div class="video-FD978N">VIDEO</div>
+        </div>
+        <div class="a-blockchain-so-rm-to-sell-earn-C61RwL">A Blockchain Social Platform to Sell &amp; Earn</div>
+        <div class="with-the-power-r-to-the-people-C61RwL">
+          <span class="span0-E5XBo9"
+            >With the power of INFINITYiD, you can now earn money from your own data, likes, comments, mints, videos and
+            more, giving back the </span
+          ><span class="span1-E5XBo9">Power to the People!</span>
+        </div>
+        <div class="blockchain-soci-sing-blockchain-C61RwL">
+          Blockchain social media platform that allows users to secure, protect and sell their data personally. Using
+          blockchain technology your avatar can earn, crypto, point &amp; coins from monetizing their own data using
+          blockchain.
+        </div>
+        <div class="earn-crypto-rew-e-your-own-data-C61RwL">
+          <span class="span0-XmwXKU">Earn Crypto &amp; Rewards <br /></span
+          ><span class="span1-XmwXKU">for Monetize Your Own Data </span>
+        </div>
+        <div class="repeat-grid-27-C61RwL">
+          <div class="x04-x5jeaa">
+            <div class="full-name-box-6CrsC3">
+              <div class="rectangle-1473-vx7nGo"></div>
+              <div class="sarah-parmenter-vx7nGo">Sarah Parmenter</div>
+              <div class="username-vx7nGo">Username</div>
+            </div>
+            <div class="full-name-box-n1UTIU">
+              <div class="path-273-7AecYx"></div>
+              <div class="sarahinfinityio-7AecYx">sarah@infinity.io</div>
+              <div class="email-address-7AecYx">Email Address</div>
+            </div>
+            <div class="full-name-box-fKlPs2">
+              <div class="rectangle-1473-9NCrtd"></div>
+              <div class="sarah-uk-9NCrtd">@sarahUK</div>
+              <div class="username-9NCrtd">Username</div>
+            </div>
+          </div>
+          <div class="x14-x5jeaa">
+            <div class="full-name-box-xGAKjX">
+              <div class="rectangle-1473-uZEVwT"></div>
+              <div class="textlabel-uZEVwT">••••••••••••••••••••</div>
+              <div class="password-uZEVwT">Password</div>
+            </div>
+            <div class="full-name-box-8TxG3e">
+              <div class="path-273-80gaBD"></div>
+              <div class="textlabel-80gaBD">••••••••••••••••••••••••</div>
+              <div class="password-80gaBD">Password</div>
+            </div>
+            <div class="full-name-box-FVobsa">
+              <div class="rectangle-1473-1394rc"></div>
+              <div class="textlabel-1394rc">••••••••••••••••••••••••</div>
+              <div class="password-confirm-1394rc">Password Confirm</div>
+            </div>
+          </div>
+        </div>
+        <div class="group-245-C61RwL">
+          <div class="toggle-on-M8Z0t3">
+            <div class="rectangle-657-97GwL5"></div>
+            <div class="rectangle-658-97GwL5"></div>
+            <div class="on-97GwL5">ON</div>
+          </div>
+          <div class="stay-logged-in-M8Z0t3">Stay Logged In</div>
+        </div>
+        <div class="photos-C61RwL">PHOTOS</div>
+        <div class="images-C61RwL">
+          <div class="images-bFSo9k">
+            <div class="nyancat-still-6-e262161985fb564-BTpT7l"></div>
+            <div class="alternativedata-eatured-770x400-BTpT7l"></div>
+            <div class="grimes-nft-1614741018-BTpT7l"></div>
+            <div class="maxresdefault-BTpT7l"></div>
+            <div class="x1175387721f14-97-b1c8066e7ab1-BTpT7l"></div>
+            <div class="x14637-BTpT7l"></div>
+            <div class="nft-digital-art-digital-artists-BTpT7l"></div>
+            <div class="cc-BTpT7l"></div>
+            <div class="nss-magazine-fo-my-studio-nft-1-BTpT7l"></div>
+            <div class="nft-art-beeple-g-id4-BTpT7l"></div>
+          </div>
+          <div class="images-eVvw8Q">
+            <div class="nyancat-still-6-e262161985fb564-WzQzVu"></div>
+            <div class="technology-WzQzVu"></div>
+            <div class="grimes-nft-1614741018-WzQzVu"></div>
+            <div class="maxresdefault-WzQzVu"></div>
+            <div class="x1175387721f14-97-b1c8066e7ab1-WzQzVu"></div>
+            <div class="x14637-WzQzVu"></div>
+            <div class="nft-digital-art-digital-artists-WzQzVu"></div>
+            <div class="cc-WzQzVu"></div>
+            <div class="nss-magazine-fo-my-studio-nft-1-WzQzVu"></div>
+            <div class="nft-art-beeple-g-id4-WzQzVu"></div>
+          </div>
+        </div>
+        <div class="photos-VMr6Om">PHOTOS</div>
+        <div class="similar-art-C61RwL">SIMILAR ART</div>
+        <div class="nft-art-beeple-g-id4-C61RwL"></div>
+        <div class="daft-punk-nft-artwork-C61RwL">DAFT PUNK NFT <br />ARTWORK</div>
+        <div class="infinityid-C61RwL">INFINITYID</div>
+        <div class="x007-eth-12639-1-of-1-C61RwL">
+          <span class="span0-8VzbQJ">0.07 ETH</span
+          ><span class="span1-8VzbQJ"> $126.39&nbsp;&nbsp;|&nbsp;&nbsp;1 of 1</span>
+        </div>
+        <div class="info-C61RwL">
+          <div class="daft-punk-user-physical-prints-IfDidi">
+            “Daft Punk” user “minted” editions of some Daft Punk NFTs on Sunday (there are only two distinct images, but
+            each has been “minted” into a number of editions, similar to physical prints).
+          </div>
+        </div>
+        <div class="info-history-C61RwL">INFO / HISTORY</div>
+        <div class="repeat-grid-37-C61RwL">
+          <div class="group-259-xhTPSD">
+            <div class="owner-put-on-sa-by-infinity-i-d-HxliTK">
+              Owner Put on sale for 0.07 ETH 32 minutes ago by INFINITY iD
+            </div>
+            <div class="infinity-i-d-HxliTK">INFINITY iD</div>
+            <div class="x2h-HxliTK">2h</div>
+            <div class="rectangle-258-HxliTK"></div>
+            <div class="component-216-1-HxliTK">
+              <div class="visor-media-gL8AVS"></div>
+            </div>
+          </div>
+          <div class="group-259-vcBZHt">
+            <div class="put-on-sale-for-by-infinity-i-d-FgoADZ">
+              Put on sale for 0.07 ETH 32 minutes ago by INFINITY iD
+            </div>
+            <div class="infinity-i-d-FgoADZ">INFINITY iD</div>
+            <div class="x2h-FgoADZ">2h</div>
+            <div class="rectangle-258-FgoADZ"></div>
+            <div class="component-216-1-FgoADZ">
+              <div class="visor-media-jNnt7r"></div>
+            </div>
+          </div>
+          <div class="group-259-ZY0LSi">
+            <div class="put-on-sale-for-by-infinity-i-d-wxn78X">
+              Put on sale for 0.07 ETH 32 minutes ago by INFINITY iD
+            </div>
+            <div class="infinity-i-d-wxn78X">INFINITY iD</div>
+            <div class="x2h-wxn78X">2h</div>
+            <div class="rectangle-258-wxn78X"></div>
+            <div class="component-216-1-wxn78X">
+              <div class="visor-media-kPLxow"></div>
+            </div>
+          </div>
+        </div>
+        <div class="rectangle-1545-C61RwL"></div>
+        <div class="bids-C61RwL">BIDS</div>
+        <div class="rectangle-1546-C61RwL"></div>
+        <div class="owner-put-on-sa-by-infinity-i-d-C61RwL">
+          Owner Put on sale for 0.07 ETH 32 minutes ago by INFINITY iD
+        </div>
+        <div class="created-by-infinity-i-d-C61RwL">CREATED BY: INFINITY iD</div>
+        <div class="x2h-C61RwL">2h</div>
+        <div class="component-216-2-C61RwL">
+          <div class="visor-media-biCnaX"></div>
+        </div>
+        <div class="details-C61RwL">DETAILS</div>
+        <div class="rectangle-1547-C61RwL"></div>
+        <div class="repeat-grid-39-C61RwL">
+          <div class="x09-4xZ3Cj">
+            <div class="x11-wethby-0x2385e48d1b887-ffjtxO">1.1 WETH<br />by 0x2385e48d1…b887</div>
+            <div class="component-216-5-ffjtxO">
+              <div class="visor-media-aCHNC3"></div>
+            </div>
+          </div>
+          <div class="x19-4xZ3Cj">
+            <div class="x11-wethby-0x2385e48d1b887-EszroA">1.1 WETH<br />by 0x2385e48d1…b887</div>
+            <div class="component-216-5-EszroA">
+              <div class="visor-media-mCr9UG"></div>
+            </div>
+          </div>
+          <div class="x23-4xZ3Cj">
+            <div class="x11-wethby-0x2385e48d1b887-4dYfos">1.1 WETH<br />by 0x2385e48d1…b887</div>
+            <div class="component-216-5-4dYfos">
+              <div class="visor-media-UhtWDy"></div>
+            </div>
+          </div>
+          <div class="x33-4xZ3Cj">
+            <div class="x11-wethby-0x2385e48d1b887-KhuXwX">1.1 WETH<br />by 0x2385e48d1…b887</div>
+            <div class="component-216-5-KhuXwX">
+              <div class="visor-media-GeI7l9"></div>
+            </div>
+          </div>
+          <div class="x41-4xZ3Cj">
+            <div class="x11-wethby-0x2385e48d1b887-P6KMWM">1.1 WETH<br />by 0x2385e48d1…b887</div>
+            <div class="component-216-5-P6KMWM">
+              <div class="visor-media-kBgmSE"></div>
+            </div>
+          </div>
+        </div>
+        <div class="info-VMr6Om">
+          <div class="daft-punk-user-physical-prints-q3RxS7">
+            “Daft Punk” user “minted” editions of some Daft Punk NFTs on Sunday (there are only two distinct images, but
+            each has been “minted” into a number of editions, similar to physical prints).
+          </div>
+        </div>
+        <div class="repeat-grid-40-C61RwL">
+          <div class="x05-ofINvd">
+            <div class="sizer-kvPWj3"></div>
+            <div class="avatar-kvPWj3"></div>
+            <div class="group-40-kvPWj3">
+              <div class="nora-bravo-YBlfPj">Nora Bravo</div>
+              <div class="product-designe-r-at-loud-sound-YBlfPj">
+                Product Designer at LoudSound.Product Designer at LoudSound.Product Designer at LoudSound.Product
+                Designer at LoudSound.
+              </div>
+            </div>
+            <div class="message-symbol-kvPWj3">
+              <div class="path-268-AxKHvx"></div>
+              <div class="path-270-AxKHvx"></div>
+            </div>
+            <div class="path-275-kvPWj3"></div>
+          </div>
+          <div class="x15-ofINvd">
+            <div class="sizer-8jctxA"></div>
+            <div class="avatar-8jctxA"></div>
+            <div class="group-40-8jctxA">
+              <div class="nora-bravo-9Annx9">Nora Bravo</div>
+              <div class="product-designe-r-at-loud-sound-9Annx9">
+                Product Designer at LoudSound.Product Designer at LoudSound.Product Designer at LoudSound.Product
+                Designer at LoudSound.
+              </div>
+            </div>
+            <div class="message-symbol-8jctxA">
+              <div class="path-268-5EQ4P6"></div>
+              <div class="path-270-5EQ4P6"></div>
+            </div>
+            <div class="path-275-8jctxA"></div>
+          </div>
+          <div class="x21-ofINvd">
+            <div class="sizer-aZcGa4"></div>
+            <div class="avatar-aZcGa4"></div>
+            <div class="group-40-aZcGa4">
+              <div class="nora-bravo-CEPdjr">Nora Bravo</div>
+              <div class="product-designe-r-at-loud-sound-CEPdjr">
+                Product Designer at LoudSound.Product Designer at LoudSound.Product Designer at LoudSound.Product
+                Designer at LoudSound.
+              </div>
+            </div>
+            <div class="message-symbol-aZcGa4">
+              <div class="path-268-oTXgW2"></div>
+              <div class="path-270-oTXgW2"></div>
+            </div>
+            <div class="path-275-aZcGa4"></div>
+          </div>
+          <div class="x31-ofINvd">
+            <div class="sizer-rUD7BX"></div>
+            <div class="avatar-rUD7BX"></div>
+            <div class="group-40-rUD7BX">
+              <div class="nora-bravo-QfeIWc">Nora Bravo</div>
+              <div class="product-designe-r-at-loud-sound-QfeIWc">
+                Product Designer at LoudSound.Product Designer at LoudSound.Product Designer at LoudSound.Product
+                Designer at LoudSound.
+              </div>
+            </div>
+            <div class="message-symbol-rUD7BX">
+              <div class="path-268-bnS88S"></div>
+              <div class="path-270-bnS88S"></div>
+            </div>
+            <div class="path-275-rUD7BX"></div>
+          </div>
+        </div>
+        <div class="rectangle-1503-C61RwL"></div>
+        <div class="thats-crazy-are-for-work-today-C61RwL">That’s crazy! Are you traveling for work today?</div>
+        <div class="avatar-C61RwL"></div>
+        <div class="rectangle-1505-C61RwL"></div>
+        <div class="sure-am-im-in-t-fore-the-flight-C61RwL">
+          Sure am! I’m in the Soho office. Wanna grab coffee before the flight?
+        </div>
+        <div class="rectangle-1514-C61RwL"></div>
+        <div class="absolutely-lets-meet-here-C61RwL">Absolutely! Let’s meet here.</div>
+        <div class="avatar-VMr6Om"></div>
+        <div class="rectangle-1548-C61RwL"></div>
+        <div class="sure-am-im-in-t-fore-the-flight-VMr6Om">
+          Sure am! I’m in the Soho office. Wanna grab coffee before the flight?
+        </div>
+        <div class="group-260-C61RwL">
+          <div class="map-background-pI1RzZ">
+            <div class="screen-shot-201-01-10-at-163932-sQzK3d"></div>
+            <div class="group-51-sQzK3d">
+              <div class="brand-blockouts-Sxtxqj"></div>
+              <div class="brand-blockouts-7yDKkb"></div>
+            </div>
+          </div>
+          <div class="number-pI1RzZ">
+            <div class="ellipse-20-Egwz8H"></div>
+            <div class="x1-Egwz8H">1</div>
+          </div>
+          <div class="map-background-jXoawt">
+            <div class="screen-shot-201-01-10-at-163932-9qJqeq"></div>
+          </div>
+          <div class="coffee-house-location-pI1RzZ">
+            <div class="x1-Bcav3p">1.</div>
+            <div class="utopia-coffee-house-Bcav3p">Utopia Coffee House</div>
+            <div class="terminal-5-heathrow-airport-Bcav3p">Terminal 5, Heathrow Airport</div>
+          </div>
+        </div>
+        <div class="dashboard-C61RwL" onclick="Lib.autoanim_redirect('%2A,home%23dashboard,,ease-out,1000', event)">
+          DASHBOARD
+        </div>
+        <div class="feed-C61RwL" onclick="Lib.autoanim_redirect('%2A,home%23feed,,ease-out,2000', event)">FEED</div>
+        <a href="javascript:history.back()">
+          <div class="no-C61RwL">
+            <div class="rectangle-1445-hGGiLo"></div>
+            <div class="union-3-hGGiLo">
+              <div class="rectangle-9-8CYxFp"></div>
+              <div class="rectangle-10-8CYxFp"></div>
+            </div></div
+        ></a>
+        <div class="nft-name-C61RwL">NFT Name:</div>
+        <div class="group-265-C61RwL">
+          <div class="rectangle-95-f3DUzY"></div>
+          <div class="group-264-f3DUzY">
+            <div class="rectangle-1549-blcT3x"></div>
+            <div class="png-gif-webp-mp-or-mp3-max-30mb-blcT3x">PNG, GIF, WEBP, MP4 or MP3. Max 30mb.</div>
+            <div class="sign-up-button-blcT3x">
+              <div class="rectangle-1479-HlNaD6"></div>
+              <div class="upload-nft-HlNaD6">UPLOAD NFT</div>
+            </div>
+          </div>
+        </div>
+        <div class="group-266-C61RwL">
+          <div class="group-267-mVZ9e5">
+            <div class="nft-art-beeple-g-id4-zQzI0F"></div>
+            <div class="group-264-zQzI0F">
+              <div class="rectangle-1549-jQToHN"></div>
+              <div class="preview-of-your-new-nft-jQToHN">Preview of your new NFT</div>
+            </div>
+          </div>
+        </div>
+        <div class="description-C61RwL">Description:</div>
+        <div class="royalties-C61RwL">Royalties:</div>
+        <div class="of-copies-C61RwL"># of Copies:</div>
+        <div class="create-your-nft-project-C61RwL">CREATE YOUR NFT PROJECT</div>
+        <div class="rectangle-1550-C61RwL"></div>
+        <div class="rectangle-1551-C61RwL"></div>
+        <div class="rectangle-1552-C61RwL"></div>
+        <div class="rectangle-1553-C61RwL"></div>
+        <div class="group-63-C61RwL">
+          <div class="group-62-L0cjLb">
+            <div class="rectangle-1518-INUqhA"></div>
+          </div>
+        </div>
+        <div
+          class="repeat-grid-5-C61RwL"
+          onclick="Lib.autoanim_redirect('%2A,home%23nft-page-layout,,ease-out,2000', event)"
+        >
+          <div class="group-54-R5Tp5s">
+            <div class="song-qPanqg">
+              <div class="avatar-Ww2nFM"></div>
+              <div class="avatar-YZluSx"></div>
+              <div class="nft-art-Ww2nFM">NFT ART</div>
+              <div class="infinityid-Ww2nFM">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-qPanqg">PUCHASED FOR .03 ETH</div>
+          </div>
+          <div class="group-54-ThpPil">
+            <div class="song-fGNNtK">
+              <div class="avatar-zve7xM"></div>
+              <div class="avatar-LBkOEw"></div>
+              <div class="nft-art-zve7xM">NFT ART</div>
+              <div class="infinityid-zve7xM">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-fGNNtK">PUCHASED FOR .03 ETH</div>
+          </div>
+          <div class="group-54-ESo5d5">
+            <div class="song-F9Pejw">
+              <div class="avatar-4UER8T"></div>
+              <div class="avatar-7EhWEN"></div>
+              <div class="nft-art-4UER8T">NFT ART</div>
+              <div class="infinityid-4UER8T">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-F9Pejw">PUCHASED FOR .03 ETH</div>
+          </div>
+          <div class="group-54-IGvzjY">
+            <div class="song-fCVM1N">
+              <div class="avatar-NwPmpb"></div>
+              <div class="avatar-U4xLM9"></div>
+              <div class="nft-art-NwPmpb">NFT ART</div>
+              <div class="infinityid-NwPmpb">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-fCVM1N">PUCHASED FOR .03 ETH</div>
+          </div>
+          <div class="group-54-6FTlsK">
+            <div class="song-q08ZX0">
+              <div class="avatar-jqlv9I"></div>
+              <div class="avatar-GDJqxE"></div>
+              <div class="nft-art-jqlv9I">NFT ART</div>
+              <div class="infinityid-jqlv9I">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-q08ZX0">PUCHASED FOR .03 ETH</div>
+          </div>
+          <div class="group-54-zhNRrv">
+            <div class="song-dUNs81">
+              <div class="avatar-jodXbp"></div>
+              <div class="avatar-MLUDJL"></div>
+              <div class="nft-art-jodXbp">NFT ART</div>
+              <div class="infinityid-jodXbp">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-dUNs81">PUCHASED FOR .03 ETH</div>
+          </div>
+          <div class="group-54-Ixqrsx">
+            <div class="song-xgaYq1">
+              <div class="avatar-2Y5IPq"></div>
+              <div class="avatar-XI2ev1"></div>
+              <div class="nft-art-2Y5IPq">NFT ART</div>
+              <div class="infinityid-2Y5IPq">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-xgaYq1">PUCHASED FOR .03 ETH</div>
+          </div>
+          <div class="group-54-g2x5nA">
+            <div class="song-DykeWq">
+              <div class="avatar-khw0a9"></div>
+              <div class="avatar-DTv8EB"></div>
+              <div class="nft-art-khw0a9">NFT ART</div>
+              <div class="infinityid-khw0a9">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-DykeWq">PUCHASED FOR .03 ETH</div>
+          </div>
+          <div class="group-54-0Fxj4E">
+            <div class="song-z641xy">
+              <div class="avatar-7etn4h"></div>
+              <div class="avatar-wIQZmq"></div>
+              <div class="nft-art-7etn4h">NFT ART</div>
+              <div class="infinityid-7etn4h">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-z641xy">PUCHASED FOR .03 ETH</div>
+          </div>
+        </div>
+        <div class="id-featured-projects-C61RwL">
+          <span class="span0-Gnx1DG">ID</span><span class="span1-Gnx1DG"> FEATURED PROJECTS </span>
+        </div>
+        <div class="todays-top-sellers-C61RwL">TODAY’S TOP SELLERS</div>
+        <div class="todays-highest-bids-C61RwL">TODAY’S HIGHEST BIDS</div>
+        <div
+          class="repeat-grid-26-C61RwL"
+          onclick="Lib.autoanim_redirect('%2A,home%23public-profile,,ease-out,2000', event)"
+        >
+          <div class="group-65-5eAiqh">
+            <div class="group-64-DHyrFk">
+              <div class="traveller-chip-OWxlVE">
+                <div class="base-chip-for-user-PldkOh"></div>
+                <div class="avatar-PldkOh"></div>
+                <div class="group-40-PldkOh">
+                  <div class="nora-bravo-R5x0rv">Nora Bravo</div>
+                  <div class="product-designer-at-loud-sound-R5x0rv">Product Designer at LoudSound.</div>
+                </div>
+                <div class="message-symbol-PldkOh">
+                  <div class="path-268-R1qqfO"></div>
+                </div>
+              </div>
+              <div class="yes-OWxlVE">
+                <div class="checkbox-U1oIAk"></div>
+                <div class="rectangle-556-U1oIAk"></div>
+              </div>
+            </div>
+          </div>
+          <div class="group-65-8VvQuO">
+            <div class="group-64-YdRUxD">
+              <div class="traveller-chip-dGLKw1">
+                <div class="base-chip-for-user-UpKVzD"></div>
+                <div class="avatar-UpKVzD"></div>
+                <div class="group-40-UpKVzD">
+                  <div class="nora-bravo-OxcsYh">Nora Bravo</div>
+                  <div class="product-designer-at-loud-sound-OxcsYh">Product Designer at LoudSound.</div>
+                </div>
+                <div class="message-symbol-UpKVzD">
+                  <div class="path-268-YP0H4p"></div>
+                </div>
+              </div>
+              <div class="yes-dGLKw1">
+                <div class="checkbox-Jtspdi"></div>
+                <div class="rectangle-556-Jtspdi"></div>
+              </div>
+            </div>
+          </div>
+          <div class="group-65-LGXxq9">
+            <div class="group-64-e4UqKI">
+              <div class="traveller-chip-x7DHeu">
+                <div class="base-chip-for-user-7AGwmB"></div>
+                <div class="avatar-7AGwmB"></div>
+                <div class="group-40-7AGwmB">
+                  <div class="nora-bravo-vlzPhd">Nora Bravo</div>
+                  <div class="product-designer-at-loud-sound-vlzPhd">Product Designer at LoudSound.</div>
+                </div>
+                <div class="message-symbol-7AGwmB">
+                  <div class="path-268-fZUNfQ"></div>
+                </div>
+              </div>
+              <div class="yes-x7DHeu">
+                <div class="checkbox-Sjx5iW"></div>
+                <div class="rectangle-556-Sjx5iW"></div>
+              </div>
+            </div>
+          </div>
+          <div class="group-65-qiiq9v">
+            <div class="group-64-hlCV6J">
+              <div class="traveller-chip-MmGnKP">
+                <div class="base-chip-for-user-AzCrwR"></div>
+                <div class="avatar-AzCrwR"></div>
+                <div class="group-40-AzCrwR">
+                  <div class="nora-bravo-vSiv81">Nora Bravo</div>
+                  <div class="product-designer-at-loud-sound-vSiv81">Product Designer at LoudSound.</div>
+                </div>
+                <div class="message-symbol-AzCrwR">
+                  <div class="path-268-eki6TB"></div>
+                </div>
+              </div>
+              <div class="yes-MmGnKP">
+                <div class="checkbox-6ExKwi"></div>
+                <div class="rectangle-556-6ExKwi"></div>
+              </div>
+            </div>
+          </div>
+          <div class="group-65-lxkfXa">
+            <div class="group-64-sxLbcR">
+              <div class="traveller-chip-EA11DX">
+                <div class="base-chip-for-user-ABQwkZ"></div>
+                <div class="avatar-ABQwkZ"></div>
+                <div class="group-40-ABQwkZ">
+                  <div class="nora-bravo-Y75Cl8">Nora Bravo</div>
+                  <div class="product-designer-at-loud-sound-Y75Cl8">Product Designer at LoudSound.</div>
+                </div>
+                <div class="message-symbol-ABQwkZ">
+                  <div class="path-268-ICZL90"></div>
+                </div>
+              </div>
+              <div class="yes-EA11DX">
+                <div class="checkbox-nFaPIx"></div>
+                <div class="rectangle-556-nFaPIx"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="most-popular-artist-C61RwL">MOST POPULAR ARTIST</div>
+        <div class="explore-art-C61RwL">EXPLORE ART</div>
+        <div class="line-6-C61RwL"></div>
+        <div
+          class="repeat-grid-32-C61RwL"
+          onclick="Lib.autoanim_redirect('%2A,home%23nft-page-layout,,ease-out,2000', event)"
+        >
+          <div class="group-54-H9zlvx">
+            <div class="song-xt6O4z">
+              <div class="avatar-vuNNC9"></div>
+              <div class="avatar-TFSRZO"></div>
+              <div class="nft-art-vuNNC9">NFT ART</div>
+              <div class="infinityid-vuNNC9">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-xt6O4z">PUCHASED FOR .03 ETH</div>
+          </div>
+          <div class="group-54-9F79gi">
+            <div class="song-3l1u2F">
+              <div class="avatar-Fue3z0"></div>
+              <div class="avatar-nhTh1O"></div>
+              <div class="nft-art-Fue3z0">NFT ART</div>
+              <div class="infinityid-Fue3z0">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-3l1u2F">PUCHASED FOR .03 ETH</div>
+          </div>
+          <div class="group-54-7FP5C0">
+            <div class="song-kzRINt">
+              <div class="avatar-s5P0cH"></div>
+              <div class="avatar-OboKkk"></div>
+              <div class="nft-art-s5P0cH">NFT ART</div>
+              <div class="infinityid-s5P0cH">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-kzRINt">PUCHASED FOR .03 ETH</div>
+          </div>
+          <div class="group-54-eLwRL7">
+            <div class="song-A60jpq">
+              <div class="avatar-SI2T5H"></div>
+              <div class="avatar-UNrmng"></div>
+              <div class="nft-art-SI2T5H">NFT ART</div>
+              <div class="infinityid-SI2T5H">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-A60jpq">PUCHASED FOR .03 ETH</div>
+          </div>
+          <div class="group-54-ygzu8R">
+            <div class="song-PvIFo3">
+              <div class="avatar-Iqd2Bn"></div>
+              <div class="avatar-bhpUEx"></div>
+              <div class="nft-art-Iqd2Bn">NFT ART</div>
+              <div class="infinityid-Iqd2Bn">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-PvIFo3">PUCHASED FOR .03 ETH</div>
+          </div>
+          <div class="group-54-GPMSMy">
+            <div class="song-E5EICU">
+              <div class="avatar-XycunO"></div>
+              <div class="avatar-2wuqez"></div>
+              <div class="nft-art-XycunO">NFT ART</div>
+              <div class="infinityid-XycunO">INFINITYID</div>
+            </div>
+            <div class="puchased-for-03-eth-E5EICU">PUCHASED FOR .03 ETH</div>
+          </div>
+        </div>
+        <div class="posts-VMr6Om" onclick="Lib.autoanim_redirect('%2A,home%23nft-page-layout,,ease-out,2000', event)">
+          <div class="post-L8Ej7v">
+            <div class="nft-art-beeple-g-id4-laDEi0"></div>
+            <div class="rectangle-171-laDEi0"></div>
+            <div class="nft-artwork-laDEi0">NFT ARTWORK</div>
+            <div class="excepteur-sint-unt-mollit-anim-laDEi0">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+            </div>
+            <div class="likes-laDEi0">
+              <div class="x609-Hqqpqx">609</div>
+              <div class="heart-Hqqpqx"></div>
+            </div>
+            <div class="comments-laDEi0">
+              <div class="x120-dlc41L">120</div>
+              <div class="chat-dlc41L"></div>
+            </div>
+            <div class="featured-laDEi0">FEATURED</div>
+          </div>
+          <div class="post-YHfxTM">
+            <div class="nft-digital-art-digital-artists-edsOCU"></div>
+            <div class="rectangle-171-edsOCU"></div>
+            <div class="excepteur-sint-occaecat-edsOCU">Excepteur sint occaecat.</div>
+            <div class="excepteur-sint-unt-mollit-anim-edsOCU">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+            </div>
+            <div class="likes-edsOCU">
+              <div class="x609-JQghDx">609</div>
+              <div class="heart-JQghDx"></div>
+            </div>
+            <div class="comments-edsOCU">
+              <div class="x120-fSfoXR">120</div>
+              <div class="chat-fSfoXR"></div>
+            </div>
+            <div class="featured-edsOCU">FEATURED</div>
+          </div>
+        </div>
+        <div class="rectangle-1537-C61RwL"></div>
+        <div class="rectangle-1538-C61RwL"></div>
+        <div class="rectangle-1515-VMr6Om"></div>
+        <div class="group-217-C61RwL">
+          <div class="group-216-YXubFO">
+            <div class="mon-0uTNaV">Mon</div>
+            <div class="tue-0uTNaV">Tue</div>
+            <div class="wed-0uTNaV">Wed</div>
+            <div class="thu-0uTNaV">Thu</div>
+            <div class="fri-0uTNaV">Fri</div>
+            <div class="sat-0uTNaV">Sat</div>
+            <div class="sun-0uTNaV">Sun</div>
+            <div class="polygon-1-0uTNaV"></div>
+          </div>
+          <div class="group-215-YXubFO">
+            <div class="search-field-ovotQM"></div>
+            <div class="graphgradient-ovotQM"></div>
+            <div class="graphpath-ovotQM"></div>
+            <div class="graphline-ovotQM"></div>
+            <div class="pinpoint-ovotQM"></div>
+            <div class="currentvalueflag-ovotQM"></div>
+            <div class="currentvalueplatform-ovotQM"></div>
+            <div class="x2000000-ovotQM">
+              <span class="span0-TzeAdf">$</span><span class="span1-TzeAdf">20,000.</span
+              ><span class="span2-TzeAdf">00</span>
+            </div>
+          </div>
+        </div>
+        <div class="x10023200-C61RwL">
+          <span class="span0-ej2977">$</span><span class="span1-ej2977">100,232.</span
+          ><span class="span2-ej2977">00</span>
+        </div>
+        <div class="current-wallet-balance-C61RwL">Current Wallet Balance</div>
+        <div class="your-wallet-C61RwL">YOUR WALLET:</div>
+        <div class="group-48-C61RwL">
+          <div class="ellipse-234-YQC0Kc"></div>
+          <div class="cryptopunk-YQC0Kc"></div>
+        </div>
+        <div class="sample-C61RwL"></div>
+        <div class="group-252-C61RwL">
+          <div class="icon-material-content-copy-JTM1d4"></div>
+          <div class="public-address-xej212bsjah124d-JTM1d4">
+            <span class="span0-SW5SEx">Public Address:</span><span class="span1-SW5SEx">&nbsp;</span
+            ><span class="span2-SW5SEx">0xej212bsjah124d</span>
+          </div>
+        </div>
+        <div class="group-254-C61RwL">
+          <div class="collectibles-FEOR7v">COLLECTIBLES</div>
+          <div class="repeat-grid-34-FEOR7v">
+            <div class="group-251-XC2h2n">
+              <div class="path-274-0ElkWE"></div>
+              <div class="nft-art-0ElkWE">NFT ART</div>
+              <div class="infinityid-0ElkWE">INFINITYID</div>
+              <div class="avatar-0ElkWE"></div>
+            </div>
+            <div class="group-251-7YCdr6">
+              <div class="path-274-x6vTY6"></div>
+              <div class="nft-art-x6vTY6">NFT ART</div>
+              <div class="infinityid-x6vTY6">INFINITYID</div>
+              <div class="avatar-x6vTY6"></div>
+            </div>
+            <div class="group-251-GdMlgl">
+              <div class="path-274-4LzqvE"></div>
+              <div class="nft-art-4LzqvE">NFT ART</div>
+              <div class="infinityid-4LzqvE">INFINITYID</div>
+              <div class="avatar-4LzqvE"></div>
+            </div>
+            <div class="group-251-pl8YsD">
+              <div class="path-274-hl8PiX"></div>
+              <div class="nft-art-hl8PiX">NFT ART</div>
+              <div class="infinityid-hl8PiX">INFINITYID</div>
+              <div class="avatar-hl8PiX"></div>
+            </div>
+            <div class="group-251-aAvx1U">
+              <div class="path-274-E4IkQw"></div>
+              <div class="nft-art-E4IkQw">NFT ART</div>
+              <div class="infinityid-E4IkQw">INFINITYID</div>
+              <div class="avatar-E4IkQw"></div>
+            </div>
+            <div class="group-251-hRNnRY">
+              <div class="path-274-qUbqbj"></div>
+              <div class="nft-art-qUbqbj">NFT ART</div>
+              <div class="infinityid-qUbqbj">INFINITYID</div>
+              <div class="avatar-qUbqbj"></div>
+            </div>
+          </div>
+        </div>
+        <div class="group-255-C61RwL">
+          <div class="wearables-P79SNn">WEARABLES</div>
+          <div class="repeat-grid-35-P79SNn">
+            <div class="group-251-BXvhNn">
+              <div class="path-274-0A7GNY"></div>
+              <div class="nft-art-0A7GNY">NFT ART</div>
+              <div class="infinityid-0A7GNY">INFINITYID</div>
+              <div class="avatar-0A7GNY"></div>
+            </div>
+            <div class="group-251-D0Uady">
+              <div class="path-274-6jeAbQ"></div>
+              <div class="nft-art-6jeAbQ">NFT ART</div>
+              <div class="infinityid-6jeAbQ">INFINITYID</div>
+              <div class="avatar-6jeAbQ"></div>
+            </div>
+            <div class="group-251-l3ZHQD">
+              <div class="path-274-aijBxe"></div>
+              <div class="nft-art-aijBxe">NFT ART</div>
+              <div class="infinityid-aijBxe">INFINITYID</div>
+              <div class="avatar-aijBxe"></div>
+            </div>
+          </div>
+        </div>
+        <div class="group-256-C61RwL">
+          <div class="music-2Nxv7x">MUSIC</div>
+          <div class="repeat-grid-36-2Nxv7x">
+            <div class="group-251-2pMoke">
+              <div class="path-274-KB2r91"></div>
+              <div class="nft-art-KB2r91">NFT ART</div>
+              <div class="infinityid-KB2r91">INFINITYID</div>
+              <div class="avatar-KB2r91"></div>
+            </div>
+            <div class="group-251-ywWJwZ">
+              <div class="path-274-unMnxT"></div>
+              <div class="nft-art-unMnxT">NFT ART</div>
+              <div class="infinityid-unMnxT">INFINITYID</div>
+              <div class="avatar-unMnxT"></div>
+            </div>
+            <div class="group-251-rCxiLZ">
+              <div class="path-274-Z2vlHB"></div>
+              <div class="nft-art-Z2vlHB">NFT ART</div>
+              <div class="infinityid-Z2vlHB">INFINITYID</div>
+              <div class="avatar-Z2vlHB"></div>
+            </div>
+          </div>
+        </div>
+        <div class="rectangle-1518-C61RwL"></div>
+        <div class="x59262-200-C61RwL"></div>
+        <div class="send-C61RwL">SEND</div>
+        <div class="recieve-C61RwL">RECIEVE</div>
+        <div class="rectangle-1540-C61RwL"></div>
+        <div class="rectangle-1542-C61RwL"></div>
+        <div class="scan-C61RwL">SCAN</div>
+        <div class="rectangle-1518-VMr6Om"></div>
+        <div class="deposit-C61RwL">DEPOSIT</div>
+        <div class="withdraw-C61RwL">WITHDRAW</div>
+        <div class="rectangle-1540-VMr6Om"></div>
+        <div class="scroll-C61RwL">SCROLL</div>
+        <div class="friends-C61RwL">FRIENDS</div>
+        <div class="repeat-grid-41-C61RwL">
+          <div class="group-262-EtUQkN">
+            <div class="base-chip-for-user-D9G0RR"></div>
+            <div class="avatar-D9G0RR"></div>
+            <div class="group-57-D9G0RR">
+              <div class="james-harrington-raNxsb">James Harrington</div>
+              <div class="london-uk-raNxsb">London, UK</div>
+            </div>
+            <div class="group-263-D9G0RR">
+              <div class="rectangle-1516-6Vlx5c"></div>
+              <div class="message-6Vlx5c">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-xcSsx3">
+            <div class="base-chip-for-user-zzSSxM"></div>
+            <div class="avatar-zzSSxM"></div>
+            <div class="group-57-zzSSxM">
+              <div class="james-harrington-xxF5Kl">James Harrington</div>
+              <div class="london-uk-xxF5Kl">London, UK</div>
+            </div>
+            <div class="group-263-zzSSxM">
+              <div class="rectangle-1516-gtfMxa"></div>
+              <div class="message-gtfMxa">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-xXLQ2p">
+            <div class="base-chip-for-user-0fTuX3"></div>
+            <div class="avatar-0fTuX3"></div>
+            <div class="group-57-0fTuX3">
+              <div class="james-harrington-koP0T7">James Harrington</div>
+              <div class="london-uk-koP0T7">London, UK</div>
+            </div>
+            <div class="group-263-0fTuX3">
+              <div class="rectangle-1516-BaI6x1"></div>
+              <div class="message-BaI6x1">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-NnjQE3">
+            <div class="base-chip-for-user-K6bVQp"></div>
+            <div class="avatar-K6bVQp"></div>
+            <div class="group-57-K6bVQp">
+              <div class="james-harrington-GbfA2L">James Harrington</div>
+              <div class="london-uk-GbfA2L">London, UK</div>
+            </div>
+            <div class="group-263-K6bVQp">
+              <div class="rectangle-1516-1P30Ln"></div>
+              <div class="message-1P30Ln">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-EoxxaR">
+            <div class="base-chip-for-user-GDwMMX"></div>
+            <div class="avatar-GDwMMX"></div>
+            <div class="group-57-GDwMMX">
+              <div class="james-harrington-xFY8dl">James Harrington</div>
+              <div class="london-uk-xFY8dl">London, UK</div>
+            </div>
+            <div class="group-263-GDwMMX">
+              <div class="rectangle-1516-16NKQ2"></div>
+              <div class="message-16NKQ2">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-x4x9Xf">
+            <div class="base-chip-for-user-0T3wb0"></div>
+            <div class="avatar-0T3wb0"></div>
+            <div class="group-57-0T3wb0">
+              <div class="james-harrington-pc0pFa">James Harrington</div>
+              <div class="london-uk-pc0pFa">London, UK</div>
+            </div>
+            <div class="group-263-0T3wb0">
+              <div class="rectangle-1516-emnXvx"></div>
+              <div class="message-emnXvx">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-5gDTUZ">
+            <div class="base-chip-for-user-gVSTYV"></div>
+            <div class="avatar-gVSTYV"></div>
+            <div class="group-57-gVSTYV">
+              <div class="james-harrington-DvHkRO">James Harrington</div>
+              <div class="london-uk-DvHkRO">London, UK</div>
+            </div>
+            <div class="group-263-gVSTYV">
+              <div class="rectangle-1516-wEIXdo"></div>
+              <div class="message-wEIXdo">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-P253zD">
+            <div class="base-chip-for-user-Qqvht2"></div>
+            <div class="avatar-Qqvht2"></div>
+            <div class="group-57-Qqvht2">
+              <div class="james-harrington-mYUGqS">James Harrington</div>
+              <div class="london-uk-mYUGqS">London, UK</div>
+            </div>
+            <div class="group-263-Qqvht2">
+              <div class="rectangle-1516-xzetdv"></div>
+              <div class="message-xzetdv">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-IFwun8">
+            <div class="base-chip-for-user-He9u20"></div>
+            <div class="avatar-He9u20"></div>
+            <div class="group-57-He9u20">
+              <div class="james-harrington-7dgeVx">James Harrington</div>
+              <div class="london-uk-7dgeVx">London, UK</div>
+            </div>
+            <div class="group-263-He9u20">
+              <div class="rectangle-1516-ksyRbi"></div>
+              <div class="message-ksyRbi">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-0WNwEh">
+            <div class="base-chip-for-user-6kIuCZ"></div>
+            <div class="avatar-6kIuCZ"></div>
+            <div class="group-57-6kIuCZ">
+              <div class="james-harrington-zXOfxV">James Harrington</div>
+              <div class="london-uk-zXOfxV">London, UK</div>
+            </div>
+            <div class="group-263-6kIuCZ">
+              <div class="rectangle-1516-HBrbZW"></div>
+              <div class="message-HBrbZW">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-HuJY7a">
+            <div class="base-chip-for-user-QcFJJb"></div>
+            <div class="avatar-QcFJJb"></div>
+            <div class="group-57-QcFJJb">
+              <div class="james-harrington-Y86nlh">James Harrington</div>
+              <div class="london-uk-Y86nlh">London, UK</div>
+            </div>
+            <div class="group-263-QcFJJb">
+              <div class="rectangle-1516-LIBJ0N"></div>
+              <div class="message-LIBJ0N">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-FHmPcx">
+            <div class="base-chip-for-user-yxmgQh"></div>
+            <div class="avatar-yxmgQh"></div>
+            <div class="group-57-yxmgQh">
+              <div class="james-harrington-exWY5k">James Harrington</div>
+              <div class="london-uk-exWY5k">London, UK</div>
+            </div>
+            <div class="group-263-yxmgQh">
+              <div class="rectangle-1516-tOYcMS"></div>
+              <div class="message-tOYcMS">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-iisAd2">
+            <div class="base-chip-for-user-UW1Yyo"></div>
+            <div class="avatar-UW1Yyo"></div>
+            <div class="group-57-UW1Yyo">
+              <div class="james-harrington-YNiBL0">James Harrington</div>
+              <div class="london-uk-YNiBL0">London, UK</div>
+            </div>
+            <div class="group-263-UW1Yyo">
+              <div class="rectangle-1516-Uxvf3V"></div>
+              <div class="message-Uxvf3V">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-UcVAV0">
+            <div class="base-chip-for-user-B3uv5v"></div>
+            <div class="avatar-B3uv5v"></div>
+            <div class="group-57-B3uv5v">
+              <div class="james-harrington-H3JSS2">James Harrington</div>
+              <div class="london-uk-H3JSS2">London, UK</div>
+            </div>
+            <div class="group-263-B3uv5v">
+              <div class="rectangle-1516-KLoxpl"></div>
+              <div class="message-KLoxpl">MESSAGE</div>
+            </div>
+          </div>
+          <div class="group-262-09uF9l">
+            <div class="base-chip-for-user-xM8SRw"></div>
+            <div class="avatar-xM8SRw"></div>
+            <div class="group-57-xM8SRw">
+              <div class="james-harrington-cqq2U6">James Harrington</div>
+              <div class="london-uk-cqq2U6">London, UK</div>
+            </div>
+            <div class="group-263-xM8SRw">
+              <div class="rectangle-1516-mBl3Ce"></div>
+              <div class="message-mBl3Ce">MESSAGE</div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="group-241-C61RwL"
+          onclick="Lib.autoanim_redirect('%2A,home%23nft-page-layout,,ease-out,2000', event)"
+        >
+          <div class="group-239-3jLCkw">
+            <div class="play-dcAUsa">
+              <div class="path-5-JnQxW6"></div>
+              <div class="ellipse-2-JnQxW6"></div>
+            </div>
+            <div class="play-lijwco">
+              <div class="path-5-qSxsl2"></div>
+              <div class="ellipse-2-qSxsl2"></div>
+            </div>
+            <div class="browse-dcAUsa">BROWSE</div>
+          </div>
+          <div class="on-sale-3jLCkw">ON SALE</div>
+          <div class="line-10-3jLCkw"></div>
+          <div class="repeat-grid-30-3jLCkw">
+            <div class="group-238-Mx5HYe">
+              <div class="avatar-tnbhre"></div>
+              <div class="avatar-bo5u1v"></div>
+              <div class="nft-art-tnbhre">NFT ART</div>
+              <div class="infinityid-tnbhre">INFINITYID</div>
+              <div class="x2-bids-highest-002-eth-tnbhre">2 BIDS - HIGHEST 0.02 ETH</div>
+              <div class="group-237-tnbhre">
+                <div class="rectangle-1536-hN5tWe"></div>
+                <div class="bid-hN5tWe">BID</div>
+              </div>
+            </div>
+            <div class="group-238-rGSunA">
+              <div class="avatar-u0xlcG"></div>
+              <div class="avatar-GrMxdb"></div>
+              <div class="nft-art-u0xlcG">NFT ART</div>
+              <div class="infinityid-u0xlcG">INFINITYID</div>
+              <div class="x2-bids-highest-002-eth-u0xlcG">2 BIDS - HIGHEST 0.02 ETH</div>
+              <div class="group-237-u0xlcG">
+                <div class="rectangle-1536-qSUKWw"></div>
+                <div class="bid-qSUKWw">BID</div>
+              </div>
+            </div>
+            <div class="group-238-xEpI9N">
+              <div class="avatar-4NS8c7"></div>
+              <div class="avatar-H27XF2"></div>
+              <div class="nft-art-4NS8c7">NFT ART</div>
+              <div class="infinityid-4NS8c7">INFINITYID</div>
+              <div class="x2-bids-highest-002-eth-4NS8c7">2 BIDS - HIGHEST 0.02 ETH</div>
+              <div class="group-237-4NS8c7">
+                <div class="rectangle-1536-WajxxM"></div>
+                <div class="bid-WajxxM">BID</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="group-242-C61RwL"
+          onclick="Lib.autoanim_redirect('%2A,home%23nft-page-layout,,ease-out,2000', event)"
+        >
+          <div class="auctions-VDz23I">AUCTIONS</div>
+          <div class="line-11-VDz23I"></div>
+          <div class="repeat-grid-31-VDz23I">
+            <div class="group-238-IcsdSk">
+              <div class="avatar-84FPXJ"></div>
+              <div class="avatar-mQsWhF"></div>
+              <div class="nft-art-84FPXJ">NFT ART</div>
+              <div class="infinityid-84FPXJ">INFINITYID</div>
+              <div class="x2-bids-highest-002-eth-84FPXJ">2 BIDS - HIGHEST 0.02 ETH</div>
+              <div class="group-237-84FPXJ">
+                <div class="rectangle-1536-mwLxfY"></div>
+                <div class="bid-mwLxfY">BID</div>
+              </div>
+            </div>
+            <div class="group-238-EOlzzX">
+              <div class="avatar-cx0Kq2"></div>
+              <div class="avatar-11QjoA"></div>
+              <div class="nft-art-cx0Kq2">NFT ART</div>
+              <div class="infinityid-cx0Kq2">INFINITYID</div>
+              <div class="x2-bids-highest-002-eth-cx0Kq2">2 BIDS - HIGHEST 0.02 ETH</div>
+              <div class="group-237-cx0Kq2">
+                <div class="rectangle-1536-wTzbNU"></div>
+                <div class="bid-wTzbNU">BID</div>
+              </div>
+            </div>
+            <div class="group-238-mxMNcQ">
+              <div class="avatar-LIITWf"></div>
+              <div class="avatar-fyXVX2"></div>
+              <div class="nft-art-LIITWf">NFT ART</div>
+              <div class="infinityid-LIITWf">INFINITYID</div>
+              <div class="x2-bids-highest-002-eth-LIITWf">2 BIDS - HIGHEST 0.02 ETH</div>
+              <div class="group-237-LIITWf">
+                <div class="rectangle-1536-XPaabt"></div>
+                <div class="bid-XPaabt">BID</div>
+              </div>
+            </div>
+          </div>
+          <div class="group-240-VDz23I">
+            <div class="play-NVFST4">
+              <div class="path-5-xRdrAm"></div>
+              <div class="ellipse-2-xRdrAm"></div>
+            </div>
+            <div class="play-peadGZ">
+              <div class="path-5-oy0e1b"></div>
+              <div class="ellipse-2-oy0e1b"></div>
+            </div>
+            <div class="browse-NVFST4">BROWSE</div>
+          </div>
+        </div>
+        <div class="sold-C61RwL">SOLD</div>
+        <div class="line-11-C61RwL"></div>
+        <div
+          class="repeat-grid-31-C61RwL"
+          onclick="Lib.autoanim_redirect('%2A,home%23nft-page-layout,,ease-out,2000', event)"
+        >
+          <div class="group-238-FRcxxr">
+            <div class="avatar-TZMa3D"></div>
+            <div class="avatar-wQZgJy"></div>
+            <div class="nft-art-TZMa3D">NFT ART</div>
+            <div class="infinityid-TZMa3D">INFINITYID</div>
+            <div class="sold-TZMa3D">SOLD</div>
+            <div class="group-237-TZMa3D">
+              <div class="rectangle-1536-mcTZH8"></div>
+              <div class="bid-mcTZH8">BID</div>
+            </div>
+          </div>
+          <div class="group-238-pnllAx">
+            <div class="avatar-Xn1w4B"></div>
+            <div class="avatar-kR3xnI"></div>
+            <div class="nft-art-Xn1w4B">NFT ART</div>
+            <div class="infinityid-Xn1w4B">INFINITYID</div>
+            <div class="sold-Xn1w4B">SOLD</div>
+            <div class="group-237-Xn1w4B">
+              <div class="rectangle-1536-bzcTxP"></div>
+              <div class="bid-bzcTxP">BID</div>
+            </div>
+          </div>
+          <div class="group-238-Rji8JV">
+            <div class="avatar-cxzzZp"></div>
+            <div class="avatar-xXmrxu"></div>
+            <div class="nft-art-cxzzZp">NFT ART</div>
+            <div class="infinityid-cxzzZp">INFINITYID</div>
+            <div class="sold-cxzzZp">SOLD</div>
+            <div class="group-237-cxzzZp">
+              <div class="rectangle-1536-ZXqkEN"></div>
+              <div class="bid-ZXqkEN">BID</div>
+            </div>
+          </div>
+        </div>
+        <div class="group-240-C61RwL">
+          <div class="play-6o48Mp">
+            <div class="path-5-P0y2pf"></div>
+            <div class="ellipse-2-P0y2pf"></div>
+          </div>
+          <div class="play-Q4fCEb">
+            <div class="path-5-tyxhJj"></div>
+            <div class="ellipse-2-tyxhJj"></div>
+          </div>
+          <div class="browse-6o48Mp">BROWSE</div>
+        </div>
+        <div class="create-new-post-C61RwL">CREATE NEW POST</div>
+        <div class="rectangle-95-C61RwL"></div>
+        <div class="visor-media-C61RwL"></div>
+        <div class="rectangle-1549-C61RwL"></div>
+        <div class="infinity-i-d-ed-gline-biography-C61RwL">INFINITY iD edit your profile tagline / biography…</div>
+        <div class="edit-biography-C61RwL">EDIT BIOGRAPHY</div>
+        <div class="line-12-C61RwL"></div>
+        <div class="ellipse-236-C61RwL"></div>
+        <div class="camera-C61RwL">
+          <div class="rectangle-252-ej2VFb"></div>
+          <div class="path-110-ej2VFb"></div>
+        </div>
+        <div class="camera-VMr6Om">
+          <div class="rectangle-252-1HI8FU"></div>
+          <div class="path-110-1HI8FU"></div>
+        </div>
+        <div class="cover-photo-C61RwL">Cover Photo</div>
+      </div>
+    </div>
+    <script>
+      "use strict";
+
+      function _toConsumableArray(arr) {
+        return (
+          _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread()
+        );
+      }
+
+      function _nonIterableSpread() {
+        throw new TypeError(
+          "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+        );
+      }
+
+      function _iterableToArray(iter) {
+        if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+      }
+
+      function _arrayWithoutHoles(arr) {
+        if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+      }
+
+      function ownKeys(object, enumerableOnly) {
+        var keys = Object.keys(object);
+        if (Object.getOwnPropertySymbols) {
+          var symbols = Object.getOwnPropertySymbols(object);
+          if (enumerableOnly)
+            symbols = symbols.filter(function (sym) {
+              return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+            });
+          keys.push.apply(keys, symbols);
+        }
+        return keys;
+      }
+
+      function _objectSpread(target) {
+        for (var i = 1; i < arguments.length; i++) {
+          var source = arguments[i] != null ? arguments[i] : {};
+          if (i % 2) {
+            ownKeys(Object(source), true).forEach(function (key) {
+              _defineProperty(target, key, source[key]);
+            });
+          } else if (Object.getOwnPropertyDescriptors) {
+            Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+          } else {
+            ownKeys(Object(source)).forEach(function (key) {
+              Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+            });
+          }
+        }
+        return target;
+      }
+
+      function _defineProperty(obj, key, value) {
+        if (key in obj) {
+          Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+        } else {
+          obj[key] = value;
+        }
+        return obj;
+      }
+
+      function _createForOfIteratorHelper(o, allowArrayLike) {
+        var it;
+        if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+          if (
+            Array.isArray(o) ||
+            (it = _unsupportedIterableToArray(o)) ||
+            (allowArrayLike && o && typeof o.length === "number")
+          ) {
+            if (it) o = it;
+            var i = 0;
+            var F = function F() {};
+            return {
+              s: F,
+              n: function n() {
+                if (i >= o.length) return { done: true };
+                return { done: false, value: o[i++] };
+              },
+              e: function e(_e2) {
+                throw _e2;
+              },
+              f: F,
+            };
+          }
+          throw new TypeError(
+            "Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+          );
+        }
+        var normalCompletion = true,
+          didErr = false,
+          err;
+        return {
+          s: function s() {
+            it = o[Symbol.iterator]();
+          },
+          n: function n() {
+            var step = it.next();
+            normalCompletion = step.done;
+            return step;
+          },
+          e: function e(_e3) {
+            didErr = true;
+            err = _e3;
+          },
+          f: function f() {
+            try {
+              if (!normalCompletion && it["return"] != null) it["return"]();
+            } finally {
+              if (didErr) throw err;
+            }
+          },
+        };
+      }
+
+      function _slicedToArray(arr, i) {
+        return (
+          _arrayWithHoles(arr) ||
+          _iterableToArrayLimit(arr, i) ||
+          _unsupportedIterableToArray(arr, i) ||
+          _nonIterableRest()
+        );
+      }
+
+      function _nonIterableRest() {
+        throw new TypeError(
+          "Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+        );
+      }
+
+      function _unsupportedIterableToArray(o, minLen) {
+        if (!o) return;
+        if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+        var n = Object.prototype.toString.call(o).slice(8, -1);
+        if (n === "Object" && o.constructor) n = o.constructor.name;
+        if (n === "Map" || n === "Set") return Array.from(o);
+        if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
+          return _arrayLikeToArray(o, minLen);
+      }
+
+      function _arrayLikeToArray(arr, len) {
+        if (len == null || len > arr.length) len = arr.length;
+        for (var i = 0, arr2 = new Array(len); i < len; i++) {
+          arr2[i] = arr[i];
+        }
+        return arr2;
+      }
+
+      function _iterableToArrayLimit(arr, i) {
+        if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+        var _arr = [];
+        var _n = true;
+        var _d = false;
+        var _e = undefined;
+        try {
+          for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+            _arr.push(_s.value);
+            if (i && _arr.length === i) break;
+          }
+        } catch (err) {
+          _d = true;
+          _e = err;
+        } finally {
+          try {
+            if (!_n && _i["return"] != null) _i["return"]();
+          } finally {
+            if (_d) throw _e;
+          }
+        }
+        return _arr;
+      }
+
+      function _arrayWithHoles(arr) {
+        if (Array.isArray(arr)) return arr;
+      }
+
+      (function () {
+        var sides_opposites = {
+          left: "right",
+          right: "left",
+          top: "bottom",
+          bottom: "top",
+        };
+        var sides_containers = {
+          left: "width",
+          right: "width",
+          top: "height",
+          bottom: "height",
+        };
+        var containers = ["height", "width"];
+        var autoanimated_properties = [
+          "left",
+          "right",
+          "top",
+          "bottom",
+          "width",
+          "height",
+          "background-color",
+          "color",
+          "font-size",
+          "line-height",
+          "letter-spacing",
+          "border",
+          "border-size",
+          "border-color",
+          "margin",
+          "margin-right",
+          "margin-left",
+          "margin-top",
+          "margin-bottom",
+          "opacity",
+          "font-family",
+          "transform",
+          "rotate",
+        ];
+        var autoanimated_properties_from_zero = ["opacity", "rotate"];
+        var last_set_hash = "";
+
+        function normalize_to_percent_and_offset(value) {
+          var percent = 0.0;
+          var pixel_offset = 0;
+          var calc_match = value.match(/calc\(\s*([0-9.]*)%\s*([-+])\s*([0-9]*)px/);
+
+          if (calc_match) {
+            percent = parseFloat(calc_match[1]);
+            pixel_offset = parseInt(calc_match[3]);
+
+            if (calc_match[2] === "-") {
+              pixel_offset = -pixel_offset;
+            }
+          } else if (String(value).includes("%")) {
+            percent = parseFloat(value.replace("%", ""));
+          } else {
+            pixel_offset = parseInt(value, 10);
+          }
+
+          return {
+            percent: percent,
+            pixel_offset: pixel_offset,
+          };
+        }
+
+        function to_relative_percent(element, property, value) {
+          var offsetParent = element.offsetParent;
+
+          if (!offsetParent) {
+            return 0;
+          }
+
+          var target_style_property = property;
+
+          if (sides_containers.hasOwnProperty(property)) {
+            target_style_property = sides_containers[property];
+          }
+
+          var parent_size = Math.max(1, parseInt(getComputedStyle(offsetParent)[target_style_property], 10));
+          return parseFloat((100 * value) / parent_size);
+        }
+
+        function convert_to_matching_positioning(element, new_props) {
+          var computed_element_style = getComputedStyle(element);
+          Object.entries(new_props).forEach(function (_ref) {
+            var _ref2 = _slicedToArray(_ref, 2),
+              property = _ref2[0],
+              value = _ref2[1];
+
+            if (sides_opposites.hasOwnProperty(property)) {
+              var to_percent = String(value).includes("%");
+              var new_prop_value =
+                parseInt(computed_element_style[property], 10) +
+                parseInt(computed_element_style["margin-" + property], 10);
+
+              if (to_percent) {
+                new_prop_value = to_relative_percent(element, property, new_prop_value).toFixed(4) + "%";
+              } else {
+                new_prop_value += "px";
+              }
+
+              element.style[property] = new_prop_value;
+              element.style["margin-" + property] = 0;
+              element.style["margin-" + sides_opposites[property]] = 0;
+
+              if (element.style[sides_opposites[property]]) {
+                element.style[sides_opposites[property]] = "auto";
+              }
+            } else if (containers.includes(property)) {
+              var _to_percent = String(value).includes("%");
+
+              var _new_prop_value = parseInt(computed_element_style[property]);
+
+              if (_to_percent) {
+                _new_prop_value = to_relative_percent(element, property, _new_prop_value).toFixed(4) + "%";
+              } else {
+                _new_prop_value += "px";
+              }
+
+              element.style[property] = _new_prop_value;
+            }
+          });
+        }
+
+        function setup_listener(root_element, listener_specs, event_handler) {
+          var cleaner = null;
+
+          if (listener_specs.listener_type === "timer") {
+            var timeout = setTimeout(event_handler, listener_specs.delay);
+
+            cleaner = function cleaner() {
+              return clearTimeout(timeout);
+            };
+          } else if (["click", "mouseenter", "mouseleave"].includes(listener_specs.listener_type)) {
+            var target_element =
+              listener_specs.target_selector === ""
+                ? root_element
+                : root_element.querySelector(listener_specs.target_selector);
+
+            if (!target_element) {
+              return function () {};
+            }
+
+            var event_handler_fixed = function event_handler_fixed(event) {
+              if (event.type === "click" || event.target === target_element) {
+                event.stopPropagation();
+                event_handler();
+              }
+            };
+
+            target_element.classList.add("listeners-active");
+
+            if (listener_specs.listener_type === "click") {
+              target_element.classList.add("listeners-active-click");
+            }
+
+            target_element.addEventListener(listener_specs.listener_type, event_handler_fixed, true);
+
+            cleaner = function cleaner() {
+              target_element.removeEventListener(listener_specs.listener_type, event_handler_fixed, true);
+              target_element.classList.remove("listeners-active");
+              target_element.classList.remove("listeners-active-click");
+            };
+          }
+
+          return cleaner;
+        }
+
+        function animate_elements(root_element, selector_to_properties_map, transition_props, on_done) {
+          var from_current_position = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : true;
+          var hide_low_opacity = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : true;
+          var entries = selector_to_properties_map.entries
+            ? selector_to_properties_map.entries()
+            : Object.entries(selector_to_properties_map);
+
+          var _iterator = _createForOfIteratorHelper(entries),
+            _step;
+
+          try {
+            var _loop = function _loop() {
+              var _step$value = _slicedToArray(_step.value, 2),
+                selector_or_element = _step$value[0],
+                prop_values_map = _step$value[1];
+
+              var element = root_element;
+
+              if (typeof selector_or_element === "string") {
+                if (selector_or_element !== "") {
+                  element = root_element.querySelector(selector_or_element);
+                }
+              } else {
+                element = selector_or_element;
+              }
+
+              if (element) {
+                var update_element_visibility = function update_element_visibility(visible) {
+                  if (visible) {
+                    element.classList.toggle("hidden", false);
+                  } else {
+                    element.classList.toggle("hidden", true);
+                  }
+                };
+
+                if (hide_low_opacity) {
+                  update_element_visibility(
+                    prop_values_map["opacity"] > 0 || getComputedStyle(element).opacity > 0.001
+                  );
+                }
+
+                anime.remove(element);
+
+                var full_params = _objectSpread(
+                  _objectSpread(_objectSpread({}, transition_props), prop_values_map),
+                  {},
+                  {
+                    targets: [element],
+                    complete: function complete() {
+                      if (hide_low_opacity) {
+                        update_element_visibility(getComputedStyle(element).opacity > 0.001);
+                      }
+
+                      if (on_done) {
+                        on_done(element);
+                      }
+                    },
+                  }
+                );
+
+                if (prop_values_map.hasOwnProperty("transform")) {
+                  var transform_val = full_params.transform;
+                  delete full_params.transform;
+
+                  if (!Array.isArray(transform_val)) {
+                    transform_val
+                      .match(/\S*\([^)]*/g)
+                      .map(function (x) {
+                        return x.split("(");
+                      })
+                      .forEach(function (_ref3) {
+                        var _ref4 = _slicedToArray(_ref3, 2),
+                          key = _ref4[0],
+                          val = _ref4[1];
+
+                        full_params[key] = val;
+                      });
+                  }
+                }
+
+                if (full_params.hasOwnProperty("easing")) {
+                  var mapping = {
+                    "": "linear",
+                    none: "linear",
+                    bounce: "easeOutBounce",
+                    "wind-up": "cubicBezier(0.4, -0.25, 0.8, 0.8)",
+                    snap: "cubicBezier(0.8, 0.85, 0.7, 1.15)",
+                    "ease-in-out": "cubicBezier(0.42, 0, 0.58, 1)",
+                    "ease-in": "cubicBezier(0.42, 0, 1, 1)",
+                    "ease-out": "cubicBezier(0, 0, 0.58, 1)",
+                  };
+                  var easing = full_params["easing"].trim().toLowerCase();
+
+                  if (mapping.hasOwnProperty(easing)) {
+                    easing = mapping[easing];
+                  } else if (easing.startsWith("cubic-bezier")) {
+                    easing = easing.replace("cubic-bezier", "cubicBezier");
+                  }
+
+                  full_params["easing"] = easing;
+                }
+
+                if (from_current_position) {
+                  convert_to_matching_positioning(element, full_params);
+                  Object.keys(sides_opposites).forEach(function (side) {
+                    if (full_params.hasOwnProperty(side)) {
+                      var value = full_params[side];
+
+                      var _normalize_to_percent = normalize_to_percent_and_offset(value),
+                        percent = _normalize_to_percent.percent,
+                        pixel_offset = _normalize_to_percent.pixel_offset;
+
+                      if (Math.abs(percent) < 0.001) {
+                        full_params[side] = pixel_offset + "px";
+                      } else {
+                        full_params[side] = percent + "%";
+                        full_params["margin-" + side] = pixel_offset + "px";
+                      }
+
+                      element.style[sides_opposites[side]] = "auto";
+                    }
+                  });
+                  containers.forEach(function (container) {
+                    if (full_params.hasOwnProperty(container)) {
+                      var value = full_params[container];
+
+                      var _normalize_to_percent2 = normalize_to_percent_and_offset(value),
+                        percent = _normalize_to_percent2.percent,
+                        pixel_offset = _normalize_to_percent2.pixel_offset;
+
+                      if (Math.abs(percent) < 0.001) {
+                        full_params[container] = pixel_offset + "px";
+                      } else {
+                        if (Math.abs(pixel_offset) > 0) {
+                          percent += to_relative_percent(element, container, pixel_offset);
+                          percent = Math.max(0, percent);
+                        }
+
+                        full_params[container] = percent + "%";
+                      }
+                    }
+                  });
+                }
+
+                anime(full_params);
+              }
+            };
+
+            for (_iterator.s(); !(_step = _iterator.n()).done; ) {
+              _loop();
+            }
+          } catch (err) {
+            _iterator.e(err);
+          } finally {
+            _iterator.f();
+          }
+        }
+
+        function timeline_get_changed_properties_between_states(
+          initial_element_state,
+          from_state_element_state,
+          to_state_element_state
+        ) {
+          var selector_to_props = {};
+          Object.entries(from_state_element_state).forEach(function (_ref5) {
+            var _ref6 = _slicedToArray(_ref5, 2),
+              selector = _ref6[0],
+              properties = _ref6[1];
+
+            selector_to_props[selector] = selector_to_props[selector] || {};
+            Object.entries(properties).forEach(function (_ref7) {
+              var _ref8 = _slicedToArray(_ref7, 2),
+                property = _ref8[0],
+                value = _ref8[1];
+
+              selector_to_props[selector][property] = initial_element_state[selector][property];
+            });
+          });
+          Object.entries(to_state_element_state).forEach(function (_ref9) {
+            var _ref10 = _slicedToArray(_ref9, 2),
+              selector = _ref10[0],
+              properties = _ref10[1];
+
+            selector_to_props[selector] = selector_to_props[selector] || {};
+            Object.entries(properties).forEach(function (_ref11) {
+              var _ref12 = _slicedToArray(_ref11, 2),
+                property = _ref12[0],
+                value = _ref12[1];
+
+              selector_to_props[selector][property] = value;
+            });
+          });
+          return selector_to_props;
+        }
+
+        function timeline_transitioning_to_state(
+          root_element,
+          initial_properties,
+          states_flow,
+          now_state_name,
+          transition_animation_time
+        ) {
+          var new_state_flow = states_flow[now_state_name];
+          var listener_cleanup_callbacks = [];
+
+          var _iterator2 = _createForOfIteratorHelper(new_state_flow.listeners),
+            _step2;
+
+          try {
+            var _loop2 = function _loop2() {
+              var listener_specs = _step2.value;
+
+              function on_listener_run() {
+                listener_cleanup_callbacks.forEach(function (callback) {
+                  return callback();
+                });
+                listener_cleanup_callbacks = [];
+                var next_state_name = listener_specs.change_to_state;
+                var this_state_element_state = states_flow[now_state_name].overrides;
+                var next_state_element_state = states_flow[next_state_name].overrides;
+                var element_selector_to_changed_properties = timeline_get_changed_properties_between_states(
+                  initial_properties,
+                  this_state_element_state,
+                  next_state_element_state
+                );
+                var longest_animation_time_ms = 0;
+                Object.entries(listener_specs.animations).forEach(function (_ref13) {
+                  var _ref14 = _slicedToArray(_ref13, 2),
+                    selector = _ref14[0],
+                    animation_specs = _ref14[1];
+
+                  var filtered_props = {};
+
+                  if (element_selector_to_changed_properties.hasOwnProperty(selector)) {
+                    filtered_props[selector] = element_selector_to_changed_properties[selector];
+                    longest_animation_time_ms = Math.max(
+                      longest_animation_time_ms,
+                      animation_specs.delay + animation_specs.duration
+                    );
+                    animate_elements(root_element, filtered_props, animation_specs);
+                  }
+                });
+                timeline_transitioning_to_state(
+                  root_element,
+                  initial_properties,
+                  states_flow,
+                  next_state_name,
+                  longest_animation_time_ms
+                );
+              }
+
+              var final_listener_specs = _objectSpread({}, listener_specs);
+
+              if (listener_specs.listener_type === "timer") {
+                final_listener_specs.delay += transition_animation_time;
+              }
+
+              var cleanup_callback = setup_listener(root_element, final_listener_specs, on_listener_run);
+              listener_cleanup_callbacks.push(cleanup_callback);
+            };
+
+            for (_iterator2.s(); !(_step2 = _iterator2.n()).done; ) {
+              _loop2();
+            }
+          } catch (err) {
+            _iterator2.e(err);
+          } finally {
+            _iterator2.f();
+          }
+        }
+
+        function run_when_doc_ready(fn) {
+          if (!document.getElementById("anime-js-script")) {
+            var animejs_element = document.createElement("script");
+            animejs_element.id = "anime-js-script";
+            animejs_element.setAttribute("src", "https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js");
+            animejs_element.setAttribute("integrity", "sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8=");
+            animejs_element.setAttribute("crossorigin", "anonymous");
+            document.head.appendChild(animejs_element);
+          }
+
+          if (!document.getElementById("imgloaded-js-script")) {
+            var imgloaded_element = document.createElement("script");
+            imgloaded_element.id = "imgloaded-js-script";
+            imgloaded_element.setAttribute("src", "https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js");
+            document.head.appendChild(imgloaded_element);
+          }
+
+          if (window.anime === undefined || window.imagesLoaded === undefined) {
+            setTimeout(function () {
+              return run_when_doc_ready(fn);
+            }, 50);
+            return;
+          }
+
+          if (document.readyState === "complete" || document.readyState === "interactive") {
+            setTimeout(fn, 1);
+          } else {
+            document.addEventListener("DOMContentLoaded", fn);
+          }
+        }
+
+        function timeline_load_initial_values(components) {
+          components.forEach(function (component) {
+            var root_element = document.querySelector(component.root_element);
+            var states_flow = component.states_flow;
+            var initial_state_name = component.initial_state_name;
+            var initial_properties = {};
+            Object.values(component.states_flow).forEach(function (state_spec) {
+              Object.entries(state_spec.overrides).forEach(function (_ref15) {
+                var _ref16 = _slicedToArray(_ref15, 2),
+                  selector = _ref16[0],
+                  properties = _ref16[1];
+
+                initial_properties[selector] = initial_properties[selector] || {};
+                var element = selector === "" ? root_element : root_element.querySelector(selector);
+                Object.keys(properties).forEach(function (property) {
+                  initial_properties[selector][property] =
+                    element.style[property] ||
+                    (property === "transform" && "rotate(0deg)") ||
+                    window.getComputedStyle(element)[property];
+                });
+              });
+            });
+            Object.entries(component.states_flow[initial_state_name].overrides).forEach(function (_ref17) {
+              var _ref18 = _slicedToArray(_ref17, 2),
+                selector = _ref18[0],
+                properties = _ref18[1];
+
+              var element = selector === "" ? root_element : root_element.querySelector(selector);
+              animate_elements(
+                element,
+                {
+                  "": properties,
+                },
+                {
+                  duration: 0,
+                }
+              );
+            });
+            timeline_transitioning_to_state(root_element, initial_properties, states_flow, initial_state_name, 0);
+          });
+          document.querySelectorAll(".not-ready").forEach(function (x) {
+            return x.classList.remove("not-ready");
+          });
+        }
+
+        function autoanim_get_current_view() {
+          var hash = window.location.hash && window.location.hash.slice(1);
+          var screen_element = document.querySelector(".screen");
+          var screens_slugs = screen_element.getAttribute("data-screens").split(",");
+          var page = screen_element.getAttribute("data-page");
+
+          if (screens_slugs.indexOf(hash) !== -1) {
+            return [page, hash];
+          }
+
+          var _iterator3 = _createForOfIteratorHelper(screens_slugs),
+            _step3;
+
+          try {
+            for (_iterator3.s(); !(_step3 = _iterator3.n()).done; ) {
+              var slug = _step3.value;
+
+              if (screen_element.classList.contains(slug)) {
+                return [page, slug];
+              }
+            }
+          } catch (err) {
+            _iterator3.e(err);
+          } finally {
+            _iterator3.f();
+          }
+
+          return [page, page];
+        }
+
+        function autoanim_redirect(specs, event) {
+          var actions = specs.split(";");
+
+          var _autoanim_get_current = autoanim_get_current_view(),
+            _autoanim_get_current2 = _slicedToArray(_autoanim_get_current, 2),
+            page = _autoanim_get_current2[0],
+            current_screen = _autoanim_get_current2[1];
+
+          var _iterator4 = _createForOfIteratorHelper(actions),
+            _step4;
+
+          try {
+            for (_iterator4.s(); !(_step4 = _iterator4.n()).done; ) {
+              var action = _step4.value;
+
+              var _action$split = action.split(","),
+                _action$split2 = _slicedToArray(_action$split, 5),
+                from_screen = _action$split2[0],
+                target_url = _action$split2[1],
+                link_target_attribute = _action$split2[2],
+                easing = _action$split2[3],
+                duration = _action$split2[4];
+
+              from_screen = decodeURIComponent(from_screen);
+              target_url = decodeURIComponent(target_url);
+              duration = parseInt(duration, 10);
+
+              if (from_screen === "*" || from_screen === current_screen) {
+                var js_run = target_url.match(/\s*javascript\:(.*)/);
+
+                if (js_run) {
+                  eval(js_run[1]);
+                  event.stopPropagation();
+                  return false;
+                } else if (target_url.indexOf(page + "#") === 0) {
+                  autoanim_change_to_screen(current_screen, target_url.split("#")[1], easing, duration);
+                  event.stopPropagation();
+                  return false;
+                } else {
+                  window.open(target_url, link_target_attribute);
+                  event.stopPropagation();
+                  return false;
+                }
+              }
+            }
+          } catch (err) {
+            _iterator4.e(err);
+          } finally {
+            _iterator4.f();
+          }
+
+          return false;
+        }
+
+        function autoanim_reorder_by_z_indexes() {
+          var parents_contained_z_values = new Map();
+          var children_z = new Map();
+
+          var _iterator5 = _createForOfIteratorHelper(document.querySelectorAll(".screen[data-screens] *")),
+            _step5;
+
+          try {
+            for (_iterator5.s(); !(_step5 = _iterator5.n()).done; ) {
+              var element = _step5.value;
+              var computed_style = getComputedStyle(element);
+
+              if (["br", "#text", "#comment", "svg"].includes(element.nodeName && element.nodeName.toLowerCase())) {
+                continue;
+              }
+
+              var z = parseInt(computed_style.getPropertyValue("--z-index"));
+
+              if (z !== -1) {
+                if (!parents_contained_z_values.has(element.parentNode)) {
+                  parents_contained_z_values.set(element.parentNode, {});
+                }
+
+                var parent_z_values = parents_contained_z_values.get(element.parentNode);
+                parent_z_values[z] = true;
+                children_z.set(element, z);
+              }
+            }
+          } catch (err) {
+            _iterator5.e(err);
+          } finally {
+            _iterator5.f();
+          }
+
+          var _iterator6 = _createForOfIteratorHelper(parents_contained_z_values.entries()),
+            _step6;
+
+          try {
+            for (_iterator6.s(); !(_step6 = _iterator6.n()).done; ) {
+              var comparator = function comparator(a, b) {
+                var a_z = children_z.has(a) ? parseInt(children_z.get(a)) : -1;
+                var b_z = children_z.has(b) ? parseInt(children_z.get(b)) : -1;
+
+                if (a_z > b_z) {
+                  return 1;
+                } else if (a_z < b_z) {
+                  return -1;
+                }
+
+                return 0;
+              };
+
+              var _step6$value = _slicedToArray(_step6.value, 2),
+                parent = _step6$value[0],
+                z_values = _step6$value[1];
+
+              if (Object.keys(z_values).length <= 1) {
+                continue;
+              }
+
+              var children_sorted = _toConsumableArray(parent.children);
+
+              children_sorted.sort(comparator);
+
+              var _iterator7 = _createForOfIteratorHelper(children_sorted),
+                _step7;
+
+              try {
+                for (_iterator7.s(); !(_step7 = _iterator7.n()).done; ) {
+                  var child = _step7.value;
+                  parent.appendChild(child);
+                }
+              } catch (err) {
+                _iterator7.e(err);
+              } finally {
+                _iterator7.f();
+              }
+            }
+          } catch (err) {
+            _iterator6.e(err);
+          } finally {
+            _iterator6.f();
+          }
+        }
+
+        function autoanim_change_to_screen(current_slug, target_slug, easing, duration) {
+          var push_history = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : true;
+          var screen_node = document.querySelector(".screen[data-screens]");
+
+          if (screen_node.current_timed_transition) {
+            window.clearTimeout(screen_node.current_timed_transition);
+            screen_node.current_timed_transition = null;
+          }
+
+          var autoanim_data = screen_node.autoanim;
+          var new_styles = autoanim_data[target_slug];
+          var old_styles = autoanim_data[current_slug];
+
+          if (duration) {
+            var per_element_animated_props = new Map();
+            var all_elements = new Set(
+              [].concat(_toConsumableArray(new_styles.keys()), _toConsumableArray(old_styles.keys()))
+            );
+
+            var _iterator8 = _createForOfIteratorHelper(all_elements.values()),
+              _step8;
+
+            try {
+              for (_iterator8.s(); !(_step8 = _iterator8.n()).done; ) {
+                var element = _step8.value;
+                var new_element_style = new_styles.get(element);
+                var old_element_style = old_styles.get(element);
+
+                if (!new_element_style && !old_element_style) {
+                  continue;
+                }
+
+                var this_element_animated_props = {};
+
+                var _iterator9 = _createForOfIteratorHelper(autoanimated_properties),
+                  _step9;
+
+                try {
+                  for (_iterator9.s(); !(_step9 = _iterator9.n()).done; ) {
+                    var prop = _step9.value;
+                    var new_value =
+                      new_element_style === null || new_element_style === void 0 ? void 0 : new_element_style[prop];
+                    var old_value =
+                      old_element_style === null || old_element_style === void 0 ? void 0 : old_element_style[prop];
+
+                    if (new_value == null && old_value == null) {
+                      continue;
+                    }
+
+                    if (autoanimated_properties_from_zero.includes(prop)) {
+                      new_value = new_value || 0;
+                      old_value = old_value || 0;
+                    } else {
+                      new_value = new_value !== undefined ? new_value : old_value;
+                      old_value = old_value !== undefined ? old_value : new_value;
+                    }
+
+                    this_element_animated_props[prop] = [old_value, new_value];
+                  }
+                } catch (err) {
+                  _iterator9.e(err);
+                } finally {
+                  _iterator9.f();
+                }
+
+                if (Object.keys(this_element_animated_props).length !== 0) {
+                  per_element_animated_props.set(element, this_element_animated_props);
+                }
+              }
+            } catch (err) {
+              _iterator8.e(err);
+            } finally {
+              _iterator8.f();
+            }
+
+            var has_reordered = false;
+            var root_element = document.querySelector(".screen");
+            animate_elements(
+              root_element,
+              per_element_animated_props,
+              {
+                duration: duration,
+                easing: easing,
+              },
+              function (element) {
+                element.removeAttribute("style");
+
+                if (!has_reordered) {
+                  autoanim_reorder_by_z_indexes();
+                  has_reordered = true;
+                }
+              },
+              false,
+              false
+            );
+          } else {
+            setTimeout(autoanim_reorder_by_z_indexes);
+          }
+
+          var screen_element = document.querySelector(".screen");
+          var screens_slugs = screen_element.getAttribute("data-screens").split(",");
+
+          var _iterator10 = _createForOfIteratorHelper(screens_slugs),
+            _step10;
+
+          try {
+            for (_iterator10.s(); !(_step10 = _iterator10.n()).done; ) {
+              var slug = _step10.value;
+              screen_element.classList.toggle(slug, slug === target_slug);
+            }
+          } catch (err) {
+            _iterator10.e(err);
+          } finally {
+            _iterator10.f();
+          }
+
+          last_set_hash = "#" + target_slug;
+
+          if (history.pushState && current_slug && push_history) {
+            history.pushState(null, null, last_set_hash);
+          } else if (push_history) {
+            location.hash = last_set_hash;
+          } else {
+            window.location.replace(("" + window.location).split("#")[0] + last_set_hash);
+          }
+
+          var timed_transitions = screen_node.getAttribute("data-transitions");
+
+          if (timed_transitions) {
+            var _iterator11 = _createForOfIteratorHelper(timed_transitions.split(";")),
+              _step11;
+
+            try {
+              var _loop3 = function _loop3() {
+                var transition = _step11.value;
+
+                var _transition$split = transition.split(","),
+                  _transition$split2 = _slicedToArray(_transition$split, 5),
+                  transition_from_screen = _transition$split2[0],
+                  transition_to_screen = _transition$split2[1],
+                  delay = _transition$split2[2],
+                  easing = _transition$split2[3],
+                  duration_next = _transition$split2[4];
+
+                delay = parseInt(delay, 10);
+                easing = decodeURIComponent(easing);
+
+                if (target_slug === transition_from_screen) {
+                  if (duration) {
+                    delay += duration;
+                  }
+
+                  var delayed_exec_cb = function delayed_exec_cb() {
+                    screen_node.current_timed_transition = setTimeout(function () {
+                      autoanim_change_to_screen(
+                        transition_from_screen,
+                        transition_to_screen,
+                        easing,
+                        parseInt(duration_next, 10),
+                        false
+                      );
+                    }, Math.max(delay, 1));
+                    window.Lib.imagesLoadedFinished = true;
+                  };
+
+                  if (window.Lib.imagesLoadedFinished) {
+                    delayed_exec_cb();
+                  } else {
+                    imagesLoaded(
+                      ".screen *",
+                      {
+                        background: true,
+                      },
+                      delayed_exec_cb
+                    );
+                  }
+
+                  return "break";
+                }
+              };
+
+              for (_iterator11.s(); !(_step11 = _iterator11.n()).done; ) {
+                var _ret = _loop3();
+
+                if (_ret === "break") break;
+              }
+            } catch (err) {
+              _iterator11.e(err);
+            } finally {
+              _iterator11.f();
+            }
+          }
+        }
+
+        function transform_matrix_to_rotation(matrix_str) {
+          if (!matrix_str) {
+            return 0;
+          }
+
+          var split = matrix_str.split(/,|\(/);
+
+          if (!split || split.length !== 7) {
+            return 0;
+          }
+
+          var a = parseFloat(split[1]);
+          var b = parseFloat(split[2]);
+          return Math.round(Math.atan2(b, a) * (180 / Math.PI));
+        }
+
+        function autoanim_collect_styles(root_element) {
+          var css_by_screen = {};
+          var screens_slugs = root_element.getAttribute("data-screens").split(",");
+
+          var _iterator12 = _createForOfIteratorHelper(screens_slugs),
+            _step12;
+
+          try {
+            for (_iterator12.s(); !(_step12 = _iterator12.n()).done; ) {
+              var target_slug = _step12.value;
+
+              var _iterator13 = _createForOfIteratorHelper(screens_slugs),
+                _step13;
+
+              try {
+                for (_iterator13.s(); !(_step13 = _iterator13.n()).done; ) {
+                  var slug = _step13.value;
+                  root_element.classList.toggle(slug, slug === target_slug);
+                }
+              } catch (err) {
+                _iterator13.e(err);
+              } finally {
+                _iterator13.f();
+              }
+
+              css_by_screen[target_slug] = new Map();
+
+              var _iterator14 = _createForOfIteratorHelper(root_element.querySelectorAll("*")),
+                _step14;
+
+              try {
+                for (_iterator14.s(); !(_step14 = _iterator14.n()).done; ) {
+                  var animated_obj = _step14.value;
+                  var computed_style = getComputedStyle(animated_obj);
+
+                  if (computed_style.backgroundImage !== "none") {
+                    var pic = new Image();
+                    pic.src = computed_style.backgroundImage;
+                  }
+
+                  var zindex = parseInt(computed_style.getPropertyValue("--z-index"));
+
+                  if (zindex === -1) {
+                    continue;
+                  }
+
+                  var autoanim_props = {};
+
+                  var _iterator15 = _createForOfIteratorHelper(autoanimated_properties),
+                    _step15;
+
+                  try {
+                    for (_iterator15.s(); !(_step15 = _iterator15.n()).done; ) {
+                      var prop = _step15.value;
+                      var val = computed_style.getPropertyValue(prop);
+
+                      if (prop === "transform") {
+                        var rotation = transform_matrix_to_rotation(val);
+
+                        if (rotation) {
+                          autoanim_props["rotate"] = rotation;
+                        }
+                      } else if (val && val !== "none") {
+                        autoanim_props[prop] = computed_style.getPropertyValue(prop);
+                      }
+                    }
+                  } catch (err) {
+                    _iterator15.e(err);
+                  } finally {
+                    _iterator15.f();
+                  }
+
+                  autoanim_props["--z-index"] = zindex;
+                  css_by_screen[target_slug].set(animated_obj, autoanim_props);
+                }
+              } catch (err) {
+                _iterator14.e(err);
+              } finally {
+                _iterator14.f();
+              }
+            }
+          } catch (err) {
+            _iterator12.e(err);
+          } finally {
+            _iterator12.f();
+          }
+
+          root_element.autoanim = css_by_screen;
+        }
+
+        function init_timeline_components() {
+          run_when_doc_ready(function () {
+            var _iterator16 = _createForOfIteratorHelper(document.querySelectorAll(".component-wrapper")),
+              _step16;
+
+            try {
+              for (_iterator16.s(); !(_step16 = _iterator16.n()).done; ) {
+                var element = _step16.value;
+
+                if (element.timeline_data) {
+                  timeline_load_initial_values(element.timeline_data);
+                }
+              }
+            } catch (err) {
+              _iterator16.e(err);
+            } finally {
+              _iterator16.f();
+            }
+          });
+        }
+
+        function init_auto_animate() {
+          var screen_element = document.querySelector(".screen[data-screens]");
+
+          if (!screen_element) {
+            return;
+          }
+
+          screen_element.style.opacity = 0;
+          run_when_doc_ready(function () {
+            var _iterator17 = _createForOfIteratorHelper(document.querySelectorAll(".hidden")),
+              _step17;
+
+            try {
+              for (_iterator17.s(); !(_step17 = _iterator17.n()).done; ) {
+                var element = _step17.value;
+                element.classList.remove("hidden");
+              }
+            } catch (err) {
+              _iterator17.e(err);
+            } finally {
+              _iterator17.f();
+            }
+
+            var screen_element = document.querySelector(".screen[data-screens]");
+            screen_element.style.opacity = 1;
+
+            if (screen_element) {
+              var initial_screen = autoanim_get_current_view()[1];
+              autoanim_collect_styles(screen_element);
+              autoanim_change_to_screen(null, initial_screen);
+
+              window.onhashchange = function () {
+                if (last_set_hash !== location.hash) {
+                  autoanim_change_to_screen(null, autoanim_get_current_view()[1]);
+                }
+              };
+            }
+          });
+        }
+
+        window.Lib = {
+          autoanim_redirect: autoanim_redirect,
+        };
+        setTimeout(init_timeline_components, 0);
+        setTimeout(init_auto_animate, 0);
+      })();
+    </script>
+  </body>
+</html>

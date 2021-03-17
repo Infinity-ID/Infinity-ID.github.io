@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, maximum-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <link rel="stylesheet" type="text/css" href="css/assets2.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Montserrat:400,300,700|Poppins:400,300,700,400italic");
+
+      @font-face {
+        font-family: "Runda-Normal";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://anima-uploads.s3.amazonaws.com/5d6ba63d97ac03b9cb7754ad/.7909.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "MuseoSans-700";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://anima-uploads.s3.amazonaws.com/5bf7a2010c3abe000b678507/MuseoSans-700.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "Runda-Light";
+        font-style: normal;
+        font-weight: 300;
+        src: url("https://anima-uploads.s3.amazonaws.com/5d6ba63d97ac03b9cb7754ad/.7915.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "Runda-Medium";
+        font-style: normal;
+        font-weight: 500;
+        src: url("https://anima-uploads.s3.amazonaws.com/5c8205c4598af3000ac880f3/Runda Medium.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "Runda-Bold";
+        font-style: normal;
+        font-weight: 700;
+        src: url("https://anima-uploads.s3.amazonaws.com/5c8205c4598af3000ac880f3/Runda Bold.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "Arial-Bold";
+        font-style: normal;
+        font-weight: 700;
+        src: url("https://anima-uploads.s3.amazonaws.com/5c58c99ae21217000c4e869b/arial.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "MuseoSans-500";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://anima-uploads.s3.amazonaws.com/5bf7a2010c3abe000b678507/Museo Sans.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "BrandonGrotesque-Bold";
+        font-style: normal;
+        font-weight: 700;
+        src: url("https://anima-uploads.s3.amazonaws.com/5b3c7db95d6b6a00096731e2/.10296.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "MuseoSans-900";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://anima-uploads.s3.amazonaws.com/5b629ea4f333e4000bb23b2e/MuseoSans_900.otf") format("opentype");
+      }
+
+      .component-wrapper a,
+      .screen a {
+        text-decoration: none;
+        display: contents;
+      }
+
+      .full-width-a {
+        width: 100%;
+      }
+
+      .full-height-a {
+        height: 100%;
+      }
+
+      .screen textarea:focus,
+      .screen input:focus {
+        outline: none;
+      }
+
+      .screen *,
+      .component-wrapper * {
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .screen div {
+        -webkit-text-size-adjust: none;
+      }
+
+      .container-center-vertical,
+      .container-center-horizontal {
+        pointer-events: none;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+      }
+
+      .container-center-vertical {
+        align-items: center;
+        height: 100%;
+      }
+
+      .container-center-horizontal {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .container-center-vertical > *,
+      .container-center-horizontal > * {
+        pointer-events: auto;
+        flex-shrink: 0;
+      }
+
+      .component-wrapper,
+      .screen {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-all;
+        word-break: break-word;
+      }
+
+      .auto-animated div {
+        opacity: 0;
+        position: absolute;
+        --z-index: -1;
+      }
+
+      .auto-animated .container-center-vertical,
+      .auto-animated .container-center-horizontal {
+        opacity: 1;
+      }
+
+      .overlay {
+        position: absolute;
+        opacity: 0;
+        display: none;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+      }
+
+      .animate-appear {
+        opacity: 0;
+        display: block;
+        animation: reveal 0.3s ease-in-out 1 normal forwards;
+      }
+
+      .animate-disappear {
+        opacity: 1;
+        display: block;
+        animation: reveal 0.3s ease-in-out 1 reverse forwards;
+      }
+
+      .animate-nodelay {
+        animation-delay: 0s;
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .align-self-flex-start {
+        align-self: flex-start;
+      }
+      .align-self-flex-end {
+        align-self: flex-end;
+      }
+      .align-self-flex-center {
+        align-self: center;
+      }
+      .valign-text-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .valign-text-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      input:focus {
+        outline: none;
+      }
+      .component-wrapper,
+      .component-wrapper * {
+        pointer-events: none;
+      }
+
+      .component-wrapper a *,
+      .component-wrapper a,
+      .component-wrapper input,
+      .component-wrapper video,
+      .component-wrapper iframe,
+      .listeners-active,
+      .listeners-active * {
+        pointer-events: auto;
+      }
+
+      .hidden,
+      .hidden * {
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .smart-layers-pointers,
+      .smart-layers-pointers * {
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      .component-wrapper.not-ready,
+      .component-wrapper.not-ready * {
+        visibility: hidden !important;
+      }
+
+      .listeners-active-click,
+      .listeners-active-click * {
+        cursor: pointer;
+      }
+    </style>
+    <meta name="author" content="AnimaApp.com - Design to code, Automated." />
+  </head>
+  <body style="margin: 0; background: rgba(255, 255, 255, 1)">
+    <input type="hidden" id="anPageName" name="page" value="assets2" />
+    <div class="container-center-horizontal">
+      <div class="assets2 screen">
+        <img class="infinit-yi-d-logo-C61RwL" src="img/infinityid-logo@1x.png" />
+        <img class="infinit-yi-d-logo-words-C61RwL" src="img/infinityid-logo-words@1x.png" />
+        <img class="infinit-yi-d-logo2-C61RwL" src="img/infinityid-logo2@1x.png" />
+        <img class="infinit-yi-d-logo3-C61RwL" src="img/infinityid-logo3@1x.png" />
+        <img class="idd2-C61RwL" src="img/idd2@1x.png" />
+        <img class="iid2-C61RwL" src="img/iid2@1x.png" />
+        <img class="iid-C61RwL" src="img/iid@1x.png" />
+        <div class="infinit-yi-d-logo-files-C61RwL runda-bold-mine-shaft-18px">INFINITYiD LOGO FILES:</div>
+      </div>
+    </div>
+  </body>
+</html>

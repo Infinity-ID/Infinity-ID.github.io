@@ -1,0 +1,109 @@
+/* screen - assets2 */
+
+.assets2 {
+  background-color: var(--white);
+  height: 1080px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1920px;
+}
+.assets2 .idd2-C61RwL {
+  background-color: transparent;
+  height: 179px;
+  left: 1136px;
+  position: absolute;
+  top: 183px;
+  width: 250px;
+}
+.assets2 .iid-C61RwL {
+  background-color: transparent;
+  height: 171px;
+  left: 784px;
+  position: absolute;
+  top: 192px;
+  width: 250px;
+}
+.assets2 .iid2-C61RwL {
+  background-color: transparent;
+  height: 182px;
+  left: 1490px;
+  position: absolute;
+  top: 181px;
+  width: 250px;
+}
+.assets2 .infinit-yi-d-logo-C61RwL {
+  background-color: transparent;
+  height: 256px;
+  left: 146px;
+  position: absolute;
+  top: 449px;
+  width: 500px;
+}
+.assets2 .infinit-yi-d-logo-files-C61RwL {
+  background-color: transparent;
+  height: 28px;
+  left: 272px;
+  letter-spacing: 1.80px;
+  line-height: 37px;
+  position: absolute;
+  text-align: center;
+  top: 365px;
+  white-space: nowrap;
+  width: 250px;
+}
+.assets2 .infinit-yi-d-logo-words-C61RwL {
+  background-color: transparent;
+  height: 137px;
+  left: 812px;
+  position: absolute;
+  top: 447px;
+  width: 900px;
+}
+.assets2 .infinit-yi-d-logo2-C61RwL {
+  background-color: transparent;
+  height: 136px;
+  left: 812px;
+  position: absolute;
+  top: 619px;
+  width: 900px;
+}
+.assets2 .infinit-yi-d-logo3-C61RwL {
+  background-color: transparent;
+  height: 136px;
+  left: 812px;
+  position: absolute;
+  top: 790px;
+  width: 900px;
+}
+.border-1px-white {
+  border: 1px solid var(--white);
+}
+.montserrat-bold-chetwode-blue-14px {
+  color: var(--chetwode-blue);
+  font-family: 'Montserrat', Helvetica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
+.montserrat-normal-mine-shaft-14px {
+  color: var(--mine-shaft);
+  font-family: 'Montserrat', Helvetica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+.runda-bold-mine-shaft-18px {
+  color: var(--mine-shaft);
+  font-family: 'Runda-Bold', Helvetica;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+}
+:root {
+  --black: rgba(0,0,0,1.0);
+  --chetwode-blue: rgba(140,124,252,1.0);
+  --mine-shaft: rgba(51,51,51,1.0);
+  --nebula: rgba(203,215,212,1.0);
+  --white: rgba(255,255,255,1.0);
+}

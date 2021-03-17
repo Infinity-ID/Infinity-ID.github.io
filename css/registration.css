@@ -1,0 +1,436 @@
+/* screen - registration */
+
+.border-1px-white {
+  border: 1px solid var(--white);
+}
+.montserrat-bold-chetwode-blue-14px {
+  color: var(--chetwode-blue);
+  font-family: 'Montserrat', Helvetica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
+.montserrat-normal-mine-shaft-14px {
+  color: var(--mine-shaft);
+  font-family: 'Montserrat', Helvetica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+.registration {
+  background-color: var(--white);
+  background-image: url(../img/3d-grid-perspective-concept-digital-network-data-visualization-1@1x.png);
+  background-size: 100% 100%;
+  height: 768px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1366px;
+}
+.registration .a-blockchain-so-crypto-rewards-C61RwL {
+  background-color: transparent;
+  color: var(--white);
+  font-family: "Museo Sans", Helvetica;
+  font-size: 21px;
+  height: 51px;
+  left: 138px;
+  letter-spacing: 1.58px;
+  line-height: 37px;
+  position: absolute;
+  text-align: left;
+  top: 253px;
+  width: 1091px;
+}
+.registration .email-address-KbsN0q {
+  background-color: transparent;
+  height: 20px;
+  left: 9px;
+  letter-spacing: 0.28px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 2px;
+  white-space: nowrap;
+  width: 114px;
+}
+.registration .full-name-QmbgjY {
+  background-color: transparent;
+  height: 20px;
+  left: 9px;
+  letter-spacing: 0.28px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 2px;
+  white-space: nowrap;
+  width: 78px;
+}
+.registration .full-name-box-GqmeGh {
+  background-color: transparent;
+  height: 70px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 315px;
+}
+.registration .full-name-box-Pccg2M {
+  background-color: transparent;
+  height: 70px;
+  left: 686px;
+  position: absolute;
+  top: 0px;
+  width: 315px;
+}
+.registration .full-name-box-dCiraq {
+  background-color: transparent;
+  height: 70px;
+  left: 686px;
+  position: absolute;
+  top: 0px;
+  width: 315px;
+}
+.registration .full-name-box-dK8V9u {
+  background-color: transparent;
+  height: 70px;
+  left: 343px;
+  position: absolute;
+  top: 0px;
+  width: 315px;
+}
+.registration .full-name-box-kwomyW {
+  background-color: transparent;
+  height: 70px;
+  left: 343px;
+  position: absolute;
+  top: 0px;
+  width: 315px;
+}
+.registration .full-name-box-l9AyEk {
+  background-color: transparent;
+  height: 70px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 315px;
+}
+.registration .infinit-yi-d-logo-C61RwL {
+  background-color: transparent;
+  height: 90px;
+  left: 139px;
+  position: absolute;
+  top: 150px;
+  width: 175px;
+}
+.registration .login-mT7s7X {
+  background-color: transparent;
+  bottom: calc(39.00% - 9px);
+  color: var(--white);
+  font-family: 'Montserrat', Helvetica;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  height: 24px;
+  left: 0px;
+  letter-spacing: 1.30px;
+  line-height: 13px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% + 2px);
+}
+.registration .on-Igz3QQ {
+  background-color: transparent;
+  bottom: calc(28.53% - 4px);
+  color: var(--white);
+  font-family: 'Montserrat', Helvetica;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 700;
+  height: 13px;
+  left: calc(26.15% - 4px);
+  letter-spacing: 0.00px;
+  line-height: 9px;
+  position: absolute;
+  text-align: right;
+  white-space: nowrap;
+  width: 16px;
+}
+.registration .password-confirm-lI0gH7 {
+  background-color: transparent;
+  height: 20px;
+  left: 9px;
+  letter-spacing: 0.28px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 2px;
+  white-space: nowrap;
+  width: 138px;
+}
+.registration .password-l5nwLB {
+  background-color: transparent;
+  height: 20px;
+  left: 9px;
+  letter-spacing: 0.28px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 2px;
+  white-space: nowrap;
+  width: 74px;
+}
+.registration .path-273-KbsN0q {
+  background-color: transparent;
+  height: calc(100.00% - 22px);
+  left: 0px;
+  position: absolute;
+  top: 22px;
+  width: 100%;
+}
+.registration .path-273-l5nwLB {
+  background-color: transparent;
+  height: calc(100.00% - 22px);
+  left: 0px;
+  position: absolute;
+  top: 22px;
+  width: 100%;
+}
+.registration .phone-number-xGjfmt {
+  background-color: transparent;
+  height: 20px;
+  left: 9px;
+  letter-spacing: 0.28px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 2px;
+  white-space: nowrap;
+  width: 114px;
+}
+.registration .recieve-sms-updates-C61RwL {
+  background-color: transparent;
+  color: var(--white);
+  font-family: 'Poppins', Helvetica;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  height: 30px;
+  left: 149px;
+  letter-spacing: 0.38px;
+  line-height: 37px;
+  position: absolute;
+  text-align: left;
+  top: 490px;
+  white-space: nowrap;
+  width: 179px;
+}
+.registration .rectangle-1473-A9qSlz {
+  background-color: var(--white);
+  border-radius: 24px;
+  height: calc(100.00% - 22px);
+  left: 0px;
+  position: absolute;
+  top: 22px;
+  width: 100%;
+}
+.registration .rectangle-1473-QmbgjY {
+  background-color: var(--white);
+  border-radius: 24px;
+  height: calc(100.00% - 22px);
+  left: 0px;
+  position: absolute;
+  top: 22px;
+  width: 100%;
+}
+.registration .rectangle-1473-lI0gH7 {
+  background-color: var(--white);
+  border-radius: 24px;
+  height: calc(100.00% - 22px);
+  left: 0px;
+  position: absolute;
+  top: 22px;
+  width: 100%;
+}
+.registration .rectangle-1473-xGjfmt {
+  background-color: var(--white);
+  border-radius: 24px;
+  height: calc(100.00% - 22px);
+  left: 0px;
+  position: absolute;
+  top: 22px;
+  width: 100%;
+}
+.registration .rectangle-1479-mT7s7X {
+  background: linear-gradient(252.21deg, #6e68e5 0%, #83ddf2 88.92%);
+  background-color: transparent;
+  border: 2px solid var(--white);
+  border-radius: 40px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.registration .rectangle-658-Igz3QQ {
+  background-color: var(--white);
+  border-radius: 40px;
+  height: calc(100.00% - 8px);
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 18px;
+}
+.registration .repeat-grid-27-C61RwL {
+  background-color: transparent;
+  height: 177px;
+  left: 139px;
+  position: absolute;
+  top: 309px;
+  width: 1001px;
+}
+.registration .sarah-parmenter-QmbgjY {
+  background-color: transparent;
+  bottom: calc(26.00% - 5px);
+  height: 20px;
+  left: 20px;
+  letter-spacing: 0.28px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 81px);
+}
+.registration .sarah-uk-A9qSlz {
+  background-color: transparent;
+  bottom: calc(26.00% - 5px);
+  color: var(--black);
+  font-family: 'Montserrat', Helvetica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  height: 20px;
+  left: 20px;
+  letter-spacing: 0.28px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 81px);
+}
+.registration .sarahinfinityio-KbsN0q {
+  background-color: transparent;
+  bottom: calc(26.00% - 5px);
+  height: 20px;
+  left: 20px;
+  letter-spacing: 0.28px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 81px);
+}
+.registration .sign-up-button-C61RwL {
+  background-color: transparent;
+  height: 51px;
+  left: 139px;
+  position: absolute;
+  top: 544px;
+  width: 160px;
+}
+.registration .span0-XMYckQ {
+  color: rgba(255,255,255,1.0);
+  font-family: 'MuseoSans-500', Helvetica;
+  font-style: normal;
+  font-weight: 400;
+}
+.registration .span1-XMYckQ {
+  color: rgba(255,255,255,1.0);
+  font-family: 'MuseoSans-900', Helvetica;
+  font-style: normal;
+  font-weight: 400;
+}
+.registration .textlabel-l5nwLB {
+  background-color: transparent;
+  bottom: calc(26.00% - 5px);
+  height: 20px;
+  left: 20px;
+  letter-spacing: 0.28px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 81px);
+}
+.registration .textlabel-lI0gH7 {
+  background-color: transparent;
+  bottom: calc(26.00% - 5px);
+  color: var(--black);
+  font-family: 'Montserrat', Helvetica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  height: 20px;
+  left: 20px;
+  letter-spacing: 0.28px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 81px);
+}
+.registration .toggle-on-C61RwL {
+  background-color: rgba(94,201,253,1.0);
+  border-radius: 40px;
+  height: 23px;
+  left: 328px;
+  position: absolute;
+  top: 501px;
+  width: 50px;
+}
+.registration .username-A9qSlz {
+  background-color: transparent;
+  height: 20px;
+  left: 9px;
+  letter-spacing: 0.28px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: 2px;
+  white-space: nowrap;
+  width: 82px;
+}
+.registration .x03-x5jeaa {
+  background-color: transparent;
+  height: 70px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1001px;
+}
+.registration .x13-x5jeaa {
+  background-color: transparent;
+  height: 70px;
+  left: 0px;
+  position: absolute;
+  top: 90px;
+  width: 1001px;
+}
+.registration .xxx-xxx-xxx-xGjfmt {
+  background-color: transparent;
+  bottom: calc(26.00% - 5px);
+  height: 20px;
+  left: 20px;
+  letter-spacing: 0.28px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  width: calc(100.00% - 81px);
+}
+.runda-bold-mine-shaft-18px {
+  color: var(--mine-shaft);
+  font-family: 'Runda-Bold', Helvetica;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+}
+:root {
+  --black: rgba(0,0,0,1.0);
+  --chetwode-blue: rgba(140,124,252,1.0);
+  --mine-shaft: rgba(51,51,51,1.0);
+  --nebula: rgba(203,215,212,1.0);
+  --white: rgba(255,255,255,1.0);
+}
