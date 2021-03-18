@@ -1,0 +1,82 @@
+<html>
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+  <title>Signin Template for Bootstrap</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+ <!-- <script type="text/javascript" language="javascript" src="/js/loginscript.js"></script>-->
+   <script type="text/javascript" language="javascript" src="/js/jquery.js"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/style.css" type="text/css" rel="stylesheet"/>
+<link href="/signin.css" rel="stylesheet">
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script>
+  function callLogin(){
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    xmlHttpRequest=new XMLHttpRequest();
+    xmlHttpRequest.onreadystatechange=function() {
+      if (xmlHttpRequest.readyState==4 && xmlHttpRequest.status==200) {
+        var response = xmlHttpRequest.responseText;
+        if(response == 'success') {
+          var welcome_message = '<p class="welcome-message">Welcome, You have successfully loggedin!</p>';
+          document.getElementById("output").innerHTML = welcome_message;
+          setTimeout(function(){
+          window.location.href = '/dashboard';
+         }, 3000);
+        } else {
+          document.getElementById("messageBoxId").innerHTML="Invalid Credentials";
+          document.getElementById("messageBoxId").className="error-message";
+        }
+      }
+    }
+    xmlHttpRequest.open("GET","https://infinity-id.herokuapp.com/login2.php?email="+email+"&pwd="+password,true);
+    xmlHttpRequest.send();
+  }
+  </script>
+  
+</head>
+<body>
+
+
+<div class="container">
+    {% include nav2.html %}
+    <div class="row">
+      <div class="">
+    <h2>Login Here </h2>
+    <form action="" method="post" id="frmLogin">
+	 
+       
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      </div>
+      
+       
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+      </div>
+       
+      <input type="button" name="login" value="Login" class="btn btn-primary" onClick="callLogin();">   </form>
+  </div>
+</div></div>
+	<div id="output"><div id="messageBoxId"></div></div>
+  <footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright © {{ site.name }} <span id="thisyear"></span></p>
+        </div>
+    </div>
+    <!-- /.row -->
+</footer>
+
+</body>
+</html>
