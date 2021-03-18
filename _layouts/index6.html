@@ -87,7 +87,7 @@
       h.append('Authentication', `Bearer ${token}`);
 
       let req = new Request(url, {
-          method: 'GET',
+          method: 'POST',
           mode: 'cors',
           headers: h
       });
