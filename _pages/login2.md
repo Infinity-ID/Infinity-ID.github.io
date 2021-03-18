@@ -1,5 +1,5 @@
 ---
-layout: login
+layout: login2
 title: login
 permalink: /login/
 image: "/assets/making-conference-badge-better-hero.png"

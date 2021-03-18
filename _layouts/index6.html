@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Signin Template · Bootstrap</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bgimg-1 {
+        height: 100%;
+      }
+      .h32 {
+        color: white;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="../css/signin6.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<!--<div class="bgimg-1">-->
+    <form class="form-signin">
+  <img class="mb-4" src="../img/infinityid-logo-1@1x.png" alt=""  height="72">
+  <h1 class="h3 mb-3 font-weight-normal h32">Please sign in</h1>
+  <label for="inputEmail" class="sr-only h32">Email address</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+ <!-- <div class="checkbox mb-3">
+    <label class="h32">
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>-->
+ 
+  <input type="checkbox" checked style="color: white;" id="toggle-two" class="h32"></input><label style="color: white;">Remember me</label>
+<script>
+  $(function() {
+    $('#toggle-two').bootstrapToggle({
+      on: 'Enabled',
+      off: 'Disabled'
+    });
+  })
+</script><br /><br />
+  <button class="rounded-pill btn btn-lg btn-primary btn-block" type="submit" id="btnFetch">Sign in</button>
+  <p class="mt-5 mb-3 text-muted"><div class="h32">&copy; 2017-2020</div></p>
+</form>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('btnFetch').addEventListener('click', sendReq);
+      //pretend to get a token after logging in
+      sessionStorage.setItem('MyUniqueUserToken',
+          JSON.stringify(
+              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+              )
+      );
+  });
+
+  let sendReq = (ev) => {
+      let url = 'https://infinity-id.herokuapp.com/login.php';
+      let token = JSON.parse(sessionStorage.getItem('MyUniqueUserToken'));
+
+      let h = new Headers();
+      h.append('Authentication', `Bearer ${token}`);
+
+      let req = new Request(url, {
+          method: 'GET',
+          mode: 'cors',
+          headers: h
+      });
+      fetch(req)
+          .then(resp => resp.json())
+          .then(data => {
+              console.log(data[0]);
+          })
+          .catch(err => {
+              console.error(err.message);
+          })
+  }
+</script>
+<!--</div>-->
+</body>
+</html>

@@ -1,5 +1,5 @@
 ---
-layout: index5
+layout: index6
 title: example
 permalink: /example/
 image: "/assets/making-conference-badge-better-hero.png"
