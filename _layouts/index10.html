@@ -2,9 +2,12 @@
 <form name="person">
     <input name="name" value="John">
     <input name="surname" value="Smith">
+    
+<button onclick="myFunction()">Click me</button>
   </form>
   
   <script>
+      function myFunction() {
     // pre-fill FormData from the form
     let formData = new FormData(document.forms.person);
   
@@ -15,22 +18,22 @@
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "https://infinityidnode.herokuapp.com/api/auth/signin");
     xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("postman-token", "1eded23b-f797-08dd-72b3-d38af27ef6e0");
+    xhr.setRequestHeader("content-type", "application/json");
 
-xhr.onreadystatechange = function () {
+    xhr.onreadystatechange = function () {
    if (xhr.readyState === 4) {
       console.log(xhr.status);
       console.log(xhr.responseText);
    }};
 
-var data = `{
+    var data = `{
 	"email": "ered.com",
 	"password": "1234567",
 	"username":"comeface",
 	"roles": ["user"]
-}`;
+    }`;
     xhr.send(data);
     xhr.onload = () => alert(xhr.response);
+}
   </script>
   </body></html>
