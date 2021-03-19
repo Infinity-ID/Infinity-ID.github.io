@@ -28,13 +28,13 @@
       var result = JSON.parse(xhr.responseText);
    }};
 
-    var data = `{
+    var data1a = `{
 	"email": "` + data2 + `",
 	"password": "` + data3 + `",
 	"username":"` + data1 + `",
 	"roles": ["user"]
     }`;
-    xhr.send(data);
+    xhr.send(data1a);
     xhr.onload = () => alert(xhr.response);      
     var data7 = xhr.responseText;
 	
