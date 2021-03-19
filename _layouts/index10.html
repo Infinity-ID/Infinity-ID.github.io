@@ -36,9 +36,13 @@
     xhr.send(data);
     var data7 = xhr.response;
 
+    if( data7.indexOf('accessToken') >= 0){
+   xhr.onload = () => alert(xhr.response);
+    }      
+	      
 // log response
 console.log(data7);
-    xhr.onload = () => alert(xhr.response);
+   
 }
   </script>
   </body></html>
