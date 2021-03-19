@@ -25,8 +25,8 @@
    if (xhr.readyState === 4) {
       console.log(xhr.status);
       console.log(xhr.responseText);
-      var result = JSON.parse(xhr.response);
-      console.log(result.data);
+      var result = (xhr.responseText);
+      console.log(result);
    }};
 
     var data1a = `{
