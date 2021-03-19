@@ -13,6 +13,8 @@
    // formData.append("middle", "Lee");
   
     // send it out
+    var data1 = document.getElementById('name').value;
+    var data2 = "ered.com";
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "https://infinityidnode.herokuapp.com/api/auth/signin");
     xhr.setRequestHeader("cache-control", "no-cache");
@@ -25,7 +27,7 @@
    }};
 
     var data = `{
-	"email":` + `"ered.com",
+	"email": "` + data2 + `",
 	"password": "1234567",
 	"username":"comeface",
 	"roles": ["user"]
