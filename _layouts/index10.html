@@ -26,6 +26,7 @@
       console.log(xhr.status);
       console.log(xhr.responseText);
       var result = JSON.parse(xhr.responseText);
+      console.log(result.data);
    }};
 
     var data1a = `{
@@ -39,7 +40,7 @@
     var data7 = xhr.responseText;
 	
 // now you can access it's params:
-console.log(result.data);
+
 
     if( data7.indexOf('accessToken') >= 0){
  
