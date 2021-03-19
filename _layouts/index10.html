@@ -2,17 +2,15 @@
 <form name="person">
     <input name="name" value="John">
     <input name="surname" value="Smith">
-    
-<button onclick="myFunction()">Click me</button>
   </form>
-  
+  <button type="button" onclick="loadDoc()">Change Content</button>
   <script>
-      function myFunction() {
+      function loadDoc() {
     // pre-fill FormData from the form
-    let formData = new FormData(document.forms.person);
+   // let formData = new FormData(document.forms.person);
   
     // add one more field
-    formData.append("middle", "Lee");
+   // formData.append("middle", "Lee");
   
     // send it out
     let xhr = new XMLHttpRequest();
