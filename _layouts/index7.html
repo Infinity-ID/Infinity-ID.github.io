@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CORS - HTML5Rocks and NY Times</title>
+<style>
+	#ResponseContent {
+		width:66%;
+		padding:1% 2%;
+		background-color:#ccc;
+		margin-top:20px;
+	}
+	h2 {
+		margin:0;
+		padding:0;
+	}
+</style>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#btnhtml5rocks').click(function() {
+			$('#ResponseContent h2').html('Response Content');
+			$('#ResponseContent div').html('');
+			$.ajax({
+                "async": true,
+  "crossDomain": true,
+  "url": "https://infinityidnode.herokuapp.com/api/auth/signin",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json",
+    "cache-control": "no-cache",
+    "postman-token": "0bebb856-3a4f-9757-df4c-34f74d4240fd",
+    
+  },
+  "processData": false,
+  "data": "{\n\t\"email\": \"ered.com\",\n\t\"password\": \"1234567\",\n\t\"username\":\"comeface\",\n\t\"roles\": [\"user\"]\n}"
+				}
+			}).fail(function() {
+				alert("failed!");
+			});;
+		});
+		$('#btnnytimes').click(function() {
+			$('#ResponseContent h2').html('Response Content');
+			$('#ResponseContent div').html('');
+			$.ajax({
+				type: 'GET',
+				url: 'http://www.nytimes.com/',
+				success: function(response) {
+					var article = $(response).find('article').first().html();
+					$('#ResponseContent h2').html('Response Content - from NY Times');
+					$('#ResponseContent div').html(article);
+				}
+			}).fail(function() {
+				alert("failed!");
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btnhtml5rocks">Fetch HTML5 Rocks</button>
+	<button id="btnnytimes">Fetch NY Times</button>
+	<br>
+	<div id="ResponseContent">
+		<h2>Response Content</h2>
+		<div></div>
+	</div>
+</body>
+</html>
