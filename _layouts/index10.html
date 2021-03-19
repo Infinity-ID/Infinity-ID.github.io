@@ -14,7 +14,22 @@
     // send it out
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "https://infinityidnode.herokuapp.com/api/auth/signin");
-    xhr.send(formData);
+    xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("postman-token", "1eded23b-f797-08dd-72b3-d38af27ef6e0");
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+var data = `{
+	"email": "ered.com",
+	"password": "1234567",
+	"username":"comeface",
+	"roles": ["user"]
+}`;
   
     xhr.onload = () => alert(xhr.response);
   </script>
