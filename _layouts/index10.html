@@ -28,9 +28,11 @@
       var result = (xhr.responseText);
       console.log(result);
    }
-   else {
-   alert("Hello\nHow are you?");
-}};
+   if (xhr.status == 404) {
+            // I can live with that, log it and go on
+            console.log("file missing");
+            return;
+        }};
 
     var data1a = `{
 	"email": "` + data2 + `",
