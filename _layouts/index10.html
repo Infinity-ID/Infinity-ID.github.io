@@ -35,8 +35,8 @@
     }`;
     xhr.send(data);
     xhr.onload = () => alert(xhr.response);      
-    var data7 = xhr.response;
-	var result = JSON.parse(xhr.response);
+    var data7 = xhr.responseText;
+	var result = JSON.parse(xhr.responseText);
 // now you can access it's params:
 console.log(result.data);
 
