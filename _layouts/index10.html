@@ -25,6 +25,7 @@
    if (xhr.readyState === 4) {
       console.log(xhr.status);
       console.log(xhr.responseText);
+      var result = JSON.parse(xhr.responseText);
    }};
 
     var data = `{
@@ -36,7 +37,7 @@
     xhr.send(data);
     xhr.onload = () => alert(xhr.response);      
     var data7 = xhr.responseText;
-	var result = JSON.parse(xhr.responseText);
+	
 // now you can access it's params:
 console.log(result.data);
 
