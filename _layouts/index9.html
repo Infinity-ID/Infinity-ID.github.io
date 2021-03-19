@@ -12,35 +12,35 @@
 
     $("#Save").click(function () {
 
-        var person = new Object();
+        
+var url = "https://infinityidnode.herokuapp.com/api/auth/signin";
 
-        person.name = "Sourav";
+var xhr = new XMLHttpRequest();
+xhr.open("POST", url);
 
-        person.surname = "Kayal";
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("postman-token", "1eded23b-f797-08dd-72b3-d38af27ef6e0");
 
-        $.ajax({
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
 
-            url: 'https://infinityidnode.herokuapp.com/api/auth/signin',
+var data = `{
+	"email": "ered.com",
+	"password": "1234567",
+	"username":"comeface",
+	"roles": ["user"]
+}`;
 
-            type: 'POST',
+xhr.send(data);
 
-            dataType: 'json',
 
-            crossDomain: true,
+           
 
-            data: person,
-
-            success: function (data, textStatus, xhr) {
-
-                console.log('Cross domain POST data' + data);
-
-            },
-
-            error: function (xhr, textStatus, errorThrown) {
-
-                console.log(errorThrown);
-
-            }
+           
 
         });
 
