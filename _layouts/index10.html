@@ -27,16 +27,7 @@
       console.log(xhr.responseText);
       var result = (xhr.responseText);
       console.log(result);
-   }
-   if (xhr.status === 404) {
-            // I can live with that, log it and go on
-          //  console.log("file missing");
-        }
-    
-     if (xhr.status === 200) {
-            // I can live with that, log it and go on
-           // alert("you are cool");
-        }};
+   }};
 
     var data1a = `{
 	"email": "` + data2 + `",
@@ -44,6 +35,15 @@
 	"username":"` + data1 + `",
 	"roles": ["user"]
     }`;
+    if (xhr.status === 404) {
+            // I can live with that, log it and go on
+          console.log("file missing");
+        }
+    
+     if (xhr.status === 200) {
+            // I can live with that, log it and go on
+           alert("you are cool");
+        }
     xhr.send(data1a);
     xhr.onload = () => alert(xhr.response);      
     var data7 = xhr.responseText;
