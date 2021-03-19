@@ -2,7 +2,7 @@
 
 $.ajax({
     type: "POST",
-    url: "https://infinityidnode.herokuapp.com/api/auth/signin",
+    url: "https://infinityidnode.herokuapp.com/api/auth/signin", 
     data: formData,
     dataType: "json",
     encode: true,
