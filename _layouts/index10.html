@@ -1,7 +1,7 @@
 <html><head></head><body>
 <form name="person">
-    <input name="name" value="John">
-    <input name="surname" value="Smith">
+    <input id="name" name="name" value="John">
+    <input id="password" name="surname" value="Smith">
   </form>
   <button type="button" onclick="loadDoc()">Change Content</button>
   <script>
@@ -15,6 +15,7 @@
     // send it out
     var data1 = document.getElementById('name').value;
     var data2 = "ered.com";
+    var data3 = document.getElementById('password').value;
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "https://infinityidnode.herokuapp.com/api/auth/signin");
     xhr.setRequestHeader("cache-control", "no-cache");
@@ -28,8 +29,8 @@
 
     var data = `{
 	"email": "` + data2 + `",
-	"password": "1234567",
-	"username":"comeface",
+	"password": "` + data3 + `",
+	"username":"` + data2 + `",
 	"roles": ["user"]
     }`;
     xhr.send(data);
