@@ -1,142 +1,154 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.1.1">
-    <title>Signin Template · Bootstrap</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+<html>
+<head>
 
-    <!-- Bootstrap core CSS -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Jekyll v4.1.1">
+<title>Signin Template · Bootstrap</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+
+<!-- Bootstrap core CSS -->
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bgimg-1 {
-        height: 100%;
-      }
-      .h32 {
-        color: white;
-      }
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="../css/signin6.css" rel="stylesheet">
-  </head>
-  <body class="text-center">
-    
-<!--<div class="bgimg-1">-->
-    <form class="form-signin">
-  <img class="mb-4" src="../img/infinityid-logo-1@1x.png" alt=""  height="72">
-  <h1 class="h3 mb-3 font-weight-normal h32">Please sign in</h1>
-  <label for="inputEmail" class="sr-only h32">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
- <!-- <div class="checkbox mb-3">
-    <label class="h32">
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>-->
- 
-  <input type="checkbox" checked style="color: white;" id="toggle-two" class="h32"></input><label style="color: white;">Remember me</label>
 <script>
-  $(function() {
-    $('#toggle-two').bootstrapToggle({
-      on: 'Enabled',
-      off: 'Disabled'
-    });
-  })
+if ('https:' != window.location.protocol) {
+window.location.href = 'https:' + window.location.href.substring(
+window.location.protocol.length
+);
+}
+</script>
+
+<style>
+.bgimg-1 {
+height: 100%;
+}
+.h32 {
+color: white;
+}
+.bd-placeholder-img {
+font-size: 1.125rem;
+text-anchor: middle;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+@media (min-width: 768px) {
+.bd-placeholder-img-lg {
+font-size: 3.5rem;
+}
+}
+</style>
+<!-- Custom styles for this template -->
+<link href="../css/signin6.css" rel="stylesheet">
+
+</head>
+<body class="text-center">
+<form name="person">
+<img class="mb-4" src="../img/infinityid-logo-1@1x.png" alt=""  height="72">
+<h1 class="h3 mb-3 font-weight-normal h32">A Blockchain Social Platform to Monetize Your Own Data. Earn Crypto & Rewards!</h1>
+<table style="width:100%">
+<tr><td>
+<label for="name" class="sr-only h32">Full name</label>
+<input type="name" id="name" class="form-control" placeholder="Full Name" required autofocus>
+</td>
+<td>
+<label for="email" class="sr-only h32">Email Address</label>
+<input type="email" id="email" class="form-control" placeholder="Email Address" required autofocus>
+</td>
+<td>
+<label for="name" class="sr-only h32">Username</label>
+<input type="name" id="name" class="form-control" placeholder="Username" required autofocus>
+</td>
+</tr>
+<!-- <input id="name" name="name" value="John">-->
+<tr>
+<td>
+<label for="password" class="sr-only">Phone Number</label>
+<input type="password" id="password" class="form-control" placeholder="Password" required>
+</td>
+<td>
+<label for="password" class="sr-only">Password</label>
+<input type="password" id="password" class="form-control" placeholder="Password" required>
+</td>
+<td>
+<label for="password" class="sr-only">Password Confirm</label>
+<input type="password" id="password" class="form-control" placeholder="Password" required>
+</td>
+</tr>
+</table>
+<input type="checkbox" checked style="color: white;" id="toggle-two" class="h32"></input><label style="color: white;">Remember me</label>
+<script>
+$(function() {
+$('#toggle-two').bootstrapToggle({
+on: 'Enabled',
+off: 'Disabled'
+});
+})
 </script><br /><br />
-  <button class="rounded-pill btn btn-lg btn-primary btn-block" type="submit" id="btnFetch">Sign in</button>
-  <p class="mt-5 mb-3 text-muted"><div class="h32">&copy; 2017-2020</div></p>
+<button class="rounded-pill btn btn-lg btn-primary btn-block" type="button" id="btnFetch" onclick="loadDoc()">Sign in</button>
+<p class="mt-5 mb-3 text-muted"><div class="h32">&copy; 2017-2020</div></p>
 </form>
 <script>
- "async": true,
-  "crossDomain": true,
-  "url": "https://infinityidnode.herokuapp.com/api/auth/signin",
-  "method": "POST",
-  "headers": {
-    "content-type": "application/json",
-    "cache-control": "no-cache",
-    "postman-token": "0bebb856-3a4f-9757-df4c-34f74d4240fd"
-  },
-  "processData": false,
-  "data": "{\n\t\"email\": \"ered.com\",\n\t\"password\": \"1234567\",\n\t\"username\":\"comeface\",\n\t\"roles\": [\"user\"]\n}"
+function loadDoc() {
+// pre-fill FormData from the form
+// let formData = new FormData(document.forms.person);
 
-  $(document).ready(function () {
-  $("form").submit(function (event) {
-    var formData = {
-      name: $("#name").val(),
-      email: $("#email").val(),
-      superheroAlias: $("#superheroAlias").val(),
-    };
+// add one more field
+// formData.append("middle", "Lee");
 
-    $.ajax({
-      type: "POST",
-      url: "https://infinityidnode.herokuapp.com/api/auth/signin",
-      data: formData,
-      dataType: "json",
-      encode: true,
-    }).done(function (data) {
-      console.log(data);
-    });
+// send it out
+var data1 = document.getElementById('name').value;
+var data2 = "ered.com";
+var data3 = document.getElementById('password').value;
+let xhr = new XMLHttpRequest();
+xhr.open("POST", "https://infinityidnode.herokuapp.com/api/auth/signin");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("content-type", "application/json");
 
-    event.preventDefault();
-  });
-});
+xhr.onreadystatechange = function () {
+if (xhr.readyState === 4) {
+console.log(xhr.status);
+console.log(xhr.responseText);
+var result = (xhr.responseText);
+console.log(result);
+}};
 
+var data1a = `{
+"email": "` + data2 + `",
+"password": "` + data3 + `",
+"username":"` + data1 + `",
+"roles": ["user"]
+}`;
+if (xhr.status === 404) {
+// I can live with that, log it and go on
+console.log("file missing");
+}
+
+if (xhr.status === 200) {
+// I can live with that, log it and go on
+alert("you are cool");
+}
+xhr.send(data1a);
+xhr.onload = () => alert(xhr.response);      
+var data7 = xhr.responseText;
+
+// now you can access it's params:
+
+
+if( data7.indexOf('accessToken') >= 0){
+
+}      
+
+// log response
+//console.log(data7);
+
+
+}
 </script>
-<script> /*
-  document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('btnFetch').addEventListener('click', sendReq);
-      //pretend to get a token after logging in
-      sessionStorage.setItem('MyUniqueUserToken',
-          JSON.stringify(
-              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
-              )
-      );
-  });
-
-  let sendReq = (ev) => {
-      let url = 'https://infinityidnode.herokuapp.com/api/auth/signin';
-      let token = JSON.parse(sessionStorage.getItem('MyUniqueUserToken'));
-
-      let h = new Headers();
-      h.append('Authentication', `Bearer ${token}`);
-
-      let req = new Request(url, {
-          method: 'POST',
-          mode: 'cors',
-          headers: h
-      });
-      fetch(req)
-          .then(resp => resp.json())
-          .then(data => {
-              console.log(data[0]);
-          })
-          .catch(err => {
-              console.error(err.message);
-          })
-  }*/
-</script>
-<!--</div>-->
-</body>
-</html>
+</body></html>
