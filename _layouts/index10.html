@@ -50,11 +50,16 @@ font-size: 3.5rem;
 </head>
 <body class="text-center">
 <form name="person" class="form-signin">
-    <input id="name" name="name" value="John">
-    <input id="password" name="surname" value="Smith">
-  </form>
-  <button type="button" onclick="loadDoc()">Change Content</button>
-  <button class="rounded-pill btn btn-lg btn-primary btn-block" type="submit" id="btnFetch" onclick="loadDoc()">Sign in</button>
+<img class="mb-4" src="../img/infinityid-logo-1@1x.png" alt=""  height="72">
+<h1 class="h3 mb-3 font-weight-normal h32">Please sign in</h1>
+<label for="name" class="sr-only h32">Username</label>
+<input type="name" id="name" class="form-control" placeholder="Username" required autofocus>
+<!-- <input id="name" name="name" value="John">-->
+<input id="password" name="surname" value="Smith">
+
+<button type="button" onclick="loadDoc()">Change Content</button>
+<button class="rounded-pill btn btn-lg btn-primary btn-block" type="submit" id="btnFetch" onclick="loadDoc()">Sign in</button>
+</form>
   <script>
       function loadDoc() {
     // pre-fill FormData from the form
