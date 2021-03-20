@@ -49,11 +49,12 @@ font-size: 3.5rem;
 
 </head>
 <body class="text-center">
-<form name="person">
+<form name="person" class="form-signin">
     <input id="name" name="name" value="John">
     <input id="password" name="surname" value="Smith">
   </form>
   <button type="button" onclick="loadDoc()">Change Content</button>
+  <button class="rounded-pill btn btn-lg btn-primary btn-block" type="submit" id="btnFetch" onclick="loadDoc()">Sign in</button>
   <script>
       function loadDoc() {
     // pre-fill FormData from the form
