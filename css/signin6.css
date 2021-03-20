@@ -40,6 +40,11 @@ body {
   padding: 15px;
   margin: auto;
 }
+.form-signin1 {
+  width: 100%;
+  padding: 15px;
+  margin: auto;
+}
 .form-signin .checkbox {
   font-weight: 400;
 }
