@@ -44,12 +44,24 @@ window.location.protocol.length
 <link href="../css/signin6.css" rel="stylesheet">
 </head>
 <body class="text-center">
-<form class="form-signin"></form>
-<input id="name" name="name" value="John">
-<input id="password" name="surname" value="Smith">
-</form>
-<button type="button" onclick="loadDoc()">Change Content</button>
+<form class="form-signin">
+<img class="mb-4" src="../img/infinityid-logo-1@1x.png" alt=""  height="72">
+<h1 class="h3 mb-3 font-weight-normal h32">Please sign in</h1>
+<label for="inputEmail" class="sr-only h32">Email address</label>
+<input id="name" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+<label for="inputPassword" class="sr-only" id="password">Password</label>
+<input id="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+<input type="checkbox" checked style="color: white;" id="toggle-two" class="h32"></input><label style="color: white;">Remember me</label>
+<script>
+  $(function() {
+    $('#toggle-two').bootstrapToggle({
+      on: 'Enabled',
+      off: 'Disabled'
+    });
+  })
+</script>
 <button class="rounded-pill btn btn-lg btn-primary btn-block" type="button submit" onclick="loadDoc()" id="btnFetch">Sign in</button>
+</form>
 <script>
 function loadDoc() {
 // pre-fill FormData from the form
