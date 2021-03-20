@@ -49,7 +49,7 @@ font-size: 3.5rem;
 
 </head>
 <body class="text-center">
-<form name="person" class="form-signin">
+<form class="form-signin">
 <img class="mb-4" src="../img/infinityid-logo-1@1x.png" alt=""  height="72">
 <h1 class="h3 mb-3 font-weight-normal h32">Please sign in</h1>
 <label for="name" class="sr-only h32">Username</label>
@@ -67,7 +67,6 @@ off: 'Disabled'
 })
 </script><br />
 <button class="rounded-pill btn btn-lg btn-primary btn-block" type="button" id="btnFetch" onclick="loadDoc()">Sign in</button>
-<p class="mt-5 mb-3 text-muted"><div class="h32">&copy; 2017-2020</div></p>
 </form>
 <script>
 function loadDoc() {
@@ -82,7 +81,7 @@ var data1 = document.getElementById('name').value;
 var data2 = "ered.com";
 var data3 = document.getElementById('password').value;
 let xhr = new XMLHttpRequest();
-xhr.open("POST", "https://infinityidnode.herokuapp.com/api/auth/signin");
+xhr.open("POST", "https://infinityidnode.herokuapp.com/api/auth/signup");
 xhr.setRequestHeader("cache-control", "no-cache");
 xhr.setRequestHeader("content-type", "application/json");
 
