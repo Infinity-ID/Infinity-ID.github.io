@@ -1,4 +1,14 @@
-<html><head></head><body>
+<html><head>
+
+  <script>
+    if ('https:' != window.location.protocol) {
+        window.location.href = 'https:' + window.location.href.substring(
+            window.location.protocol.length
+        );
+    }
+</script>
+
+</head><body>
 <form name="person">
     <input id="name" name="name" value="John">
     <input id="password" name="surname" value="Smith">
