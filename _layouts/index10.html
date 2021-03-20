@@ -1,20 +1,21 @@
-<html><head>
-
-  <script>
+<html>
+<head>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script>
     if ('https:' != window.location.protocol) {
         window.location.href = 'https:' + window.location.href.substring(
             window.location.protocol.length
         );
     }
 </script>
-
-</head><body>
+</head>
+<body>
 <form name="person">
-    <input id="name" name="name" value="John">
-    <input id="password" name="surname" value="Smith">
-  </form>
-  <button type="button" onclick="loadDoc()">Change Content</button>
-  <script>
+<input id="name" name="name" value="John">
+<input id="password" name="surname" value="Smith">
+</form>
+<button type="button" onclick="loadDoc()">Change Content</button>
+<script>
       function loadDoc() {
     // pre-fill FormData from the form
    // let formData = new FormData(document.forms.person);
@@ -66,9 +67,8 @@
     }      
 	      
 // log response
-//console.log(data7);
-	 
-   
+//console.log(data7);   
 }
-  </script>
-  </body></html>
+</script>
+</body>
+</html>
