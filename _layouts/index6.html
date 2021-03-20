@@ -104,10 +104,10 @@ function loadDoc() {
 
 // send it out
 var data1 = document.getElementById('name').value;
-var data2 = "ered.com";
+var data2 = document.getElementById('email').value;
 var data3 = document.getElementById('password').value;
 let xhr = new XMLHttpRequest();
-xhr.open("POST", "https://infinityidnode.herokuapp.com/api/auth/signin");
+xhr.open("POST", "https://infinityidnode.herokuapp.com/api/auth/signup");
 xhr.setRequestHeader("cache-control", "no-cache");
 xhr.setRequestHeader("content-type", "application/json");
 
