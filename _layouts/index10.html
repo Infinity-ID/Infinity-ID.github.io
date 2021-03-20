@@ -57,6 +57,15 @@ font-size: 3.5rem;
 <!-- <input id="name" name="name" value="John">-->
 <label for="password" class="sr-only">Password</label>
 <input type="password" id="password" class="form-control" placeholder="Password" required>
+<input type="checkbox" checked style="color: white;" id="toggle-two" class="h32"></input><label style="color: white;">Remember me</label>
+<script>
+  $(function() {
+    $('#toggle-two').bootstrapToggle({
+      on: 'Enabled',
+      off: 'Disabled'
+    });
+  })
+</script><br /><br />
 <button class="rounded-pill btn btn-lg btn-primary btn-block" type="button" id="btnFetch" onclick="loadDoc()">Sign in</button>
 </form>
   <script>
