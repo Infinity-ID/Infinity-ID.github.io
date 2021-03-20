@@ -1,121 +1,64 @@
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-<meta name="generator" content="Jekyll v4.1.1">
-<title>Signin Template · Bootstrap</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-.bgimg-1 {
-height: 100%;
-}
-.h32 {
-color: white;
-}
-.bd-placeholder-img {
-font-size: 1.125rem;
-text-anchor: middle;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-}
+<html><head></head><body>
+<form name="person">
+    <input id="name" name="name" value="John">
+    <input id="password" name="surname" value="Smith">
+  </form>
+  <button type="button" onclick="loadDoc()">Change Content</button>
+  <script>
+      function loadDoc() {
+    // pre-fill FormData from the form
+   // let formData = new FormData(document.forms.person);
+  
+    // add one more field
+   // formData.append("middle", "Lee");
+  
+    // send it out
+    var data1 = document.getElementById('name').value;
+    var data2 = "ered.com";
+    var data3 = document.getElementById('password').value;
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://infinityidnode.herokuapp.com/api/auth/signin");
+    xhr.setRequestHeader("cache-control", "no-cache");
+    xhr.setRequestHeader("content-type", "application/json");
 
-@media (min-width: 768px) {
-.bd-placeholder-img-lg {
-font-size: 3.5rem;
-}
-}
-</style>
-<script src="../js/jquery.js" type="text/javascript"></script>
-<script>
-if ('https:' != window.location.protocol) {
-window.location.href = 'https:' + window.location.href.substring(
-window.location.protocol.length
-);
-}
-</script>
-<link href="../css/signin6.css" rel="stylesheet">
-</head>
-<body class="text-center">
-<form class="form-signin">
-<img class="mb-4" src="../img/infinityid-logo-1@1x.png" alt=""  height="72">
-<h1 class="h3 mb-3 font-weight-normal h32">Please sign in</h1>
-<label for="inputEmail" class="sr-only h32">Email address</label>
-<input id="name" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-<label for="inputPassword" class="sr-only" id="password">Password</label>
-<input id="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-<input type="checkbox" checked style="color: white;" id="toggle-two" class="h32"></input><label style="color: white;">Remember me</label>
-<script>
-  $(function() {
-    $('#toggle-two').bootstrapToggle({
-      on: 'Enabled',
-      off: 'Disabled'
-    });
-  })
-</script><br /><br />
-<button class="rounded-pill btn btn-lg btn-primary btn-block" type="button submit" onclick="loadDoc()" id="btnFetch">Sign in</button>
-</form>
-<script>
-function loadDoc() {
-// pre-fill FormData from the form
-// let formData = new FormData(document.forms.person);
+    xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+      var result = (xhr.responseText);
+      console.log(result);
+   }};
 
-// add one more field
-// formData.append("middle", "Lee");
-
-// send it out
-var data1 = document.getElementById('name').value;
-var data2 = "ered.com";
-var data3 = document.getElementById('password').value;
-let xhr = new XMLHttpRequest();
-xhr.open("POST", "https://infinityidnode.herokuapp.com/api/auth/signin");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("content-type", "application/json");
-
-xhr.onreadystatechange = function () {
-if (xhr.readyState === 4) {
-console.log(xhr.status);
-console.log(xhr.responseText);
-var result = (xhr.responseText);
-console.log(result);
-}};
-
-var data1a = `{
-"email": "` + data2 + `",
-"password": "` + data3 + `",
-"username":"` + data1 + `",
-"roles": ["user"]
-}`;
-if (xhr.status === 404) {
-// I can live with that, log it and go on
-console.log("file missing");
-}
-
-if (xhr.status === 200) {
-// I can live with that, log it and go on
-alert("you are cool");
-}
-xhr.send(data1a);
-xhr.onload = () => alert(xhr.response);      
-var data7 = xhr.responseText;
-
+    var data1a = `{
+	"email": "` + data2 + `",
+	"password": "` + data3 + `",
+	"username":"` + data1 + `",
+	"roles": ["user"]
+    }`;
+    if (xhr.status === 404) {
+            // I can live with that, log it and go on
+          console.log("file missing");
+        }
+    
+     if (xhr.status === 200) {
+            // I can live with that, log it and go on
+           alert("you are cool");
+        }
+    xhr.send(data1a);
+    xhr.onload = () => alert(xhr.response);      
+    var data7 = xhr.responseText;
+	
 // now you can access it's params:
 
 
-if( data7.indexOf('accessToken') >= 0){
-
-}      
-
+    if( data7.indexOf('accessToken') >= 0){
+ 
+    }      
+	      
 // log response
-//console.log(data7);   
+//console.log(data7);
+	 
+   
 }
-</script>
-</body>
-</html>
+  </script>
+  </body></html>
