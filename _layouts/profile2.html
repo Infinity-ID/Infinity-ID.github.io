@@ -16,6 +16,41 @@
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+         .dude {
+  --z-index: 0;
+  background-color: rgba(255,255,255,1.0);
+  border-radius: 47px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.161);;
+  height: 100%;
+  left: 0px;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  width: 20%;
+}
+.dude1 {
+  --z-index: 0;
+  border: 5px solid rgba(110,104,229,1.0);
+  border-radius: 62.5px/61.45046615600586px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.161);;
+  height: calc(100.00% + 10px);
+  left: -5px;
+  opacity: 1;
+
+  top: -5px;
+  width: calc(100.00% + 10px);
+}
+.dude2 {
+  --z-index: 1;
+  background-color: transparent;
+  background-image: url(../img/cryptopunk-1@1x.png);
+  background-size: 100% 100%;
+  height: 61px;
+  opacity: 1;
+  right: calc(50.00% - 29px);
+  top: calc(48.88% - 30px);
+  width: 59px;
+}
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -89,6 +124,8 @@
             <h1>Example headline.</h1>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
             <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            <div class="dude"><div class="dude2"><div class="dude1"></div></div><span style="z-index: 20; color: #000;"> InfinityID</span><span style="z-index: 20; color: #000;"><br /> LONDON, ENGLAND</span></div>
+            
           </div>
         </div>
       </div>
@@ -96,7 +133,21 @@
      
     </div>
    
-   
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link"><i class="fas fa-user" style="font-size: 21px;"></i> Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"><i class="fas fa-rss" style="font-size: 21px;"></i> Feed</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"><i class="fas fa-images" style="font-size: 21px;"></i> Photos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"><i class="fas" style="font-size: 21px;"></i> NFT</a>
+              </li>
+      </nav>
   </div>
 
 
@@ -126,6 +177,7 @@
         <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
+    
     </div><!-- /.row -->
 
 
