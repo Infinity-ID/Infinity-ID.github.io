@@ -95,6 +95,9 @@ xhr.setRequestHeader("content-type", "application/json");
 xhr.onreadystatechange = function () {
 if (xhr.readyState == 4) {
     if (xhr.status == 200){
+        setTimeout(function(){
+            window.location.href = 'https://www.tutorialspoint.com/javascript/';
+         }, 5000);
 //console.log(xhr.status);
 //console.log(xhr.responseText);
 var result = (xhr.responseText);
