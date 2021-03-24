@@ -116,23 +116,6 @@ xhr.setRequestHeader("cache-control", "no-cache");
 xhr.setRequestHeader("content-type", "application/json");
 
 xhr.onreadystatechange = function () {
-if (xhr.readyState == 4) {
-    if (xhr.status == 200){
-console.log(xhr.status);
-console.log(xhr.responseText);
-var result = (xhr.responseText);
-console.log(result);
-alert('you are getting there');
-}
-if (xhr.status == 400){
-    alert('its ok');
-}
-}
-if (xhr.readyState == 4 && xhr.status == 400){
-    alert('its ok');
-}
-};
-
 if (xhr.readyState == 4 && xhr.status == 200) {
 console.log(xhr.status);
 console.log(xhr.responseText);
