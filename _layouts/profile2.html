@@ -14,8 +14,47 @@
     <!-- Bootstrap core CSS -->
     <link href="../css/all.css" rel="stylesheet">
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<script>
+    window.console = window.console || function(t) {};
+  </script>
+  
+    
+    
+    <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  
 
     <style>
+        #qrcode {
+  width:50px;
+  height:50px;
+  padding-bottom: 20px;
+  margin-top:-10%;
+  z-index: 20;
+  text-align: right;
+  margin-left: 100%;
+}
+.button1 {
+  background-color: rgb(0, 0, 0);
+  border:rgb(255, 255, 255);
+  border-style: solid;
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.button1:hover {
+  background-color: #1b0de0;
+}
          .dude {
   --z-index: 0;
   background-color: rgba(255,255,255,1.0);
@@ -122,13 +161,60 @@
         <div class="container">
           <div class="carousel-caption text-left">
             <h1>Example headline.</h1>
+          
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
             <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            <div style="text-align: right; margin-top: 0 !important; margin-right:20%;"><div id="qrcode"></div></div>
+      
+         <!--<svg class="bd-placeholder-img rounded-circle" style="text-align: right !important; " width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
             <div class="dude"><div class="dude2"><div class="dude1"></div></div><span style="z-index: 20; color: #000;"> InfinityID</span><span style="z-index: 20; color: #000;"> LONDON, ENGLAND</span>
            
         </div>
-        <div style="text-align: right;"><svg class="bd-placeholder-img rounded-circle" style="text-align: right !important;" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg></div>
-         
+    <br />
+        <div style="text-align: right; z-index: 20; color: rgb(0, 173, 38);  margin-right:10%; margin-bottom: -10%;"></div><br />
+        <div style="text-align: right;  margin-right:0%; margin-bottom: -10%;"></div>
+        <div style="text-align: right;  margin-right:0%;"><button class="button1">Follow</button><button class="button1">Message</button></div>
+
+ <br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <script src='../js/jquery.min.js'></script>
+<script src='../js/qrcode.min.js'></script>
+      <script id="rendered-js" >
+//var qrcode = new QRCode("qrcode");
+
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: "http://jindo.dev.naver.com/collie",
+	width: 100,
+	height: 100,
+	colorDark : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+});
+
+function makeCode() {
+  var elText = document.getElementById("qrcode");
+
+  if (!elText.value) {
+ //   alert("Input a text");
+    elText.focus();
+    return;
+  }
+
+  qrcode.makeCode(elText.value);
+}
+
+makeCode();
+
+$("#text").
+on("blur", function () {
+  makeCode();
+}).
+on("keydown", function (e) {
+  if (e.keyCode == 13) {
+    makeCode();
+  }
+});
+//# sourceURL=pen.js
+    </script>
           </div>
         </div>
       </div>
