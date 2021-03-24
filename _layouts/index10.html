@@ -100,8 +100,9 @@ console.log(xhr.responseText);
 var result = (xhr.responseText);
 var result1 = result.split(':')[1];
 var name1 = result.split(':')[2];
+var name2 = name1.split(',')[1];
 console.log(result);
-document.getElementById('result1').innerHTML = 'Welcome '+ name1 +'you will be redirected in 5secs';
+document.getElementById('result1').innerHTML = 'Welcome '+ name2 +'you will be redirected in 5secs';
 document.cookie = "user="+ result1 +"; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT"
 //alert('you are getting there');
 }
