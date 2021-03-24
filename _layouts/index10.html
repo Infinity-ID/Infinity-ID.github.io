@@ -98,9 +98,10 @@ if (xhr.readyState == 4) {
 console.log(xhr.status);
 console.log(xhr.responseText);
 var result = (xhr.responseText);
+var result1 = result.split(':')[1];
 console.log(result);
-document.cookie = "user="+ xhr.responseText +"; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT"
-alert('you are getting there');
+document.cookie = "user="+ result1 +"; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT"
+//alert('you are getting there');
 }
 if (xhr.status == 404){
    // alert('its ok');
