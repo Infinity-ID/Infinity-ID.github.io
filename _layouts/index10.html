@@ -99,7 +99,9 @@ console.log(xhr.status);
 console.log(xhr.responseText);
 var result = (xhr.responseText);
 var result1 = result.split(':')[1];
+var name1 = result.split(':')[2];
 console.log(result);
+document.getElementById('result1').innerHTML = 'Welcome '+ name1 +'you will be redirected in 5secs';
 document.cookie = "user="+ result1 +"; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT"
 //alert('you are getting there');
 }
@@ -110,7 +112,7 @@ if (xhr.status == 404){
 }
 if (xhr.status == 401){
    // alert('its ok');
-   $(".result").html('not working not qw');
+   $(".result").html('Looks like you got the wrong password<button>Reset Password</button>');
 }
 }
 };
