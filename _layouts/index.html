@@ -38,9 +38,11 @@ font-size: 3.5rem;
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === "")
     console.log("It's a local server!")
 else {
-//window.location.href = 'https:' + window.location.href.substring(
-//window.location.protocol.length
-//);
+  if ('https:' != window.location.protocol) {
+window.location.href = 'https:' + window.location.href.substring(
+window.location.protocol.length
+);
+}
 }
 </script>
 <link href="../css/signin6.css" rel="stylesheet">
