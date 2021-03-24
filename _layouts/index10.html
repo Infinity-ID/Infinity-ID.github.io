@@ -95,8 +95,8 @@ xhr.setRequestHeader("content-type", "application/json");
 xhr.onreadystatechange = function () {
 if (xhr.readyState == 4) {
     if (xhr.status == 200){
-console.log(xhr.status);
-console.log(xhr.responseText);
+//console.log(xhr.status);
+//console.log(xhr.responseText);
 var result = (xhr.responseText);
 var result1 = result.split(':')[1];
 var result2 = result1.split(',')[0];
@@ -104,7 +104,7 @@ var name1 = result.split(':')[2];
 var name2 = name1.split(',')[0];
 var at = result.split(':').pop();
 var at2 = at.split('}')[0];
-console.log(result);
+//console.log(result);
 document.getElementById('result1').innerHTML = 'Welcome '+ name2 +' you will be redirected in 5secs';
 document.cookie = "user= userid: "+ result2 +", accessToken: "+ at2 +"; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT"
 //alert('you are getting there');
