@@ -104,7 +104,7 @@ var name1 = result.split(':')[2];
 var name2 = name1.split(',')[0];
 console.log(result);
 document.getElementById('result1').innerHTML = 'Welcome '+ name2 +' you will be redirected in 5secs';
-document.cookie = "user="+ result2 +"; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT"
+document.cookie = "user= userid:"+ result2 +", accessToken: dfdfdfddfdfd; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT"
 //alert('you are getting there');
 }
 if (xhr.status == 404){
