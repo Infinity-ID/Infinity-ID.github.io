@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="../css/application.min.css">
     <script>
       var doc = document;
-var divOne = doc.getElementById('adminpan');
+//var divOne = doc.getElementById('adminpan');
 var goButton = doc.getElementById('go');
 
 document.getElementById("go").addEventListener("click", displayDate);
@@ -1421,7 +1421,10 @@ document.getElementById("go").addEventListener("click", function() {
       </div>
     </div>
     <script>
+       document.getElementById('adminpan').classList.add('theme-panel-collapsed');
+document.getElementById('adminpan').classList.remove('theme-panel-collapsed');
       function script1() {
+        document.getElementById('adminpan').classList.toggle('theme-panel-collapsed');
   console.log('dude left');
 };
     </script>
