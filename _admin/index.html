@@ -33,6 +33,12 @@
 var divOne = doc.getElementById('adminpan');
 var goButton = doc.getElementById('go');
 
+document.getElementById("go").addEventListener("click", displayDate);
+
+function displayDate() {
+  console.log('dude left');
+}
+
 document.getElementById("go").addEventListener("click", function() {
   divOne.classList="theme-panel";
   console.log('update');
