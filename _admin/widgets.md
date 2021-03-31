@@ -1,4 +1,8 @@
-
+---
+layout: post
+title: widget
+permalink: /admin/widgets.html
+---
 <!DOCTYPE html>
 <html lang="en">
   <head>
