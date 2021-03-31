@@ -1,5 +1,5 @@
 ---
 layout: adminpetity
-title: widget
+title: peity
 permalink: /admin/peity.html
 ---

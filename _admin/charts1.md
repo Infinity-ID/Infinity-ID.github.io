@@ -1,5 +1,5 @@
 ---
 layout: admincharts
-title: widget
+title: chartjs
 permalink: /admin/chartjs.html
 ---
