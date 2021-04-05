@@ -11,7 +11,7 @@ permalink: /admin/page-layouts.html
               <div class="text-center">
                 <h5>Static layout</h5>
                 <a class="page-layouts-link" href="static-layout.html" target="_blank">
-                  <img class="img-responsive" src="img/8907917568.png" alt="Static layout">
+                  <img class="img-responsive" src="../img/8907917568.png" alt="Static layout">
                 </a>
                 <p>
                   <small>Regions: header, sidebar, content.</small>
@@ -22,7 +22,7 @@ permalink: /admin/page-layouts.html
               <div class="text-center">
                 <h5>Static layout with footer</h5>
                 <a class="page-layouts-link" href="static-layout-with-footer.html" target="_blank">
-                  <img class="img-responsive" src="img/9066377313.png" alt="Static layout with footer">
+                  <img class="img-responsive" src="../img/9066377313.png" alt="Static layout with footer">
                 </a>
                 <p>
                   <small>Regions: header, footer, sidebar, content.</small>
@@ -33,7 +33,7 @@ permalink: /admin/page-layouts.html
               <div class="text-center">
                 <h5>Sidebar sticky*</h5>
                 <a class="page-layouts-link" href="sidebar-sticky.html" target="_blank">
-                  <img class="img-responsive" src="img/9193364282.png" alt="Sidebar sticky">
+                  <img class="img-responsive" src="../img/9193364282.png" alt="Sidebar sticky">
                 </a>
                 <p>
                   <small>Regions: header, footer, sidebar, content.</small>
@@ -44,7 +44,7 @@ permalink: /admin/page-layouts.html
               <div class="text-center">
                 <h5>Sidebar sticky* collapsed</h5>
                 <a class="page-layouts-link" href="sidebar-sticky-collapsed.html" target="_blank">
-                  <img class="img-responsive" src="img/9248739560.png" alt="Sidebar sticky collapsed">
+                  <img class="img-responsive" src="../img/9248739560.png" alt="Sidebar sticky collapsed">
                 </a>
                 <p>
                   <small>Regions: header, footer, sidebar, content.</small>
@@ -55,7 +55,7 @@ permalink: /admin/page-layouts.html
               <div class="text-center">
                 <h5>Header fixed</h5>
                 <a class="page-layouts-link" href="header-fixed.html" target="_blank">
-                  <img class="img-responsive" src="img/9346320298.png" alt="Header fixed">
+                  <img class="img-responsive" src="../img/9346320298.png" alt="Header fixed">
                 </a>
                 <p>
                   <small>Regions: header, footer, sidebar, content.</small>
@@ -66,7 +66,7 @@ permalink: /admin/page-layouts.html
               <div class="text-center">
                 <h5>Header and sidebar fixed</h5>
                 <a class="page-layouts-link" href="header-and-sidebar-fixed.html" target="_blank">
-                  <img class="img-responsive" src="img/9438147354.png" alt="Header and sidebar fixed">
+                  <img class="img-responsive" src="../img/9438147354.png" alt="Header and sidebar fixed">
                 </a>
                 <p>
                   <small>Regions: header, footer, sidebar, content.</small>
@@ -77,7 +77,7 @@ permalink: /admin/page-layouts.html
               <div class="text-center">
                 <h5>Footer fixed</h5>
                 <a class="page-layouts-link" href="footer-fixed.html" target="_blank">
-                  <img class="img-responsive" src="img/9540314125.png" alt="Footer fixed">
+                  <img class="img-responsive" src="../img/9540314125.png" alt="Footer fixed">
                 </a>
                 <p>
                   <small>Regions: header, footer, sidebar, content.</small>
@@ -88,7 +88,7 @@ permalink: /admin/page-layouts.html
               <div class="text-center">
                 <h5>+ Other combinations</h5>
                 <a class="page-layouts-link" href="#">
-                  <img class="img-responsive" src="img/9620101696.png" alt="Plus other combinations">
+                  <img class="img-responsive" src="../img/9620101696.png" alt="Plus other combinations">
                 </a>
                 <p>
                   <small>Regions: header, footer, sidebar, content.</small>
