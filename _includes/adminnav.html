@@ -302,6 +302,20 @@
               </div>
             </div>
           </li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" id="go"  onclick="script1()" href="#" role="button" data-toggle="dropdown" aria-haspopup="true">
+              <span class="icon-with-child hidden-xs">
+                <span class="icon icon-cog icon-lg"></span>
+              </span>
+              <span class="visible-xs-block">
+                <span class="icon icon-cog icon-lg icon-fw"></span>
+                Settings
+              </span>
+            </a>
+           
+          </li>
+
           <li class="dropdown hidden-xs">
             <button class="navbar-account-btn" data-toggle="dropdown" aria-haspopup="true">
               <img class="circle" width="36" height="36" src="../img/0180441436.jpg" alt="Teddy Wilson"> Teddy Wilson
@@ -345,7 +359,7 @@
         </ul>
         <div class="title-bar">
           <h1 class="title-bar-title">
-            <span class="d-ib">Peity charts</span>
+            <span class="d-ib">{{ page.title }}</span>
             <span class="d-ib">
               <a class="title-bar-shortcut" href="#" title="Add to shortcut list" data-container="body" data-toggle-text="Remove from shortcut list" data-trigger="hover" data-placement="right" data-toggle="tooltip">
                 <span class="sr-only">Add to shortcut list</span>

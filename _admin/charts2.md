@@ -1,6 +1,6 @@
 ---
 layout: adminpetity
-title: peity
+title: Peity Charts
 permalink: /admin/peity.html
 ---
  <div class="layout-content-body">
