@@ -2,6 +2,7 @@
 layout: admintemplate
 title: Dashboard
 permalink: /admin/modals.html
+stylesheet: ../css/animate.min.css
 ---
 <div class="layout-content-body">
           <div class="row gutter-xs">
