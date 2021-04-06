@@ -1,7 +1,7 @@
 ---
 layout: admintemplate
 title: Dashboard
-permalink: /admin/dashboard-3.html
+permalink: /admin/dashboard-1.html
 ---
  <div class="layout-content-body">
           <div class="row gutter-xs">
