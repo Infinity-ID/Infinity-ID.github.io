@@ -2,6 +2,7 @@
 layout: admintemplate
 title: Dashboard
 permalink: /admin/dashboard-3.html
+stylesheet: ../css/dashboard-3.min.css
 ---
  <div class="layout-content-body">
           <div class="row gutter-xs">
