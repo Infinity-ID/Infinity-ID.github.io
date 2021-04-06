@@ -3,7 +3,7 @@ layout: admintemplate
 title: Dashboard
 permalink: /admin/modals.html
 ---
- <div class="layout-content-body">
+<div class="layout-content-body">
           <div class="row gutter-xs">
             <div class="col-xs-6 col-md-3">
               <div class="panel panel-body text-center" data-toggle="match-height">
