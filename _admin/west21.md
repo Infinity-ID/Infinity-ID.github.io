@@ -89,7 +89,7 @@ stylesheet: ../css/animate.min.css
             <div class="col-xs-12 col-md-6 m-b-lg">
               <blockquote class="text-danger">
                 <p>Sometimes life hits you in the head with a brick. Don't lose faith.</p>
-                <img class="img-circle" width="48" height="48" src="img/8898319262.jpg" alt="Steve Jobs">
+                <img class="img-circle" width="48" height="48" src="../img/8898319262.jpg" alt="Steve Jobs">
                 <small class="d-ib">Steve Jobs</small>
               </blockquote>
             </div>
@@ -97,7 +97,7 @@ stylesheet: ../css/animate.min.css
               <blockquote class="text-danger pull-right">
                 <p>Sometimes life hits you in the head with a brick. Don't lose faith.</p>
                 <small class="d-ib">Steve Jobs</small>
-                <img class="img-circle" width="48" height="48" src="img/8898319262.jpg" alt="Steve Jobs">
+                <img class="img-circle" width="48" height="48" src="../img/8898319262.jpg" alt="Steve Jobs">
               </blockquote>
             </div>
           </div>
