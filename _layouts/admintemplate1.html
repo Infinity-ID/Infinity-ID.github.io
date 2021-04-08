@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    {% include adminhead.html %}
+  <body>{% if page.class %}
+    <div class="{{ page.class }}">
+    {% else %}
+    <div class="signup">
+    {% endif %}
+    
+        {{ content }}
+      <div class="signup-footer">
+        <ul class="list-inline">
+          <li><a class="link-muted" href="login-1.html">Log in</a></li>
+          <li>|</li>
+          <li><a class="link-muted" href="#">Privacy Policy</a></li>
+          <li>|</li>
+          <li><a class="link-muted" href="#">Terms</a></li>
+          <li>|</li>
+          <li><a class="link-muted" href="#">Cookie Policy</a></li>
+          <li>|</li>
+          <li>© Elephant 2017</li>
+        </ul>
+      </div>
+    </div>
+    <script src="../js/vendor.min.js"></script>
+    <script src="../js/elephant.min.js"></script>
+    <script src="../js/application.min.js"></script>
+    <script src="../js/signup-1.min.js"></script>
+      
+  </body>
+</html>
