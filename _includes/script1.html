@@ -1,0 +1,34 @@
+<script id="template-upload" type="text/x-tmpl">
+    {% for (var i=0, file; file=o.files[i]; i++) { %}
+    <li class="file template-upload fade">
+      <div class="file-thumbnail">
+        <div class="spinner spinner-default spinner-sm"></div>
+      </div>
+      <div class="file-info">
+        <span class="file-ext">{%= file.ext %}</span>
+        <span class="file-name">{%= file.name %}</span>
+      </div>
+    </li>
+    {% } %}
+  </script>
+  <script id="template-download" type="text/x-tmpl">
+    {% for (var i=0, file; file=o.files[i]; i++) { %} {% if (!file.error) { %}
+    <li class="file template-download fade">
+      <a class="file-link" href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}">
+        {% if (file.thumbnailUrl) { %}
+        <div class="file-thumbnail" style="background-image: url({%=file.thumbnailUrl%});"></div>
+        {% } else { %}
+        <div class="file-thumbnail {%=file.thumbnail%}"></div>
+        {% } %}
+        <div class="file-info">
+        <span class="file-ext">{%=file.extension%}</span>
+        <span class="file-name">{%=file.filename%}.</span>
+        </div>
+        </a>
+      <label class="file-select">
+        <input class="file-select-input" type="checkbox">
+        <span class="file-select-indicator"></span>
+        </label>
+    </li>
+    {% } %} {% } %}
+  </script>
